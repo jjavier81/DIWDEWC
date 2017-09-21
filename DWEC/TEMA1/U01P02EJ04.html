@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!---
+4. Uso escape
+Crea una página html con un título y un párrafo en la que incorpores código javascript con el siguiente formato:
+a. En un documento externo llamado U2Ej3script.js crea una variable que almacene el siguiente mensaje de texto con los saltos de línea y tabulaciones:
+b. En el documento html, incluye código javascript que permita mostrar el texto almacenado por consola.
+  Las rosas son rojas.
+    El mar es azul.
+      No sé rimar.
+-->
+  <head>
+    <!--noscript-->
+    <noscript>
+      <h2>Error...Habilita javascript en navegador</h2>
+    </noscript>
+    <script type="text/javascript">
+    //variable creada para el texto
+      var texto="'U1. Navegador y Lenguajes Web. Practica 2. Ejercicio 4.";
+    /* Alert para mostrar texto en dos alternativas */
+      alert(texto);
+      document.write("<h1>U1. Navegador y Lenguajes Web.</h1><h2>Practica 2.</h2><h3>Ejercicio 4.</h3>");
+    </script>
+    <script src="js/mensaje.js" charset="utf-8">
+    <meta charset="utf-8">
+    <title>U1. Navegador y Lenguajes Web. Practica 2. Ejercicio 4.</title>
+  </head>
+  <body>
+    <p>
+      4. Uso escape <br/>
+  Crea una página html con un título y un párrafo en la que incorpores código javascript con el siguiente formato:<br/>
+  a. En un documento externo llamado U2Ej3script.js crea una variable que almacene el siguiente mensaje de texto con los saltos de línea y tabulaciones: <br/>
+  b. En el documento html, incluye código javascript que permita mostrar el texto almacenado por consola. <br/>
+  Las rosas son rojas. <br/>
+  El mar es azul. <br/>
+  No sé rimar.<br/>
+</p>
+  </body>
+</html>
