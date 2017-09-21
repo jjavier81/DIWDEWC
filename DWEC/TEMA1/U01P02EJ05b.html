@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!---
+5. Solicitar entrada
+• Crea una página en la que se solicite al usuario su color favorito y que a continuación
+utilice ese color para cambiar el fondo de la página.
+Pista: El atributo document.bgColor almacena el color de fondo de la página con un
+string y podemos cambiar ese color desde un script.
+-->
+  <head>
+    <!--noscript-->
+    <noscript>
+      <h2>Error...Habilita javascript en navegador</h2>
+    </noscript>
+    <script type="text/javascript">
+    //variable creada para el texto
+      var texto="'U1. Navegador y Lenguajes Web. Practica 2. Ejercicio 4.";
+    /* Alert para mostrar texto en dos alternativas */
+      alert(texto);
+      document.write("<h1>U1. Navegador y Lenguajes Web.</h1><h2>Practica 2.</h2><h3>Ejercicio 4.</h3>");
+      var color = prompt("Dime un color de fondo");
+    </script>
+    <script src="js/mensaje.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title>U1. Navegador y Lenguajes Web. Practica 2. Ejercicio 4.</title>
+  </head>
+  <body>
+    <p>
+      5. Solicitar entrada<br />
+      • Crea una página en la que se solicite al usuario su color favorito y que a continuación
+      utilice ese color para cambiar el fondo de la página.<br />
+      Pista: El atributo document.bgColor almacena el color de fondo de la página con un
+      string y podemos cambiar ese color desde un script.
+    </p>
+    <script type="text/javascript">
+      document.bgColor=color;
+    </script>
+
+</html>
