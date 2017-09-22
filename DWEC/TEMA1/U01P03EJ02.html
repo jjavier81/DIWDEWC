@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tema 1. Practica 3. Ejercicio 1.</title>
+    <script type="text/javascript">
+      var numero = 16;
+      var nombre = "Jose";
+      var logico = 5>4;
+      var a;
+      var b = "true";
+      var c = "undefined";
+      var d = true;
+      var e = undefined;
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>1. Crea una página en la que incorpores el código que se indica en el recuadro.</b>
+      <p style="border: ridge #0f0fef 1px;">
+        <\script type="text/javascript">
+          var numero = 16;
+          var nombre = "Jose";
+          var logico = 5>4;
+          var a;
+          var b = "true";
+          var c = "undefined";
+          var d = true;
+          var e = undefined;
+        <\/script>
+      </p>
+      La página debe mostrar un texto en el que incluyas por cada variable la frase siguiente:
+      <i>La variable <\nombre variable> tiene el valor <\valor variable> y es de tipo <\tipo variable></i>
+    <p>
+    <p>
+      <b>Resultado:</b>
+      <script type="text/javascript">
+        document.write("<br />La variable <b>nombre</b> tiene el valor <b>" + nombre + " </b>y es de tipo <b>" + typeof(nombre) + "</b><br />");
+        document.write("La variable <b>numero</b> tiene el valor <b>" + numero + " </b>y es de tipo <b>" + typeof(numero) + "</b><br />");
+        document.write("La variable <b>logico</b> tiene el valor <b>" + logico + " </b>y es de tipo <b>" + typeof(logico) + "</b><br />");
+        document.write("La variable <b>a</b> tiene el valor <b>" + a + " </b>y es de tipo <b>" + typeof(a) + "</b><br />");
+        document.write("La variable <b>b</b> tiene el valor <b>" + b + " </b>y es de tipo <b>" + typeof(b) + "</b><br />");
+        document.write("La variable <b>c</b> tiene el valor <b>" + c + " </b>y es de tipo <b>" + typeof(c) + "</b><br />");
+        document.write("La variable <b>d</b> tiene el valor <b>" + d + " </b>y es de tipo <b>" + typeof(d) + "</b><br />");
+        document.write("La variable <b>e</b> tiene el valor <b>" + e + " </b>y es de tipo <b>" + typeof(e) + "</b><br />");
+      </script>
+  </body>
+</html>
