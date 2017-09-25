@@ -2,47 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tema 1. Practica 3. Ejercicio 1.</title>
+    <title>Tema 1. Practica 3. Ejercicio 2.</title>
     <script type="text/javascript">
-      var numero = 16;
-      var nombre = "Jose";
-      var logico = 5>4;
-      var a;
-      var b = "true";
-      var c = "undefined";
-      var d = true;
-      var e = undefined;
+      var X = 3/0;
+      var Y = 0/0;
+      var Z = NULL;
+      var A = undefined;
+      var suma1 = X++;
+      var suma2 = Y++;
+      var suma3 = Z++;
+      var suma4 = A++;
     </script>
   </head>
   <body>
     <p>
-      <b>1. Crea una página en la que incorpores el código que se indica en el recuadro.</b>
-      <p style="border: ridge #0f0fef 1px;">
-        <\script type="text/javascript">
-          var numero = 16;
-          var nombre = "Jose";
-          var logico = 5>4;
-          var a;
-          var b = "true";
-          var c = "undefined";
-          var d = true;
-          var e = undefined;
-        <\/script>
+      <b>2. Crea una página similar a la anterior en la que declares las variables,
+         las inicialices con los valores que se indican e incluyas qué valor tienen y de qué tipo son cada una: </b>
+      <p style="text-indent: 50px'">
+        X = 3/0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suma1 = X++; <br />
+        Y = 0/0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suma2 = Y++; <br />
+        Z = null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suma3 = Z++; <br />
+        A = undefined;&nbsp;&nbsp;&nbsp;suma4 = A++; <br />
       </p>
-      La página debe mostrar un texto en el que incluyas por cada variable la frase siguiente:
-      <i>La variable <\nombre variable> tiene el valor <\valor variable> y es de tipo <\tipo variable></i>
+    </p>
     <p>
-    <p>
-      <b>Resultado:</b>
+      <b>Resultado:</b><br />
       <script type="text/javascript">
-        document.write("<br />La variable <b>nombre</b> tiene el valor <b>" + nombre + " </b>y es de tipo <b>" + typeof(nombre) + "</b><br />");
-        document.write("La variable <b>numero</b> tiene el valor <b>" + numero + " </b>y es de tipo <b>" + typeof(numero) + "</b><br />");
-        document.write("La variable <b>logico</b> tiene el valor <b>" + logico + " </b>y es de tipo <b>" + typeof(logico) + "</b><br />");
-        document.write("La variable <b>a</b> tiene el valor <b>" + a + " </b>y es de tipo <b>" + typeof(a) + "</b><br />");
-        document.write("La variable <b>b</b> tiene el valor <b>" + b + " </b>y es de tipo <b>" + typeof(b) + "</b><br />");
-        document.write("La variable <b>c</b> tiene el valor <b>" + c + " </b>y es de tipo <b>" + typeof(c) + "</b><br />");
-        document.write("La variable <b>d</b> tiene el valor <b>" + d + " </b>y es de tipo <b>" + typeof(d) + "</b><br />");
-        document.write("La variable <b>e</b> tiene el valor <b>" + e + " </b>y es de tipo <b>" + typeof(e) + "</b><br />");
+        document.write("<br />La variable <b>X</b> tiene el valor <b>" + X + " </b>y es de tipo <b>" + typeof(X) + "</b><br />");
+        document.write("La variable <b>Y</b> tiene el valor <b>" + Y + " </b>y es de tipo <b>" + typeof(Y) + "</b><br />");
+        document.write("La variable <b>Z</b> tiene el valor <b>" + Z + " </b>y es de tipo <b>" + typeof(Z) + "</b><br />");
+        document.write("La variable <b>A</b> tiene el valor <b>" + A + " </b>y es de tipo <b>" + typeof(A) + "</b><br />");
+        document.write("La variable <b>suma1</b> tiene el valor <b>" + suma1 + " </b>y es de tipo <b>" + typeof(suma1) + "</b><br />");
+        document.write("La variable <b>suma2</b> tiene el valor <b>" + suma2 + " </b>y es de tipo <b>" + typeof(suma2) + "</b><br />");
+        document.write("La variable <b>suma3</b> tiene el valor <b>" + suma3 + " </b>y es de tipo <b>" + typeof(suma3) + "</b><br />");
+        document.write("La variable <b>suma4</b> tiene el valor <b>" + suma4 + " </b>y es de tipo <b>" + typeof(suma4) + "</b><br />");
       </script>
   </body>
 </html>
