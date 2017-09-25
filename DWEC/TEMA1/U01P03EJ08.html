@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tema 1. Practica 3. Ejercicio 7.</title>
+    <script type="text/javascript">
+      function precioDescuentos() {
+        var precio = prompt("Introduce el precio del artículo:");
+        while (precio <= 0 || isNaN(precio)) {
+          precio = prompt("El valor introducido no es correcto. Introduce el PRECIO del artículo:");
+        }
+        var descuento = prompt("Introduce el porcentaje de rebaja:")
+        while (descuento <= 0 || descuento >= 100|| isNaN(precio)) {
+          descuento = prompt("El valor introducido no es correcto. Introduce el PORCENTAJE DE DESCUENTO del artículo:");
+        }
+        var preciofinal = precio - (precio * descuento / 100);
+        document.write("<p align='center'> El precio final del artículo es "+ preciofinal);
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      8. Crea una función que dado un precio y el porcentaje rebajado, devuelva
+      el precio tras aplicar la rebaja. Deberás comprobar que el número del precio
+      introducido es un número y que no es negativo, ni 0 y avisar al usuario en ese caso.
+    </p>
+    <p>
+      <script type="text/javascript">
+        document.write(precioDescuentos());
+        document.write(precioDescuentos());
+        document.write(precioDescuentos());     
+      </script>
+    </p>
+  </body>
+</html>
