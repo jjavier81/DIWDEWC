@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tema 1. Practica 3. Ejercicio 5.</title>
+    <script type="text/javascript">
+      var numero = prompt("Dime un número del 1 al 10:");
+    </script>
+  </head>
+  <body>
+    <p>
+      5.Solicita al usuario un número para empezar una cuenta atrás del 1 al 10.
+      Comprueba que el número está en el rango solicitado y muestra una ventana
+      emergente en cada número de la cuenta hacia atrás utilizando para ello un bucle while.
+    </p>
+    <p>
+      <b>Resultado:</b><br />
+      <script type="text/javascript">
+        while (numero < 0 || numero > 10 || isNaN(numero)) {
+          numero = prompt("El valor introducido no es lo que te he pedido. Dime un número del 1 al 10:");
+        }
+
+        while (numero > 0) {
+          alert(numero);
+          var nextnumber = numero - 1;
+          if (nextnumber == 0) {
+            document.write(numero + ".");
+          } else {
+            document.write(numero + ", ")
+          }
+          numero--;
+        }
+      </script>
+    </p>
+  </body>
+</html>

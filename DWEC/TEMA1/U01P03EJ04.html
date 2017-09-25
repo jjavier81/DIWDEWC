@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tema 1. Practica 3. Ejercicio 4.</title>
+    <script type="text/javascript">
+      var numero = prompt("Dime tu año de nacimiento:");
+      var d = new Date();
+      var n = d.getFullYear();
+      var edad = n-numero;
+    </script>
+  </head>
+  <body>
+    <p>
+      4. Utilizando la sentencia <b>if/else</b>, crea una página que solicite al usuario su año de nacimiento.
+      <br />La página debe mostrar una advertencia si es menor de edad y en cambio debe invitarle a pasar a la web si es mayor de edad.
+      <br /><font size= '1px'>Pista: Aquí puedes encontrar las 2 líneas que necesitas para obtener el año actual
+      http://www.w3schools.com/jsref/jsref_getfullyear.asp</font>
+    </p>
+    <p>
+      <b>Resultado:</b><br />
+      <script type="text/javascript">
+        if (edad <= 17) {
+          document.write("<h1><font color='red'>Eres menor de edad, no puedes ver el contenido prohibido.</font>");
+        } else {
+          document.write("<h1><font color='green'>Adelante, que tengas una buena navegación!<br />Estas en clase de Cibeles!!</font>");
+        }
+      </script>
+    </p>
+  </body>
+</html>

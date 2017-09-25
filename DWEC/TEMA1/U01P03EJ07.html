@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tema 1. Practica 3. Ejercicio 7.</title>
+    <script type="text/javascript">
+      var fecha = new Date();
+      var dia = fecha.getDay();
+      switch (dia) {
+        case 0:
+          alert("Buenas, hoy es Domingo");
+          break;
+        case 1:
+          alert("Buenas, hoy es Lunes");
+          break;
+        case 2:
+          alert("Buenas, hoy es Martes");
+          break;
+        case 3:
+          alert("Buenas, hoy es Miercoles");
+          break;
+        case 4:
+          alert("Buenas, hoy es Jueves");
+          break;
+        case 5:
+          alert("Buenas, hoy es Viernes");
+          break;
+        case 0:
+          alert("Buenas, hoy es Sábado");
+          break;
+        default:
+          alert("Buenas, en que dia vivimos??");
+
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      7. Crea una página que informe al usuario del día de la semana que es y un
+      mensaje de ánimo dependiendo de cuánto quede para el fin de semana. Emplea para ello un switch.
+      Pista: Necesitarás incluir estas dos líneas para obtener el día de la semana
+      en formato numérico en la variable dia.
+      El 0 es el domingo, el 1 es el lunes, el 2 es el martes y así sucesivamente.
+      var fecha = new Date();
+      var dia = fecha.getDay();
+    </p>
+    <p>
+      <script type="text/javascript">
+        switch (dia) {
+          case 0:
+            document.write("<h2 align='center'><font color='green'>Disfruta del dia y coge fuerzas para la semana que entra!!</font></h2>");
+            break;
+          case 1:
+            document.write("<h2 align='center'><font color='green'>Ánimo, empieza la semana con energía!!</font></h2>");
+            break;
+          case 2:
+            document.write("<h2 align='center'><font color='green'>Muy bien!! Ya has pasado el lunes. Ánimo que la semana llega mañana a su ecuador!!.</font></h2>");
+            break;
+          case 3:
+            document.write("<h2 align='center'><font color='green'>En cuanto te acuestes hoy, mañana empieza el fin de semana!!</font></h2>");
+            break;
+          case 4:
+            document.write("<h2 align='center'><font color='green'>Feliz Juernes!! Ya queda menos!!</font></h2>");
+            break;
+          case 5:
+            document.write("<h2 align='center'><font color='green'>No pienses más, déjate llevar, empezamos el finde en cuanto acabemos el dia!!</font></h2>");
+            break;
+          case 6:
+            document.write("<h2 align='center'><font color='green'>Sabado, sabadete...</font></h2>")
+            break;
+          default:
+            document.write("No se ni en que dia vivo...")
+        }
+      </script>
+    </p>
+  </body>
+</html>
