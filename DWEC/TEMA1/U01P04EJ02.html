@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 2.</title>
+    <script type="text/javascript">
+      var numero = 18;
+      var mayorEdad = function(edad) {
+        if (edad >= numero) {
+          var mayor = "Si";
+        } else {
+          var mayor = "No";
+        }
+        return mayor;
+      }
+    </script>
+  </head>
+  <body>
+    <p>2. Crea una función anónima que: <br />
+        a.	Tome como parámetro un número al que debe asignar el valor por defecto de 18 <br />
+        b.	Si el número es mayor o igual a 18 debe devolver “si” <br />
+        c.	Si el número es menor de 18 debe devolver “no” <br />
+        d.	Asigna la función anónima a la variable var MayorEdad <br />
+        e.	Prueba la función anterior con 3 llamadas distintas para probar el valor por defecto, la salida si y la salida no. <br />
+    </p>
+    <b>Resultado:</b>
+    <p>
+      <script type="text/javascript">
+        document.write("¿10 años es mayor de edad?: <b>" + mayorEdad(10) + "</b><br />");
+        document.write("¿18 años es mayor de edad?: <b>" + mayorEdad(18) + "</b><br />");
+        document.write("¿22 años es mayor de edad?: <b>" + mayorEdad(22) + "</b><br />");
+      </script>
+    </p>
+
+    <script type="text/javascript">
+      document.write("<b>" + Hola() + "<b>");
+    </script>
+  </body>
+</html>

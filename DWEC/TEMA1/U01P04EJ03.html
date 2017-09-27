@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 3.</title>
+    <script type="text/javascript">
+      var edad = prompt("Introduce tu edad para ver la lista de artículos:");
+
+      while (edad < 0 || !isNaN(edad)) {
+        edad = prompt("El valor de tu edad no es correcto. Dime tu edad para mostrarte los articulos:");
+      }
+      var mayorEdad = function(edad) {
+        if (edad >= 18) {
+          var mayor = "<ul><li>Coca-cola</li><li>Fanta</li><li>Cafe</li><li>Whisky</li><li>Martini</li></ul>";
+        } else {
+          var mayor = "<ul><li>Coca-cola</li><li>Fanta</li></ul>";
+        }
+        return mayor;
+      }
+    </script>
+  </head>
+  <body>
+    <p>3. Crea una función que solicite al usuario que introduzca su edad,
+      la convierta a número y que emplee MayorEdad (ejercicio anterior) para mostrar
+      por pantalla todos los artículos o sólo aquellos que no contienen alcohol,
+      en caso de que sea menor de edad. Ejemplo artículos:
+      <ul>
+        <li>Coca-cola</li>
+        <li>Fanta</li>
+        <li>Cafe</li>
+        <li>Whisky</li>
+        <li>Martini</li>
+      </ul>
+    </p>
+    <b>Resultado:</b>
+    <p>
+      <script type="text/javascript">
+        document.write("Tienes " + numero + " años. <br />La Lista de articulos es: <b>" + mayorEdad(edad) + "</b><br />");
+      </script>
+    </p>
+
+    <script type="text/javascript">
+      document.write("<b>" + Hola() + "<b>");
+    </script>
+  </body>
+</html>
