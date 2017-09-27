@@ -6,7 +6,7 @@
     <script type="text/javascript">
       var edad = prompt("Introduce tu edad para ver la lista de artículos:");
 
-      while (edad < 0 || !isNaN(edad)) {
+      while (edad < 0 || isNaN(edad)) {
         edad = prompt("El valor de tu edad no es correcto. Dime tu edad para mostrarte los articulos:");
       }
       var mayorEdad = function(edad) {
@@ -35,12 +35,8 @@
     <b>Resultado:</b>
     <p>
       <script type="text/javascript">
-        document.write("Tienes " + numero + " años. <br />La Lista de articulos es: <b>" + mayorEdad(edad) + "</b><br />");
+        document.write("Tienes " + edad + " años. <br />La Lista de articulos es: <b>" + mayorEdad(edad) + "</b><br />");
       </script>
     </p>
-
-    <script type="text/javascript">
-      document.write("<b>" + Hola() + "<b>");
-    </script>
   </body>
 </html>

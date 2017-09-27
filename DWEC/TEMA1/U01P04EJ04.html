@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 3.</title>
+    <script type="text/javascript">
+      var cadena1 = prompt("Introduce una cadena de carácteres:");
+      var cadena2 = prompt("Introduce la segunda cadena de carácteres:");
+      if (typeof cadena1 !== "string") {
+        console.error("El parámetro pasado como cadena1 no es un string");
+      }
+      if (typeof cadena2 !== "string") {
+        console.error("El parámetro pasado como cadena2 no es un string");
+      }
+      console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");
+      console.log("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres");
+      if (cadena1.length > cadena2.length) {
+        console.log("La primera cadena es mayor a la segunda");
+      } else if (cadena1.length < cadena2.length) {
+        console.log("La segunda cadena es mayor a la primera");
+      } else {
+        console.log("Ambas cadenas son iguales.");
+      }
+
+      function cadenas() {
+        var cadena1 = prompt("Introduce una cadena de carácteres:");
+        var cadena2 = prompt("Introduce la segunda cadena de carácteres:");
+        if (typeof cadena1 !== "string") {
+          document.write("El parámetro pasado como cadena1 no es un string<br />");
+        }
+        if (typeof cadena2 !== "string") {
+          document.write("El parámetro pasado como cadena2 no es un string<br />");
+        }
+        document.write("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres<br />");
+        document.write("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres<br />");
+        if (cadena1.length > cadena2.length) {
+          document.write("La primera cadena es mayor a la segunda<br />");
+        } else if (cadena1.length < cadena2.length) {
+          document.write("La segunda cadena es mayor a la primera<br />");
+        } else {
+          document.write("Ambas cadenas son iguales.<br />");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>4. Crea una función que reciba 2 cadenas por parámetro.<br />
+      a.	Dicha función imprimirá por consola qué cadena tiene mayor longitud.
+      Para ello puedes usar la propiedad length tal y como muestra el ejemplo:<br />
+      <img src="img/u01p04ej04.png" alt="imagenejercicio4">
+      <br />
+      b.	Si el tipo de algún parámetro no es string (typeof param !== "string"), debes imprimir un error. <br />
+      Llama a la función 3 veces con diferentes parámetros. En una de esas llamadas
+      pásale por parámetro un valor que no sea string.
+    </p>
+    <b>Resultado:</b>
+    <p><b>Apartado a</b>:</p>
+    <i><p>&nbsp;&nbsp;&nbsp;console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");<br />
+       &nbsp;&nbsp;&nbsp;console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");<br />
+       &nbsp;&nbsp;&nbsp;if (cadena1.length > cadena2.length) {<br />
+       &nbsp;&nbsp;&nbsp;console.log("La primera cadena es mayor a la segunda");<br />
+       &nbsp;&nbsp;&nbsp;} else if (cadena1.length < cadena2.length) {<br />
+       &nbsp;&nbsp;&nbsp;console.log("La segunda cadena es mayor a la primera");<br />
+       &nbsp;&nbsp;&nbsp;} else {<br />
+       &nbsp;&nbsp;&nbsp;console.log("Ambas cadenas son iguales.");<br />
+       &nbsp;&nbsp;&nbsp;}
+    </i></p>
+    <p><b>Apartado b</b>:</p>
+    <p><i>
+       &nbsp;&nbsp;&nbsp;if (typeof cadena1 !== "string") {<br />
+       &nbsp;&nbsp;&nbsp;console.error("El parámetro pasado como cadena1 no es un string");<br />
+       &nbsp;&nbsp;&nbsp;if (typeof cadena2 !== "string") {<br />
+       &nbsp;&nbsp;&nbsp;console.error("El parámetro pasado como cadena2 no es un string");<br />
+       &nbsp;&nbsp;&nbsp;}<br />
+    </i></p>
+    <p><b>
+      Llama a la función 3 veces con diferentes parámetros. En una de esas llamadas
+      pásale por parámetro un valor que no sea string.</b><br /><br />
+      <script type="text/javascript">
+        document.write(cadenas() + "<br /><br />");
+        document.write(cadenas() + "<br /><br />");
+        document.write(cadenas() + "<br /><br />");
+      </script>
+    </p>
+  </body>
+</html>
