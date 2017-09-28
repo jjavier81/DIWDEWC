@@ -4,41 +4,61 @@
     <meta charset="utf-8">
     <title>Unidad 1. Practica 4. Ejercicio 3.</title>
     <script type="text/javascript">
+    //Apartado a
       var cadena1 = prompt("Introduce una cadena de carácteres:");
       var cadena2 = prompt("Introduce la segunda cadena de carácteres:");
+      if (!isNaN(cadena1)) {
+        cadena1 = parseInt(cadena1);
+      }
+      if (!isNaN(cadena2)) {
+        cadena2 = parseInt(cadena2);
+      }
+      var errorconsole = 0;
       if (typeof cadena1 !== "string") {
         console.error("El parámetro pasado como cadena1 no es un string");
+        errorconsole++;
       }
       if (typeof cadena2 !== "string") {
         console.error("El parámetro pasado como cadena2 no es un string");
+        errorconsole++;
       }
-      console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");
-      console.log("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres");
-      if (cadena1.length > cadena2.length) {
-        console.log("La primera cadena es mayor a la segunda");
-      } else if (cadena1.length < cadena2.length) {
-        console.log("La segunda cadena es mayor a la primera");
+      if (errorconsole == 0) {
+        console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");
+        console.log("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres");
+        if (cadena1.length > cadena2.length) {
+          console.log("La primera cadena es mayor a la segunda");
+        } else if (cadena1.length < cadena2.length) {
+          console.log("La segunda cadena es mayor a la primera");
+        } else {
+          console.log("Ambas cadenas son iguales.");
+        }
       } else {
-        console.log("Ambas cadenas son iguales.");
+        console.log("Error!! No podemos comparar cadenas que no son Strings.");
       }
 
-      function cadenas() {
-        var cadena1 = prompt("Introduce una cadena de carácteres:");
-        var cadena2 = prompt("Introduce la segunda cadena de carácteres:");
+      //apartado b
+      function cadenas(cadena1, cadena2) {
+        var error = 0;
         if (typeof cadena1 !== "string") {
           document.write("El parámetro pasado como cadena1 no es un string<br />");
+          error++;
         }
         if (typeof cadena2 !== "string") {
           document.write("El parámetro pasado como cadena2 no es un string<br />");
+          error++;
         }
-        document.write("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres<br />");
-        document.write("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres<br />");
-        if (cadena1.length > cadena2.length) {
-          document.write("La primera cadena es mayor a la segunda<br />");
-        } else if (cadena1.length < cadena2.length) {
-          document.write("La segunda cadena es mayor a la primera<br />");
+        if (error == 0) {
+          document.write("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres<br />");
+          document.write("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres<br />");
+          if (cadena1.length > cadena2.length) {
+            document.write("La primera cadena es mayor a la segunda<br />");
+          } else if (cadena1.length < cadena2.length) {
+            document.write("La segunda cadena es mayor a la primera<br />");
+          } else {
+            document.write("Ambas cadenas son iguales.<br />");
+          }
         } else {
-          document.write("Ambas cadenas son iguales.<br />");
+          document.write("<b>Error!!</b> No podemos comparar cadenas que no son Strings.<br />");
         }
       }
     </script>
@@ -51,35 +71,15 @@
       <br />
       b.	Si el tipo de algún parámetro no es string (typeof param !== "string"), debes imprimir un error. <br />
       Llama a la función 3 veces con diferentes parámetros. En una de esas llamadas
+      pásale por parámetro un valor que no sea string.<br />
+      Llama a la función 3 veces con diferentes parámetros. En una de esas llamadas
       pásale por parámetro un valor que no sea string.</b>
     </p>
-    <b>Resultado:</b>
-    <p><b>Apartado a</b>:</p>
-    <i><p>&nbsp;&nbsp;&nbsp;console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");<br />
-       &nbsp;&nbsp;&nbsp;console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");<br />
-       &nbsp;&nbsp;&nbsp;if (cadena1.length > cadena2.length) {<br />
-       &nbsp;&nbsp;&nbsp;console.log("La primera cadena es mayor a la segunda");<br />
-       &nbsp;&nbsp;&nbsp;} else if (cadena1.length < cadena2.length) {<br />
-       &nbsp;&nbsp;&nbsp;console.log("La segunda cadena es mayor a la primera");<br />
-       &nbsp;&nbsp;&nbsp;} else {<br />
-       &nbsp;&nbsp;&nbsp;console.log("Ambas cadenas son iguales.");<br />
-       &nbsp;&nbsp;&nbsp;}
-    </i></p>
-    <p><b>Apartado b</b>:</p>
-    <p><i>
-       &nbsp;&nbsp;&nbsp;if (typeof cadena1 !== "string") {<br />
-       &nbsp;&nbsp;&nbsp;console.error("El parámetro pasado como cadena1 no es un string");<br />
-       &nbsp;&nbsp;&nbsp;if (typeof cadena2 !== "string") {<br />
-       &nbsp;&nbsp;&nbsp;console.error("El parámetro pasado como cadena2 no es un string");<br />
-       &nbsp;&nbsp;&nbsp;}<br />
-    </i></p>
-    <p><b>
-      Llama a la función 3 veces con diferentes parámetros. En una de esas llamadas
-      pásale por parámetro un valor que no sea string.</b><br /><br />
+    <b>Resultado:</b> <br />
       <script type="text/javascript">
-        document.write(cadenas() + "<br /><br />");
-        document.write(cadenas() + "<br /><br />");
-        document.write(cadenas() + "<br /><br />");
+        document.write(cadenas(15,"jose") + "<br /><br />");
+        document.write(cadenas("javier","antigüedad") + "<br /><br />");
+        document.write(cadenas("julian","jose javier") + "<br /><br />");
       </script>
     </p>
   </body>

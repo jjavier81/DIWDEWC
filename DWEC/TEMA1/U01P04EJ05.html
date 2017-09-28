@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 3.</title>
+    <script type="text/javascript">
+      alert("Bienvenido a la calculadora de javascript.");
+      alert("Estas son las opciones que dispone nuestra calculadora:");
+      alert("1-Suma,2-Resta,3-Multiplicar,4-Dividir,5-Salir");
+      function calculadora()  {
+        var operacion = prompt("Introduce la opción (del 1 al 4) que deseas realizar:");
+        while (operacion < 1 || operacion > 5 || isNaN(operacion)) {
+          alert("La opción introducida no se corresponde con ninguna del menú.");
+          operacion = prompt("Introduce la opcíon (del 1 al 4) que deseas realizar:");
+        }
+        var numero1 = prompt("Introduce el primer valor:");
+        while (isNaN(numero1)) {
+          numero1 = prompt("El valor introducido no es un número. Por favor introduce un valor válido:");
+        }
+        numero1 = parseInt(numero1);
+        var numero2 = prompt("Introduce el segundo valor:");
+        while (isNaN(numero2)) {
+          numero2 = prompt("El valor introducido no es un número. Por favor introduce un valor válido:");
+        }
+        numero2 = parseInt(numero2);
+        switch (operacion) {
+          case "1":
+            var resultado = numero1+numero2;
+            if (isNaN(resultado)) {
+              alert("Error. El resultado obtenido no es un número.");
+            } else {
+              alert("Resultado: " + numero1 + " + " + numero2 + " = " + resultado);
+            }
+            break;
+          case "2":
+            var resultado = numero1-numero2;
+            if (isNaN(resultado)) {
+              alert("Error. El resultado obtenido no es un número.");
+            } else {
+              alert("Resultado: " + numero1 + " - " + numero2 + " = " + resultado);
+            }
+            break;
+          case "3":
+            var resultado = numero1*numero2;
+            if (isNaN(resultado)) {
+              alert("Error. El resultado obtenido no es un número.");
+            } else {
+              alert("Resultado: " + numero1 + " * " + numero2 + " = " + resultado);
+            }
+            break;
+          case "4":
+            var resultado = numero1/numero2;
+            if (isNaN(resultado) || !isFinite(resultado)) {
+              alert("Error. El resultado obtenido no es un número.");
+            } else {
+              alert("Resultado: " + numero1 + " / " + numero2 + " = " + resultado);
+            }
+            break;
+          case "5":
+            alert("Hasta pronto!!");
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p><b>5. Empleando las funciones predefinidas que hemos visto, crea la función calculadora que: <br />
+      <ol type="a">
+        <li>Solicite al usuario que introduzca la operación que quiere calcular (empleando operadores sencillos).</li>
+        <li>Calcule esa operación</li>
+        <li>Compruebe que el resultado no es infinito y que sí es un número y en ese caso, indique que se ha producido un error.</li>
+        <li>Muestre por pantalla el resultado si se trata de un resultado correcto.</li>
+      </ol>
+    </b></p>
+    <br />
+    <b>Resultado:</b>
+    <table align='center' rules='box'>
+      <tr>
+        <th><font size='4'>Menú Calculadora</font></th>
+      </tr>
+      <tr>
+        <td>
+          <ol>
+            <li>SUMAR</li>
+            <li>RESTAR</li>
+            <li>MULTIPLICAR</li>
+            <li>DIVIDIR</li>
+            <li>SALIR</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td align='center'>
+          <button type="button" name="calculadora" onclick="calculadora()">CALCULA!!</button>
+        </td>
+      </tr>
+    </table>
+    </p>
+  </body>
+</html>
