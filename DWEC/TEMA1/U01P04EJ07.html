@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 7.</title>
+    <script type="text/javascript">
+      var diasSemana = new Array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+      //Crea una función que muestre los días de la semana por pantalla empleando for in
+      function muestradiasSemana() {
+        document.write("Los dias de la semana son:<br />");
+        var dia = 1;
+        for (var index in diasSemana) {
+          document.write("Día " + (dia) + ":<b>" + diasSemana[index] + "</b>.<br />");
+          dia++;
+        }
+      }
+      //Crea una función que solicite al usuario el número de la semana y que le devuelva qué día es en letras.
+      // Asignado como valor por defecto el 4 en caso de que no se introduzca ningún valor.
+      function dimedia(numerodia) {
+        if (numerodia == '') {
+          var numerodia = 4;
+        }
+        if (!isFinite(numerodia)) {
+          document.write("El número de día pasado es un numero infinito.<br />");
+        } else {
+          if (numerodia < 1 || numerodia > 6) {
+            document.write("El número de día pasado no se corresponde a ningún dia de la semana.<br />");
+          } else {
+            for (var i = 0; i < diasSemana.length; i++) {
+              if ((numerodia) == i) {
+                document.write("El día de la semana es: <b>" + diasSemana[i-1] + "</b><br />");
+              }
+            }
+          }
+        }
+      }
+      //Prueba la función del apartado b) pero comprueba primero que el valor que ha pasado el usuario no es infinito y es un número.
+      //HE MODIFICADO LA FUNCIÓN
+    </script>
+  </head>
+  <body>
+    <p><b>7. Dado un array con los días de la semana: <br />
+      var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+      <ol type='a'>
+        <li>Crea una función que muestre los días de la semana por pantalla empleando for in</li>
+        <li>Crea una función que solicite al usuario el número de la semana y que le devuelva qué día es en letras. Asignado como valor por defecto el 4 en caso de que no se introduzca ningún valor.</li>
+        <li>Prueba la función del apartado b) pero comprueba primero que el valor que ha pasado el usuario no es infinito y es un número.</li>
+    </ol>
+    </b></p>
+    <br />
+    <b>Resultado:</b>
+    <p><b>Muestra los dias de la semana:</b></p>
+    <script type="text/javascript">
+      document.write(muestradiasSemana());
+    </script>
+    <p><b>Solicitar día de la semana y comprobar que no es infinito y se corresponde algún día de la semana:</b></p>
+    <script type="text/javascript">
+      var numerodia = prompt("Dime un día de la semana en cifras: (Ej: 2)");
+      document.write(dimedia(numerodia));
+    </script>
+  </body>
+</html>

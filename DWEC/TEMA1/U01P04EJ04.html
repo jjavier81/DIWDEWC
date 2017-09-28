@@ -2,32 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Unidad 1. Practica 4. Ejercicio 3.</title>
+    <title>Unidad 1. Practica 4. Ejercicio 4.</title>
     <script type="text/javascript">
     //Apartado a
-      var cadena1 = prompt("Introduce una cadena de carácteres:");
-      var cadena2 = prompt("Introduce la segunda cadena de carácteres:");
-      if (!isNaN(cadena1)) {
-        cadena1 = parseInt(cadena1);
+      var cad1 = prompt("Introduce una cadena de carácteres:");
+      var cad2 = prompt("Introduce la segunda cadena de carácteres:");
+      if (!isNaN(cad1)) {
+        cad1 = parseInt(cad1);
       }
-      if (!isNaN(cadena2)) {
-        cadena2 = parseInt(cadena2);
+      if (!isNaN(cad2)) {
+        cad2 = parseInt(cad2);
       }
       var errorconsole = 0;
-      if (typeof cadena1 !== "string") {
+      if (typeof cad1 !== "string") {
         console.error("El parámetro pasado como cadena1 no es un string");
         errorconsole++;
       }
-      if (typeof cadena2 !== "string") {
+      if (typeof cad2 !== "string") {
         console.error("El parámetro pasado como cadena2 no es un string");
         errorconsole++;
       }
       if (errorconsole == 0) {
-        console.log("La primera cadena: '" + cadena1 + "', tiene " + cadena1.length + " carácteres");
-        console.log("La segunda cadena: '" + cadena2 + "', tiene " + cadena2.length + " carácteres");
-        if (cadena1.length > cadena2.length) {
+        console.log("La primera cadena: '" + cad1 + "', tiene " + cad1.length + " carácteres");
+        console.log("La segunda cadena: '" + cad2 + "', tiene " + cad2.length + " carácteres");
+        if (cad1.length > cad2.length) {
           console.log("La primera cadena es mayor a la segunda");
-        } else if (cadena1.length < cadena2.length) {
+        } else if (cad1.length < cad2.length) {
           console.log("La segunda cadena es mayor a la primera");
         } else {
           console.log("Ambas cadenas son iguales.");
@@ -77,7 +77,7 @@
     </p>
     <b>Resultado:</b> <br />
       <script type="text/javascript">
-        document.write(cadenas(15,"jose") + "<br /><br />");
+        document.write(cadenas("18","julian") + "<br /><br />");
         document.write(cadenas("javier","antigüedad") + "<br /><br />");
         document.write(cadenas("julian","jose javier") + "<br /><br />");
       </script>
