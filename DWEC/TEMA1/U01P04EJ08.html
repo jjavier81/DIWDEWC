@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio 7.</title>
+    <script type="text/javascript">
+	function concatena() {
+	  do {
+		var valor1 = prompt("Introduce tu nombre: ");
+		var error = 0;
+		if (typeof valor1 !== "string") {
+		   error++;
+		}
+		while(error > 0) {
+		   valor1 = prompt("El nombre introducido no es un texto. Vuelve a insertarlo: ");
+		}
+		  } while (error > 0);
+		  do {
+		var valor2 = prompt("Introduce tus apellidos: ");
+		var error2 = 0;
+		if (typeof valor2 !== "string") {
+		   error2++;
+		}
+		while(error2 > 0) {
+		   valor1 = prompt("Los apellidos introducidos no son un texto. Vuelve a insertarlos: ");
+		}
+	  } while (error2 > 0);
+	  
+      var mensaje1 = valor1 + " ";
+	  var mensaje2 = mensaje1.concat(valor2);
+	  return mensaje2;
+	}
+	function saludador(mensaje, saludo) {
+	  var saludof = mensaje;
+	  var saludo1 = saludo;
+	  var saludo2 = saludo1.concat(saludof);
+	  return saludo2;
+	}
+    </script>
+  </head>
+  <body>
+    <p><b>8. Realiza la función concatena que dado dos valores, compruebe que son strings y que devuelva un único string en el que concatene los dos strings 
+	con un carácter en blanco entre ellos. Pasa la función anterior como parámetro junto a un nombre para crear la función saludador que debe mostrar el mensaje 
+	“Buenos Días XX”, siendo XX el nombre introducido como parámetro. 
+    </b></p>
+    <br />
+    <b>Resultado:</b>
+    <script type="text/javascript">
+      var saludo1 = "Buenos Días ";
+      document.write("<h1>" + saludador(concatena(),saludo1) + "</h1>");
+    </script>
+  </body>
+</html>
