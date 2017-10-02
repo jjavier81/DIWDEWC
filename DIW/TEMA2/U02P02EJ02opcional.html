@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      * {
+        font-family: CourierNew;
+        font-size: 18px;
+      }
+	  p.importante {
+		background-color: yellow;
+		font-size: 24px;
+        color: red;
+		font-weight: bold;
+		font-style: italic;
+	  }
+	  b#superimportante {
+		font-size: 30px;
+		font-weight: bold;
+		background-color: green;
+		color: black;
+	  }
+		
+	  footer>span {
+        font-family: Garamond;
+        color: pink;
+		font-style: italic;
+		font-weight: bold;
+      }
+	  footer>a>span{
+		color: green;
+		font-weight: bold;
+	  }
+	  footer>a:hover>span{
+		color: grey;
+		font-weight: bold;
+	  }
+      h1 {
+        font-family: TimesNewRoman;
+        font-size: 36px;
+        color: blue;
+      }
+      article>h1 {
+        font-family: Garamond;
+        font-size: 24px;
+        color: orange;
+      }
+	  h1 + p {
+        background-color: yellow;
+      }
+      p:nth-of-type(3) {
+        background-color: yellow;
+      }
+	  article.imagen>p {
+        text-transform: uppercase;
+		font-style: italic;
+		color: red;
+		background-color: yellow;
+      }
+      b.destacado {
+        font-style: italic;
+        color: red;
+      }
+      #japo {
+        font-weight: bold;
+        font-size: 24px;
+        color: pink;
+      }
+      i {
+        font-weight: bold;
+        font-style: normal;
+        font-family: Garamond;
+        color: green;
+      }  
+	  a:link {
+        color: purple;
+      }
+	  a:hover {
+        color: grey;
+		font
+      }
+	  
+	 
+    </style>
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <header>
+      <h1>18 selectores distintos en CSS</h1>
+    </header>
+    <article>
+      <h1>Selectores distintos en CSS</h1>
+      <p class='importante'>
+        Esto es una clase importante dentro de un parrafo que a su vez contará con otros selectores.  <b id="superimportante">Aqui hacemos referencia a la ID super importante</b> 
+		(<span id="japo">ポケットモンスター Poketto Monsutā?</span>, literalmente <i>"monstruos de bolsillo"</i>), 
+		como tales contracciones son muy comunes en Japón.
+      </p>
+      <p>
+        En inglés, la palabra se escribe Pokémon con tilde en acento agudo, a pesar de que este signo no existe en el uso habitual de este idioma. 
+		Esto se debe a que al unir las palabras Pocket Monster se obtuvo Poke-Mon.
+        El problema es que, según las normas del inglés, esto se pronunciaría como pouk mon.
+        En muy pocos otros casos (como maté que se pronuncia <span>/mátei/</span> y quiere decir mate) 
+		se puede poner en inglés un acento en la <i>"e"</i> para que ésta se pronuncie, resultando así el nombre <i>"Pokémon"</i>. 
+		En español se puede usar la transcripción rōmaji que prescinde del acento por razones ortográficas, si bien en el uso comercial habitualmente aparece usando tilde.
+      </p>
+      <p>
+        Sobre la pronunciación de los hispanohablantes en el caso de América Latina, por el doblaje del anime, 
+		que suele ser más cercano al estadounidense, se pronuncia <span>/pokemón/</span>. En España se pronuncia <span>/pokemon/</span>.
+      </p>
+      <p>
+        El término Pokémon, además de referirse a la franquicia en sí, puede aludir colectivamente a las <span class="destacado">721 especies ficticias</span> 
+		que han aparecido en los diversos medios de la franquicia. Como marca registrada es invariable: <a href="http://www.pokemon.com/es/">los Pokémon</a>.
+        Como voz lexicalizada, ya escrita en minúscula y sin tilde, si nos atenemos a su pronunciación original, pluralizaría según la RAE en -es: los pokémones
+      </p>
+    </article>
+    <article class="imagen">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/TOYOTA_ist_Pikachu_Car.jpg/200px-TOYOTA_ist_Pikachu_Car.jpg" alt="imagenCochePokemon"></img>
+      <p> Imagen de coche decorado como un Pokémon </p>
+    </article>
+  <footer>
+    <span>Fuente:</span>
+    <a href="https://es.wikipedia.org/wiki/Pok%C3%A9mon"><span>Enlace de Wikipedia a Pokémon</span></a>
+  </footer>
+  </body>
+</html>
