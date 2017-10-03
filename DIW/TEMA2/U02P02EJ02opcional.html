@@ -70,18 +70,24 @@
 	  }	    
 	  
 	  td[target] {
-	    background-color: blue;
+	    background-color: #ff4000;
 		font-family: arial;
 		color: black;
 	  }
 	  
 	  [title~=flower] {
 		border: 5px solid yellow;
-		background-color: pink;
+		background-color: white;
 	  }
 	  
 	  input:focus {
 		background-color: yellow;
+	  }
+	  
+	  a:hover {
+		background-color: yellow;
+		color: black;
+		text-decoration: underline wavy white;
 	  }
 	  	 
     </style>aa
@@ -188,7 +194,26 @@
 				</form>			
 			</td>
 			<td>2</td>
-		</tr>		
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>:hover</td>
+			<td>a:hover</td>
+			<td><a href='#'>Selecciona los links al pasar el ratón por encima.</a><br />		
+			</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>:required</td>
+			<td>input:required</td>
+			<td>Selecciona elementos 'input' que tienen el atributo 'required' especificado.<br />
+				<form>
+					Pruébame otra vez: <input placeholder='Escribe algo...' type="text" name="prueba" required>
+				</form>			
+			</td>
+			<td>2</td>
+		</tr>
 		
 	  </table>
 	</article>
