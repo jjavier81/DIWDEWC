@@ -70,7 +70,12 @@
 	  
 	  tr[target] {
 	    background-color: yellow;
+		font-family: arial;
 		color: black;
+	  }
+	  
+	  [title~=flower] {
+		border: 5px solid yellow;
 	  }
 	  	 
     </style>aa
@@ -109,7 +114,7 @@
 			<td>*</td>
 			<td>*</td>
 			<td>Selecciona todos los elementos</td>
-			<td>1</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>4</td>
@@ -137,28 +142,35 @@
 			<td>element>element</td>
 			<td>article+h1</td>
 			<td>Selecciona todos los 'h1' que están inmediatamente detras de los elementos 'article'</td>
-			<td>1</td>
+			<td>2</td>
 		</tr>
 		<tr target="_blank">
 			<td>8</td>
 			<td>element+element</td>
 			<td>[target]</td>
 			<td>Selecciona todos los elementos con un atributo 'target'</td>
-			<td>1</td>
+			<td>2</td>
 		</tr>
 		<tr lang='it'>
 			<td>9</td>
 			<td>:lang(language)</td>
 			<td>td:lang(it)</td>
 			<td>Selecciona todos los elementos 'td' con un atributo de lenguage igual a 'it'(Italiano)</td>
-			<td>1</td>
+			<td>2</td>
 		</tr>
 		<tr target="_blank">
 			<td>10</td>
 			<td>[attribute]</td>
 			<td>[target]</td>
 			<td>Selecciona todos los elementos con un atributo 'target'</td>
-			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr title='atributo flower'>
+			<td>11</td>
+			<td>[attribute~=value]</td>
+			<td>[target~=flower]</td>
+			<td>Selecciona todos los elementos con un atributo de titulo que tenga la palabra flower</td>
+			<td>2</td>
 		</tr>
 		
 	  </table>
