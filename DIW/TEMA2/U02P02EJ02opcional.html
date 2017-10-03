@@ -54,7 +54,7 @@
 	  
 	  :lang(it) {
 		font-style: italic;
-		text-decoration: underline wavy red;
+		text-decoration: underline wavy white;
 	  }
 	  
 	  table>td {
@@ -66,6 +66,10 @@
 	    color: red;
 		font-size: 18px;
 		align: center;
+	  }
+	  
+	  tr[target] {
+	    background-color: yellow;
 	  }
 	  	 
     </style>aa
@@ -110,28 +114,35 @@
 			<td>4</td>
 			<td>element</td>
 			<td>td</td>
-			<td>Selecciona todos los elemntos < td ></td>
+			<td>Selecciona todos los elemntos 'td'</td>
 			<td>1</td>
 		</tr>
 		<tr>
 			<td>5</td>
 			<td>element::first-letter</td>
 			<td>td::first-letter</td>
-			<td>Selecciona la primera letra de cada elemento < td ></td>
+			<td>Selecciona la primera letra de cada elemento 'td'</td>
 			<td>1</td>
 		</tr>
 		<tr>
 			<td>6</td>
 			<td>element:,element</td>
 			<td>tr, td</td>
-			<td>Selecciona todos los elementos < td > y los < tr ></td>
+			<td>Selecciona todos los elementos 'td' y los 'tr'</td>
 			<td>1</td>
 		</tr>
 		<tr lang='it'>
 			<td>7</td>
 			<td>:lang(language)</td>
 			<td>td:lang(it)</td>
-			<td>Selecciona todos los elementos < td > con un atributo de lenguage igual a 'it'(Italiano)</td>
+			<td>Selecciona todos los elementos 'td' con un atributo de lenguage igual a 'it'(Italiano)</td>
+			<td>1</td>
+		</tr>
+		<tr target="_blank">
+			<td>8</td>
+			<td>[attribute]</td>
+			<td>[target]</td>
+			<td>Selecciona todos los elementos con un atributo 'target'</td>
 			<td>1</td>
 		</tr>
 	  </table>
