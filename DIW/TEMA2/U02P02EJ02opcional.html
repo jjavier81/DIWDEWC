@@ -3,18 +3,12 @@
   <head>
     <meta charset="utf-8">
     <style type="text/css">
-      * {
-        font-family: CourierNew;
-        font-size: 18px;
-      }
-	  #primeralinea {
-		font-weight: bold;
-		background-color: grey;
-	  }
-	  .tablaselector {
+      .tablaselector {
 		width: 100%;
 		font-size: 14px;
-		background-color: red;
+		background-color: green;
+		border-style: dotted;
+		border-color: black;
 	  }
 	  .selector {
 		width: 20%;
@@ -32,52 +26,174 @@
 		width: 10%;
 		font-size: 18px;
 	  }
-	  tr+td {
-		text-decoration: line-through;
+	  
+	  #trprimeralinea {
+		font-weight: bold;
+		background-color: grey;
 	  }
+	  
+      * {
+        font-family: CourierNew;
+        font-size: 18px;
+		color: white;
+      }	 
+	  
+	  td {
+		font-family: monospace;
+		border-style: groove;
+	  }
+	  
+	  td::first-letter {
+		font-weight: bold;
+		color: red;
+	  }
+	  
 	  tr,td {
 		text-align: center;
 	  }
+	  
+	  table>tr>td {
+		border-style: groove;
+		border-color: black;
+	  }	
+	  
+	  article + h1 {
+	    color: red;
+		font-size: 18px;
+		align: center;
+	  }
+	  
+	  :lang(it) {
+		font-style: italic;
+		text-decoration: underline wavy white;
+	  }	    
+	  
+	  tr[target] {
+	    background-color: blue;
+		font-family: arial;
+		color: black;
+	  }
+	  
+	  [title~=flower] {
+		border: 5px solid yellow;
+		background-color: pink;
+	  }
+	  
+	  input:focus {
+		background-color: purple;
+	  }
 	  	 
-    </style>
+    </style>aa
     <title>Ejercicio 2</title>
   </head>
   <body>
     <header>
-      <h1 class='titulo'>18 selectores en CSS</h1>
+      <h1>18 selectores en CSS</h1>
     </header>
     <article>
+	  <h1>18 selectores en CSS</h1>
       <table class='tablaselector'>
 		<tr id='trprimeralinea'>
+			<th class='numero'>Nº</td>
 			<th class='selector'>Selector</th>
 			<th class='example'>Example</th>
 			<th class='description'>Example description</th>
 			<th class='css'>CSS</th>
 		</tr>
 		<tr>
+			<td>1</td>
 			<td>.class</td>
 			<td>.tablaselector</td>
 			<td>Selecciona todos los elementos de la clase 'tablaselector'</td>
 			<td>1</td>
 		</tr>
 		<tr>
+			<td>2</td>
 			<td>#id</td>
 			<td>#primeralinea</td>
 			<td>Selecciona todos los elementos con id 'primeralinea'</td>
 			<td>1</td>
 		</tr>
 		<tr>
+			<td>3</td>
 			<td>*</td>
 			<td>*</td>
-			<td>Select all elements</td>
+			<td>Selecciona todos los elementos</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>element</td>
+			<td>td</td>
+			<td>Selecciona todos los elemntos 'td'</td>
 			<td>1</td>
 		</tr>
+		<tr>
+			<td>5</td>
+			<td>element::first-letter</td>
+			<td>td::first-letter</td>
+			<td>Selecciona la primera letra de cada elemento 'td'</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>element,element</td>
+			<td>tr,td</td>
+			<td>Selecciona todos los elementos 'tr' y los 'td'</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>element>element>element</td>
+			<td>table>tr>td</td>
+			<td>Selecciona todos los 'td' que tienen como padre los 'tr' que a su vez tienen como padre 'table'</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>element+element</td>
+			<td>article+h1</td>
+			<td>Selecciona todos los elementos 'h1' que se encuentran inmediatamente detrás de los elementos article</td>
+			<td>2</td>
+		</tr>
+		<tr lang='it'>
+			<td>9</td>
+			<td>:lang(language)</td>
+			<td>td:lang(it)</td>
+			<td>Selecciona todos los elementos 'td' con un atributo de lenguage igual a 'it'(Italiano)</td>
+			<td>2</td>
+		</tr>
+		<tr target="_blank">
+			<td>10</td>
+			<td>[attribute]</td>
+			<td>[target]</td>
+			<td>Selecciona todos los elementos con un atributo 'target'</td>
+			<td>2</td>
+		</tr>
+		<tr title='atributo flower'>
+			<td>11</td>
+			<td>[attribute~=value]</td>
+			<td>[target~=flower]</td>
+			<td>Selecciona todos los elementos con un atributo de titulo que tenga la palabra flower</td>
+			<td>2</td>
+		</tr>
+		<tr title='atributo flower'>
+			<td>12</td>
+			<td>:focus</td>
+			<td>input:focus</td>
+			<td>Selecciona el elemento que esta en foco.<br />
+				<form>
+					Pruébame: <input placeholder='Escribe algo...' type="text" name="prueba">
+				</form>			
+			</td>
+			<td>2</td>
+		</tr>		
 		
 	  </table>
 	</article>
   <footer>
     <span>Fuente:</span>
-    <a href="https://es.wikipedia.org/wiki/Pok%C3%A9mon"><span>Enlace de Wikipedia a Pokémon</span></a>
+    <a href="https://www.w3schools.com/cssref/css_selectors.asp"><span>Enlace de Wikipedia a Pokémon</span></a>
   </footer>
   </body>
 </html>
