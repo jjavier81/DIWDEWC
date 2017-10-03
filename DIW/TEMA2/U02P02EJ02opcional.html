@@ -52,21 +52,21 @@
 		text-align: center;
 	  }
 	  
-	  :lang(it) {
-		font-style: italic;
-		text-decoration: underline wavy white;
-	  }
-	  
 	  table>td {
 		border-style: groove;
 		border-color: black;
-	  }
+	  }	
 	  
 	  article + h1 {
 	    color: red;
 		font-size: 18px;
 		align: center;
 	  }
+	  
+	  :lang(it) {
+		font-style: italic;
+		text-decoration: underline wavy white;
+	  }	    
 	  
 	  tr[target] {
 	    background-color: yellow;
@@ -132,22 +132,29 @@
 			<td>Selecciona todos los 'h1' que están inmediatamente detras de los elementos 'article'</td>
 			<td>1</td>
 		</tr>
-		<tr target="_blank">
+		<tr>
 			<td>7</td>
+			<td>element>element</td>
+			<td>article+h1</td>
+			<td>Selecciona todos los 'h1' que están inmediatamente detras de los elementos 'article'</td>
+			<td>1</td>
+		</tr>
+		<tr target="_blank">
+			<td>8</td>
 			<td>element+element</td>
 			<td>[target]</td>
 			<td>Selecciona todos los elementos con un atributo 'target'</td>
 			<td>1</td>
 		</tr>
 		<tr lang='it'>
-			<td>8</td>
+			<td>9</td>
 			<td>:lang(language)</td>
 			<td>td:lang(it)</td>
 			<td>Selecciona todos los elementos 'td' con un atributo de lenguage igual a 'it'(Italiano)</td>
 			<td>1</td>
 		</tr>
 		<tr target="_blank">
-			<td>9</td>
+			<td>10</td>
 			<td>[attribute]</td>
 			<td>[target]</td>
 			<td>Selecciona todos los elementos con un atributo 'target'</td>
