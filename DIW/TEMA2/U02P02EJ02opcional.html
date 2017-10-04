@@ -6,7 +6,7 @@
       .tablaselector {
 		width: 100%;
 		font-size: 14px;
-		background-color: green;
+		background-color: #D1FF33;
 		border-style: dotted;
 		border-color: black;
 	  }
@@ -35,7 +35,7 @@
       * {
         font-family: CourierNew;
         font-size: 18px;
-		color: white;
+		color: black;
       }	 
 	  
 	  td {
@@ -45,7 +45,7 @@
 	  
 	  td::first-letter {
 		font-weight: bold;
-		color: red;
+		color: blue;
 	  }
 	  
 	  tr,td {
@@ -57,9 +57,9 @@
 		border-color: black;
 	  }	
 	  
-	  article + h1 {
+	  h1 + h2 {
 	    color: red;
-		font-size: 18px;
+		font-size: 36px;
 		align: center;
 	  }
 	  
@@ -70,7 +70,7 @@
 	  }	    
 	  
 	  td[target] {
-	    background-color: #ff4000;
+	    background-color: #9CFDFC;
 		font-family: arial;
 		color: black;
 	  }
@@ -78,6 +78,7 @@
 	  [title~=flower] {
 		border: 5px solid yellow;
 		background-color: white;
+		color: black;
 	  }
 	  
 	  input:focus {
@@ -86,19 +87,42 @@
 	  
 	  a:hover {
 		background-color: yellow;
-		color: black;
-		text-decoration: underline wavy white;
+		color: red;
 	  }
-	  	 
-    </style>aa
+	  
+	  input:required {
+		background-color: pink;		
+	  }
+	  
+	  input:read-only {
+		background-color: white;
+		color: red;
+	  }
+	  
+	  #grad1 {
+		height: 100px;
+		width: 200px;
+	  	background: radial-gradient(red, white, white);
+	  }
+	  
+	  #grad2 {
+		height: 200px;
+		background: repeating-linear-gradient(red, yellow, red);
+	  }
+	  
+	  #grad3 {
+		height: 100px;
+		background: linear-gradient(red,purple,blue,pink,green);
+	  }
+	  
+    </style>
     <title>Ejercicio 2</title>
   </head>
   <body>
-    <header>
-      <h1>18 selectores en CSS</h1>
+    <header> 
+		<h1><h2>18 selectores en CSS</h2></h1>
     </header>
     <article>
-	  <h1>18 selectores en CSS</h1>
       <table class='tablaselector'>
 		<tr id='trprimeralinea'>
 			<th class='numero'>Nº</td>
@@ -212,7 +236,39 @@
 					Pruébame otra vez: <input placeholder='Escribe algo...' type="text" name="prueba" required>
 				</form>			
 			</td>
-			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>:read-only</td>
+			<td>input:read-only</td>
+			<td>Selecciona elementos 'input' que tienen el atributo 'read-only' especificado.<br />
+				<form>
+					Demo: <input readonly value='Solo puedes leer' type="text" name="prueba">
+				</form>			
+			</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>radial-gradient()</td>
+			<td id='grad1'>Japan</td>
+			<td>Crea una imagen que representa un gradiente de color radiando desde el centro.</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>linear-gradient()</td>
+			<td id='grad2'>Spain</td>
+			<td>Crea una imagen que representa un gradiente de color radiando desde el centro.</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>linear-gradient()</td>
+			<td id='grad3'>Undefined</td>
+			<td>Crea una imagen que representa una linea gradiente de colores .</td>
+			<td>3</td>
 		</tr>
 		
 	  </table>
