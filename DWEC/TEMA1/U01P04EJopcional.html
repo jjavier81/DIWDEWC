@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 1. Practica 4. Ejercicio Opcional.</title>
+    <script type="text/javascript">
+      function exponentes(numero) {
+        var funcionResultado = function (x) {
+          var resExponente = 1;
+          for (var i = 1; i <= numero; i++) {
+            resExponente *= x;
+          }
+          return resExponente;
+        };
+        return funcionResultado;
+      }
+      var numerotecleado = prompt("Numero del que quieres conocer su exponencial:");
+      var funcionexponente = exponentes(prompt("Valor del exponente:");
+      var funcionexponente = exponentes(numerotecleado);
+
+    </script>
+  </head>
+  <body>
+    <p><b>OPCIONAL: Ejemplos Fábrica de Funciones<br />
+      Diseña un ejemplo práctico en el que se emplee una función como parámetro,
+      de manera que la función resultante permita generar funciones (similar a los
+      vistos en el ejemplo de la Fábrica de funciones).
+      Sube un documento con una explicación de cuál es la utilidad del ejemplo,
+      el código de la función y un ejemplo concreto de cómo emplear la función.
+    </b></p>
+    <br />
+    <b>Resultado:</b>
+    <script type="text/javascript">
+      //document.write(procesadatos(tecleado));
+      document.write(funcionexponente(6));
+    </script>
+  </body>
+</html>

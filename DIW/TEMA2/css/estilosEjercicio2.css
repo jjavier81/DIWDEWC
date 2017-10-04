@@ -1,0 +1,38 @@
+/*a. La fuente base de toda la página es de color azul oscuro, de tipo Verdana,
+con un tamaño 0.9 veces la letra por defecto del navegador y un espaciado entre
+líneas de 1,4 em.*/
+* {
+  font-family: verdana;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  color: blue;
+}
+/*b. Los títulos de nivel h1 deben estar centrados, escritos en letras capitales
+(la primera letra de cada palabra en mayúscula) y deben tener un borde de 1px
+con un padding de 10px y un acabado redondeado.*/
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 20px;
+  border: 1px solid;
+  padding: 10px;
+}
+/*c. El texto que se incluye en un elemento párrafo, debe tener una sangría de primera línea de 1cm.*/
+p {
+  text-indent: 1cm;
+}
+/*d. Los enlaces sólo tienen subrayado cuando situamos el ratón sobre ellos, no tienen subrayado en el resto de casos.*/
+a:hover {
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+/*e. En el texto h1, limita la anchura de este elemento a 80px de ancho de manera
+que se separen con guiones las palabras cuando no quepan. El elemento h1 deberá
+seguir centrado después del cambio de tamaño.*/
+h1 {
+  width: 80px;
+  word-wrap: break-word;
+}
