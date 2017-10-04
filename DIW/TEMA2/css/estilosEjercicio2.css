@@ -33,6 +33,8 @@ a {
 que se separen con guiones las palabras cuando no quepan. El elemento h1 deberá
 seguir centrado después del cambio de tamaño.*/
 h1 {
+  margin-right: auto;
+  margin-left: auto;
   width: 80px;
   word-wrap: break-word;
 }
