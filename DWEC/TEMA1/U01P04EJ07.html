@@ -13,12 +13,17 @@
           document.write("Día " + (dia) + ":<b>" + diasSemana[index] + "</b>.<br />");
           dia++;
         }
+
       }
       //Crea una función que solicite al usuario el número de la semana y que le devuelva qué día es en letras.
       // Asignado como valor por defecto el 4 en caso de que no se introduzca ningún valor.
       function dimedia(numerodia) {
         if (numerodia == '') {
-          var numerodia = 5;
+          var numerodia = 4;
+        }
+        if (isNaN(numerodia)) {
+          document.write("El valor introducido no es un número valido de la semana. Se aplica el valor por defecto<br />");
+          var numerodia = 4;
         }
         if (!isFinite(numerodia)) {
           document.write("El número de día pasado es un numero infinito.<br />");
@@ -51,12 +56,12 @@
     <b>Resultado:</b>
     <p><b>Muestra los dias de la semana:</b></p>
     <script type="text/javascript">
-      document.write(muestradiasSemana());
+      muestradiasSemana();
     </script>
     <p><b>Solicitar día de la semana y comprobar que no es infinito y se corresponde algún día de la semana:</b></p>
     <script type="text/javascript">
       var numerodia = prompt("Dime un día de la semana en cifras: (Ej: 2)");
-      document.write(dimedia(numerodia));
+      dimedia(numerodia);
     </script>
   </body>
 </html>
