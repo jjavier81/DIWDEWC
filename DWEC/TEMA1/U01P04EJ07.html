@@ -28,10 +28,10 @@
         if (!isFinite(numerodia)) {
           document.write("El número de día pasado es un numero infinito.<br />");
         } else {
-          if (numerodia < 1 || numerodia > 6) {
+          if (numerodia < 1 || numerodia > 7) {
             document.write("El número de día pasado no se corresponde a ningún dia de la semana.<br />");
           } else {
-            for (var i = 0; i < diasSemana.length; i++) {
+            for (var i = 0; i <= diasSemana.length; i++) {
               if ((numerodia) == i) {
                 document.write("El día de la semana es: <b>" + diasSemana[i-1] + "</b><br />");
               }

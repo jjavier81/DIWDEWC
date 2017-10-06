@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+      /*a) Crea la función generaSurtido: esta función debe devolver un array con
+      los nombres de todo lo que vende el kiosko. No es necesario pasarle parámetros.*/
+      function generaSurtido() {
+        var surtido = new Array ("Pipas", "Chicle", "Prensa", "Refresco", "Agua1l", "Agua33cl", "Gominola", "Fotocopia");
+        return surtido;
+      }
+      /*Crea la función consultaPrecios: esta función devuelve el precio de los
+      artículos cuando le pasamos el índice del artículo que queremos consultar.
+        i. La función consultaPrecios tiene un parámetro de entrada.
+        ii. Dentro de la función tendrás que definir un array con los precios de
+         los artículos del apartado anterior.*/
+      function consultaPrecios(articulo) {
+        var precios = new Array (1, 0.05, 1, 1.20, 1.50, 0.75, 0.05, 0.10);
+        return precios[articulo];
+      }
+      /*Crea la función mostrarSurtidoPrecio:
+        i. Esta función debe tomar como parámetro el array con el surtido y con el
+        precio y comprobar los valores de los productos de manera que mostrará sólo
+        aquellos numéricos superiores a 0.
+        ii. Debe tomar mostrar los elementos del surtido como una sucesión de imágenes y
+        los precios (si son válidos), incluyendo que son euros.*/
+        function mostrarSurtidoPrecio(arraySurtido) {
+          var contador = 0;
+          for (var i = 0; i < arraySurtido.length; i++) {
+            if (contador == 0) {
+              document.write("<table width='800px' align='center' padding='10'><tr>")
+            }
+            if (consultaPrecios(i) > 0) {
+              document.write("<td width='100px' align='center'><img src='img/05kiosco/" + arraySurtido[i] + ".jpg' alt='"+ arraySurtido[i] + "' width='100px' height='auto''></td>");
+            }
+            contador++;
+          }
+          var contador = 0;
+          for (var i = 0; i < arraySurtido.length; i++) {
+            if (contador == 0) {
+              document.write("</tr><tr>")
+            }
+            if (consultaPrecios(i) > 0) {
+              document.write("<th width='100px' align='center'>" + consultaPrecios(i) + " €</th>");
+            }
+            if (arraySurtido.length == contador) {
+              document.write("</tr></table>")
+            }
+            contador++;
+          }
+        }
+      /*d) Opcional: En lugar de mostrar directamente las imágenes con los precios,
+      incluye un párrafo con el mensaje “Ver precios” después de la imagen de manera
+      que cuando pulsemos sobre “Ver precios” podamos volver a dibujar las imágenes
+      con los precios debajo para consultar esos precios.*/
+
+      function mostrarSurtido(arraySurtido) {
+        if (document.getElementById('precios')) {
+          document.getElementById('precios').style.display = 'none';
+          document.getElementById('surtido').style.display = 'block';
+        } else {
+          var contador = 0;
+          for (var i = 0; i < arraySurtido.length; i++) {
+            if (contador == 0) {
+              document.write("<table id='surtido' style='display:block;' width='800px' align='center' padding='10'><tr><th colspan='" + arraySurtido.length + "' align='center'>Articulos</th><tr>")
+            }
+              if (consultaPrecios(i) > 0) {
+                document.write("<td width='100px' align='center'><img src='img/05kiosco/" + arraySurtido[i] + ".jpg' alt='"+ arraySurtido[i] + "' width='100px' height='auto'></td>");
+            }
+            contador++;
+            if (arraySurtido.length == contador) {
+              document.write("</tr><tr><td colspan='8' align='center'><button onclick='mostrarPrecios(generaSurtido())'>Mostrar Precios</button></td></tr>");
+              document.write("</table>")
+            }
+          }
+        }
+      }
+      function mostrarPrecios(arraySurtido) {
+        if (document.getElementById('precios')) {
+          document.getElementById('precios').style.display = 'block';
+          document.getElementById('surtido').style.display = 'none';
+        } else {
+          document.getElementById('surtido').style.display = 'none';
+          var contador = 0;
+          for (var i = 0; i < arraySurtido.length; i++) {
+            if (contador == 0) {
+              document.write("<table id='precios' style='display:block;' width='800px' align='center' padding='10'><tr><th colspan = '" + arraySurtido.length + "' align='center'>Precios</th></tr><tr>");
+            }
+            if (consultaPrecios(i) > 0) {
+              document.write("<td width='100px' align='center'><img src='img/05kiosco/" + arraySurtido[i] + ".jpg' alt='"+ arraySurtido[i] + "' width='100px' height='auto''></td>");
+            }
+            contador++;
+          }
+          var contador = 0;
+          for (var i = 0; i < arraySurtido.length; i++) {
+            if (contador == 0) {
+              document.write("</tr><tr>")
+            }
+            if (consultaPrecios(i) > 0) {
+              document.write("<th width='100px' align='center'>" + consultaPrecios(i) + " €</th>");
+            }
+            contador++;
+            if (arraySurtido.length == contador) {
+              document.write("</tr><tr><td colspan='8' align='center'><button onclick='mostrarSurtido(generaSurtido())'>Ocultar Precios</button></td></tr>");
+              document.write("</table>")
+            }
+          }
+        }
+      }
+    </script>
+    <title>El Kiosco de DWEC</title>
+  </head>
+  <body>
+    <p align='center'>
+      <img src="img/05kiosco/kiosco.png" alt="Kiosco" onclick="mostrarSurtido(generaSurtido())"/>
+    </p>
+    <p align='center'>
+      <script type="text/javascript">
+        var articulo = 2;
+        //mostrarSurtidoPrecio(generaSurtido());
+      </script>
+    </p>
+  </body>
+</html>

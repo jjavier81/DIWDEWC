@@ -12,6 +12,6 @@ h1 {
   background-image: url("../img/blue1961.jpg");
   border-color: green;
   color: white;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-size:  1000px 1000px;
 }

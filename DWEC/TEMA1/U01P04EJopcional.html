@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Unidad 1. Practica 4. Ejercicio Opcional.</title>
     <script type="text/javascript">
+      var numerotecleado = prompt("Numero del que quieres conocer su exponencial:");
+      var valorexponente = prompt("Valor del exponente:");
       function exponentes(numero) {
         var funcionResultado = function (x) {
           var resExponente = 1;
@@ -11,12 +13,10 @@
             resExponente *= x;
           }
           return resExponente;
-        };
+        }
         return funcionResultado;
       }
-      var numerotecleado = prompt("Numero del que quieres conocer su exponencial:");
-      var funcionexponente = exponentes(prompt("Valor del exponente:");
-      var funcionexponente = exponentes(numerotecleado);
+      var funcionexponente = exponentes(valorexponente);
 
     </script>
   </head>
@@ -31,8 +31,7 @@
     <br />
     <b>Resultado:</b>
     <script type="text/javascript">
-      //document.write(procesadatos(tecleado));
-      document.write(funcionexponente(6));
+      document.write ("<p>El resultado de elevar a ''" + valorexponente + "'' el numero '" + numerotecleado + "' es: <b>" + funcionexponente(numerotecleado) + "</b>")
     </script>
   </body>
 </html>
