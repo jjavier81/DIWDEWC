@@ -5,20 +5,14 @@
     <title>Unidad 1. Practica 4. Ejercicio 4.</title>
     <script type="text/javascript">
     //Apartado a
-      var cad1 = prompt("Introduce una cadena de carácteres:");
-      var cad2 = prompt("Introduce la segunda cadena de carácteres:");
-      if (!isNaN(cad1)) {
-        cad1 = parseInt(cad1);
-      }
-      if (!isNaN(cad2)) {
-        cad2 = parseInt(cad2);
-      }
+      var cad1 = "Introduce una cadena de carácteres:";
+      var cad2 = "Introduce la segunda cadena de carácteres:";
       var errorconsole = 0;
-      if (typeof cad1 !== "string") {
+      if (typeof(cad1) !== "string") {
         console.error("El parámetro pasado como cadena1 no es un string");
         errorconsole++;
       }
-      if (typeof cad2 !== "string") {
+      if (typeof(cad2) !== "string") {
         console.error("El parámetro pasado como cadena2 no es un string");
         errorconsole++;
       }
@@ -77,9 +71,11 @@
     </p>
     <b>Resultado:</b> <br />
       <script type="text/javascript">
-        document.write(cadenas("18","julian") + "<br /><br />");
-        document.write(cadenas("javier","antigüedad") + "<br /><br />");
-        document.write(cadenas("julian","jose javier") + "<br /><br />");
+        cadenas("18","julian");
+        document.write("<br /><br />");
+        cadenas("javier","antigüedad");
+        document.write("<br /><br />");
+        cadenas("julian","jose javier");
       </script>
     </p>
   </body>
