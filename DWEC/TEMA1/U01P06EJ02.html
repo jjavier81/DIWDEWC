@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U1. Práctica 6.Dado y Primo (Parte II)</title>
+    <script type="text/javascript">
+      /*Realiza una función que calcule si un número es primo. Utilizando la función,
+      realiza una página que liste los números primos del 1 al 100.*/
+      var numero = prompt("Introduce un número entero:");
+      while (isNaN(numero) || !(numero%2)) {
+        numero = prompt("El valor introducido no es un numero entero. Introduce un número entero:");
+      }
+      funcion primo(numero) {
+        var contador = 0;
+        for (var i = 1; i <= numero; i++) {
+          if (numero%i != 0) {
+            contador++;
+          }
+        }
+        if (contador <= 2) {
+          document.write("<h1>El numero " + numero + " es un numero primo</h1>");
+        } else {
+          document.write("<h1>El numero " + numero + " NO es un numero primo</h1>");
+        }
+        document.write("<h1>Listado de números primos del 1 al 100:</h1>");
+        function calculaprimos() {
+          for (var i=1; i<=100; i++) {
+            var cuentaprimos = 0;
+            for (var j=1; j<=i; j++) {
+              if (j%i == 0) {
+                cuentaprimos++;
+              }
+              if (cuentaprimos <= 2) {
+                document.write("<h2>El numero " + i + " es un numero primo</h2>");
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      primo(numero);
+    </script>    
+  </body>
+</html>
