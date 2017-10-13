@@ -1,8 +1,11 @@
 /*a. Incluye esta imagen de fondo para la web:
-http://www.fandroides.com/wpcontent/uploads/2014/05/wall4.jpg*/
+http://www.webdesignhot.com/wpcontent/uploads/2014/07/Blue-Abstract-Design-Art-Background-VectorIllustration.jpg.
+Modifica la letra del cuerpo y de los enlaces para que sean de color amarillo.*/
 body {
   background-image: url("../img/wall4.jpg");
-  background-repeat: no-repeat;
+}
+* {
+  color: yellow;
 }
 /*b. Modifica h1 para que tenga como fondo esta imagen:
 https://1.bp.blogspot.com/_sD9yQTE5QZQ/SGvRFJbT6QI/AAAAAAAADg4/5Ot2aTA4_w/s400/blue1961.jpg.
@@ -11,7 +14,14 @@ https://1.bp.blogspot.com/_sD9yQTE5QZQ/SGvRFJbT6QI/AAAAAAAADg4/5Ot2aTA4_w/s400/b
 h1 {
   background-image: url("../img/blue1961.jpg");
   border-color: green;
-  color: white;
+  color: yellow;
   background-repeat: repeat-x;
   background-size:  1000px 1000px;
+}
+/*c. Queremos que el enlace incluya una imagen que forme parte del enlace (es posible
+  hacer click sobre ella también) para indicar el tipo de contenido que enlaza.*/
+.pdf {
+ padding: 0 0 0 18px;
+ background: #FFF url("../img/pdf.png") no-repeat left center;
+ background-size:  15px 15px;
 }
