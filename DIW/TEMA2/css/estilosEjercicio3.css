@@ -25,3 +25,16 @@ h1 {
  background: #FFF url("../img/pdf.png") no-repeat left center;
  background-size:  15px 15px;
 }
+/*OPCIONAL: Incluye un enlace en la parte inferior de la página que permita subir al
+encabezado h1 y aplica estilos CSS para que tenga formato de botón y para que cambie
+cuando se pulsa o se pasa por encima.*/
+button {
+  color: black;
+  background-color: red;
+  font-size: 1.3em;
+  border-radius: 10px;
+}
+button:hover{
+  color: red;
+  background-color: yellow;
+}

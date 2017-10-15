@@ -13,6 +13,7 @@ table {
 
 /*c. La leyenda de la tabla tiene un estilo propio*/
 caption {
+  background-color: white;
   color: grey;
   caption-side: bottom;
   font-style: italic;
