@@ -1,0 +1,69 @@
+#imgejemplo {
+  width: 200px;
+  border: 1px solid #ddd;
+}
+
+table {
+  padding: 5px;
+  margin: auto;
+  border: black 2px solid;
+  border-collapse: collapse;
+  rules: all;
+}
+
+/*c. La leyenda de la tabla tiene un estilo propio*/
+caption {
+  color: grey;
+  caption-side: bottom;
+  font-style: italic;
+  text-align: left;
+}
+/*b. Las filas pares tienen un fondo de color gris*/
+tr:nth-child(even){
+  background-color: #D5D8DC;
+}
+
+tr:nth-child(odd){
+  background-color: white;
+}
+
+/*Cuando pulsamos sobre las filas con los iconos, el fondo cambia al color
+#FFFF66 para indicar que las celdas incluyen un enlace con las url’s de los estándares*/
+.css:active {
+    background-color: #FFFF66;
+}
+.html5:active {
+    background-color: #FFFF66;
+}
+
+.css{
+  /*d. Las imágenes están incluidas en el fondo y son de tamaño 50px x 50px.*/
+  background-image: url("../img/css.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  padding-left: 55px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.html5{
+  /*d. Las imágenes están incluidas en el fondo y son de tamaño 50px x 50px.*/
+  background-image: url("../img/HTML5.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  padding-left: 55px;
+  vertical-align: middle;
+  height:55px;
+  text-align: right;
+}
+/*a. Los textos deben estar alineados como en la imagen.*/
+td {
+  padding: 5px;
+  border: black 2px solid;
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  vertical-align: bottom;
+}
