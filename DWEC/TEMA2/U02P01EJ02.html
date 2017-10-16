@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 1. Ejercicio 2.</title>
+    <script type="text/javascript">
+      /*El atributo Marca, Ruedas, Plazas y Color.*/
+      var Coche = new Object();
+        Coche.marca;
+        Coche.ruedas;
+        Coche.plazas;
+        Coche.color;
+
+      /*El método Pintar que cambia el atributo Color a white.*/
+      function Pintar(coche) {
+        coche.color = "white";
+      }
+
+      /*Crea dos instancias de Coche.*/
+      Coche.marca = "Citroen";
+      Coche.ruedas = 4;
+      Coche.plazas = 5;
+      Coche.color = "azul";
+
+      var Coche1 = new Object();
+      Coche1.marca = "Renault";
+      Coche1.ruedas = 4;
+      Coche1.plazas = 7;
+      Coche1.color = "gris";
+
+      /*Elimina el atributo Plazas del primer objeto que has creado.*/
+      delete coche1.plazas;
+
+      /*Comprueba con Object.keys() los atributos que tienen los objetos que has creado y muéstralo por consola*/
+      console.log(Object.keys(Coche));
+      console.log(Object.keys(Coche1));
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>2. Crea el objeto Coche empleando Object incluyendo:</b>
+      <ol type='a'>
+        <li>El atributo Marca, Ruedas, Plazas y Color.</li>
+          <p><font  color='blue'>
+            var Coche = new Object();<br />
+              Coche.marca;<br />
+              Coche.ruedas;<br />
+              Coche.plazas;<br />
+              Coche.color;<br />
+          </font></p>
+        <li>El método Pintar que cambia el atributo Color a white.</li>
+          <p><font  color='blue'>
+            function Pintar(coche) {<br />
+              &nbsp;&nbsp;coche.color = "white";<br />
+            }
+          </font></p>
+        <li>Crea dos instancias de Coche.</li>
+          <p><font  color='blue'>
+            Coche.marca = "Citroen";<br />
+            Coche.ruedas = 4;<br />
+            Coche.plazas = 5;<br />
+            Coche.color = "azul";<br />
+            <br />
+            var Coche1 = new Object();<br />
+            Coche1.marca = "Renault";<br />
+            Coche1.ruedas = 4;<br />
+            Coche1.plazas = 7;<br />
+            Coche1.color = "gris";<br />
+          </font></p>
+        <li>Elimina el atributo Plazas del primer objeto que has creado.</li>
+          <p><font  color='blue'>
+            delete coche1.plazas;
+          </font></p>
+        <li>Comprueba con Object.keys() los atributos que tienen los objetos que has creado y muéstralo por consola.</li>
+          <p><font  color='blue'>
+            console.log(Object.keys(Coche));<br />
+            console.log(Object.keys(Coche1));
+          </font></p>
+      </ol>
+    </p>
+  </body>
+</html>

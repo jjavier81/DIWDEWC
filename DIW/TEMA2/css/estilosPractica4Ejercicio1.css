@@ -1,0 +1,21 @@
+img {
+	float:left;
+	width: 260px;
+  margin: 15px;
+}
+#footer {
+  position: relative;
+  border: 1px solid grey;
+  background-color: grey;
+  padding: 10px;
+  width: 98%;
+  margin: auto;
+}
+#footer.izquierda {
+  position: absolute;
+  left: 5px;
+}
+.derecha {
+  position: absolute;
+  right: 5px;
+}

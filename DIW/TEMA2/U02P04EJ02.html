@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Práctica 4. Ejercicio 2.</title>
+    <link rel="stylesheet" href="css/estilosPractica4Ejercicio2.css">
+  </head>
+  <body>
+    <fieldset>
+      <legend>Inscripción</legend>
+      <fieldset>
+        <legend>Información personal</legend>
+        <form action="index.html" method="post">
+          <div>
+            <label for="nombre">Nombre*:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre..." required="required" autofocus="autofocus" />
+          </div>
+          <div>
+            <label for="apellidos">Apellidos*:</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Introduce tus apellidos..." required="required">
+          </div>
+          <div>
+            <label for="email">Email*:</label>
+            <input type="email" name="email" id="email" placeholder="Introduce tu email..." required="required">
+          </div>
+          <div class='sexo'>
+            <label id="sexo" for="Sexo">Sexo:</label>
+            <label for="Hombre">Hombre
+            <input type="radio" name="sexo" id="Hombre" value="Hombre" /></label>&nbsp;&nbsp;
+            <label for="Mujer">Mujer
+            <input type="radio" name="sexo" id="Mujer" value="Mujer" /></label>
+          </div>
+          <div>
+            <label for="fechanacimiento">Fecha de nacimiento*:</label>
+            <input type="date" name="fechanacimiento" id="fechanacimiento" required="required">
+          </div>
+          <div>
+            <label for="provincia">Provincia:</label>
+            <select name="provincia" id="provincia">
+              <option selected="true" disabled="disabled">Escoge provincia</option>
+              <option value="1">Valencia</option>
+              <option value="2">Castellón</option>
+              <option value="3">Alicante</option>
+            </select>
+          </div>
+          <div>
+            <label for="poblacion">Poblacion:</label>
+            <input type="text" name="poblacion" id="poblacion">
+          </div>
+          <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono" id="telefono">
+          </div>
+          <div>
+            <label for="motivoinscripcion">Motivo inscripción:</label>
+          </div>
+          <div class='textarea'>
+            <textarea name="motivoinscripcion" id="motivoinscripcion" rows="4" cols="120"></textarea>
+          </div>
+        </form>
+      </fieldset>
+    </fieldset>
+  </body>
+</html>
