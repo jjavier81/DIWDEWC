@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 1. Ejercicio 4.</title>
+    <script type="text/javascript">
+      /*Crea el objeto Persona incluyendo en el constructor:
+      a. Los atributos Nombre (por defecto será Anónimo si no se indica uno) y Apellidos.*/
+      function Persona(nombre, apellidos) {
+        this.nombre = nombre || "Anónimo";
+        this.apellidos = apellidos;
+
+        /*b.El método Saludar() que muestra por consola el mensaje “Hola me llamo < nombre > < apellidos >”
+        (siendo nombre y apellido las propiedades correspondientes.*/
+        this.saludar = function () {
+          console.log("Hola me llamo " + this.nombre + " " + this.apellidos);
+        }
+      }
+
+      /*c. Crea dos instancias empleando el constructor.*/
+      var Persona1 = new Persona("Pepito", "Pérez");
+      var Persona2 = new Persona("Jesús", "Gil");
+
+      /*d.Comprueba con instanceof que los objetos que has creado son instancias del constructor.*/
+      console.log("Persona1 es instancia del constructor: " + (Persona1 instanceof Persona));
+      console.log("Persona2 es instancia del constructor: " + (Persona2 instanceof Persona));
+    </script>
+  </head>
+  <body>
+    <p><b>4. Crea el objeto Persona incluyendo en el constructor:</b>
+      <ol type='a'>
+        <li>Los atributos Nombre (por defecto será Anónimo si no se indica uno) y Apellidos.</li>
+        <li>El método Saludar() que muestra por consola el mensaje “Hola me llamo < nombre > < apellidos >”
+          (siendo nombre y apellido las propiedades correspondientes.</li>
+            <br />
+            function Persona(nombre, apellidos) { <br />
+            &nbsp;&nbsp;this.nombre = nombre || "Anónimo"; <br />
+            &nbsp;&nbsp;this.apellidos = apellidos; <br />
+            &nbsp;&nbsp;this.saludar = function () { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log("Hola me llamo " + this.nombre + " " + this.apellidos); <br />
+            &nbsp;&nbsp;} <br />
+            } <br />
+            <br />
+        <li>Crea dos instancias empleando el constructor.</li>
+        <br />
+        var Persona1 = new Persona("Pepito", "Pérez");<br />
+        var Persona2 = new Persona("Jesús", "Gil");<br />
+        <br />
+        <li>Comprueba con instanceof que los objetos que has creado son instancias del constructor.</li>
+        <br />
+        console.log("Persona1 es instancia del constructor: " + (Persona1 instanceof Persona));<br />
+        console.log("Persona2 es instancia del constructor: " + (Persona2 instanceof Persona));<br />
+        <br />
+        <li>Muestra por pantalla los atributos y emplea los métodos.</li>
+        <br />
+        document.write("Los atributos de Persona1 son: " + Object.keys(Persona1) + "< br />");<br />
+        document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "< br />");<br />
+        Persona1.saludar();<br />
+        Persona2.saludar();<br />
+        <br />
+      </ol>
+    </p>
+    <p><b>
+      <script type="text/javascript">
+        /*e.Muestra por pantalla los atributos y emplea los métodos.*/
+        document.write("Los atributos de Persona1 son: " + Object.keys(Persona1) + "<br />");
+        document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "<br />");
+        Persona1.saludar();
+        Persona2.saludar();
+      </script>
+  </b></p>
+  </body>
+</html>

@@ -12,8 +12,8 @@
         Coche.color;
 
       /*El método Pintar que cambia el atributo Color a white.*/
-      function Pintar(coche) {
-        coche.color = "white";
+      Coche.Pintar = function() {
+        Coche.color = "white";
       }
 
       /*Crea dos instancias de Coche.*/
@@ -29,7 +29,7 @@
       Coche1.color = "gris";
 
       /*Elimina el atributo Plazas del primer objeto que has creado.*/
-      delete coche1.plazas;
+      delete Coche1.plazas;
 
       /*Comprueba con Object.keys() los atributos que tienen los objetos que has creado y muéstralo por consola*/
       console.log(Object.keys(Coche));
@@ -41,18 +41,17 @@
       <b>2. Crea el objeto Coche empleando Object incluyendo:</b>
       <ol type='a'>
         <li>El atributo Marca, Ruedas, Plazas y Color.</li>
-          <p><font  color='blue'>
-            var Coche = new Object();<br />
-              Coche.marca;<br />
-              Coche.ruedas;<br />
-              Coche.plazas;<br />
-              Coche.color;<br />
-          </font></p>
         <li>El método Pintar que cambia el atributo Color a white.</li>
           <p><font  color='blue'>
-            function Pintar(coche) {<br />
-              &nbsp;&nbsp;coche.color = "white";<br />
-            }
+            <p><font  color='blue'>
+              var Coche = new Object();<br />
+              &nbsp;&nbsp;Coche.marca;<br />
+              &nbsp;&nbsp;Coche.ruedas;<br />
+              &nbsp;&nbsp;Coche.plazas;<br />
+              &nbsp;&nbsp;Coche.color;<br />
+              &nbsp;&nbsp;Coche.Pintar() = new function() {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;coche.color = "white";<br />
+              }
           </font></p>
         <li>Crea dos instancias de Coche.</li>
           <p><font  color='blue'>
