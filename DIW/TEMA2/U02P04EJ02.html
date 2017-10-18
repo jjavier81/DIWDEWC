@@ -10,7 +10,7 @@
       <legend>Inscripción</legend>
       <fieldset>
         <legend>Información personal</legend>
-        <form action="index.html" method="post">
+        <form action="index.html" method="post" enctype="multipart/form-data">
           <div>
             <label for="nombre">Nombre*:</label>
             <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre..." required="required" autofocus="autofocus" />
@@ -45,20 +45,57 @@
           </div>
           <div>
             <label for="poblacion">Poblacion:</label>
-            <input type="text" name="poblacion" id="poblacion">
+            <input type="text" name="poblacion" id="poblacion" placeholder="Ej: Picanya">
           </div>
           <div>
             <label for="telefono">Teléfono:</label>
-            <input type="tel" name="telefono" id="telefono">
+            <input type="tel" name="telefono" id="telefono" maxlength="8" size="10" placeholder="Ej: 600500600">
           </div>
           <div>
-            <label for="motivoinscripcion">Motivo inscripción:</label>
+            Motivo inscripción:
           </div>
           <div class='textarea'>
-            <textarea name="motivoinscripcion" id="motivoinscripcion" rows="4" cols="120"></textarea>
+            <textarea name="motivoinscripcion" id="motivoinscripcion" rows="4" cols="100" placeholder="Introduce aqui el motivo de tu inscripción..."></textarea>
+          </div>
+          <div class='avatar'>
+            Escoge el color de tu avatar:
+            <input type="color" name="avatar" id='avatar' value="#000000">
           </div>
         </form>
       </fieldset>
+      <fieldset>
+        <legend>Creación de usuario</legend>
+        <div>
+          <label for="usuario">Nombre de usuario*:</label>
+          <input type="text" name="usuario" id="usuario" required="required" placeholder="Introduce tu usuario..." />
+        </div>
+        <div>
+          <label for="pass">Contraseña*:</label>
+          <input type="password" name="pass" id="pass" maxlength="8" size="10" required="required" placeholder="Ej: 12345678">
+        </div>
+        <div>
+          <label for="repeatpass">Repite contraseña*:</label>
+          <input type="password" name="repeatpass" id="pass" maxlength="8" size="10" required="required" placeholder="Repite...">
+        </div>
+      </fieldset>
+      <div class='checkbox'>
+        <label>
+          <input type="checkbox" name="copias" value="1" >
+            Deseo recibir copias de los mensajes del foro en mi correo electrónico
+          </input>
+        </label>
+      </div>
+      <div class='checkbox'>
+        <label>
+          <input type="checkbox" name="notificaciones" value="1" >
+            Deseo recibir notificaciones de próximos eventos en mi correo electrónico
+          </input>
+        </label>
+      </div>
+      <div class='confirmar'>
+        <input type="submit" name="confirmar" value="Confirmar registro">
+      </div>
+      <p>Nota: Los campos marcados con "*" son obligatorios</p>
     </fieldset>
   </body>
 </html>

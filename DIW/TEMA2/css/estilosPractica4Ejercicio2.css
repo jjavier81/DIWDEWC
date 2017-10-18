@@ -8,29 +8,51 @@ div label{
 input[text] {
   padding-left: 5em;
 }
-input:focus{
+input:focus {
   border: 1px solid violet;
   background-color: #ececef;
   outline: none;
 }
-select:focus{
+select:focus {
   border: 1px solid violet;
   background-color: #ececef;
   outline: none;
 }
-div.sexo label#sexo{
+div.sexo label#sexo {
   width: 7%;
   float: left;
 }
 div.textarea{
-  padding-top: 1.5em;
+  padding-top: 0.2em;
 }
-textarea{
+textarea {
   height: 40px;
   overflow: scroll;
 }
-textarea:focus{
+textarea:focus {
   border: 1px solid violet;
   background-color: #ececef;
   outline: none;
+}
+div.avatar label#avatar {
+  width: 17%;
+  float: left;
+}
+div.checkbox label {
+  float: left;
+  width: 100%;
+}
+div.confirmar {
+  padding-top: 45px;
+}
+p {
+  font-style: italic;
+  border: 1px solid #000000;
+  padding: 5px;
+  font-size: 0.85em;
+  width: 97%;
+  margin: auto;
+}
+input,textarea,checkbox,select {
+  border-radius: 5px;
 }
