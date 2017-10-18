@@ -25,21 +25,30 @@
         número aleatorio y Math.floor() para redondear al entero inferior.*/
       Persona.prototype.edad = Math.floor(Math.random()*100)+1;
 
-      /*Incorpores el método CumplirAnyo que sume 1 a la edad de la Persona*/
+      /*c.Incorpores el método CumplirAnyo que sume 1 a la edad de la Persona*/
       Persona.prototype.CumplirAnyo = function() {
         this.edad++;
       }
-
     </script>
   </head>
   <body>
     <p><b>5. Modifica el objeto Persona de manera que:</b>
       <ol type="a">
-        <li>Incorpores el atributo Teléfono sólo en una de las instancias que has creado en el ejercicio 4c.</li>
-        <li>Incorpores el atributo Edad de manera que se modifique en todas las instancias y se asigne un número random entre 1 y 100 años.
-            Pista: emplea Math.random() para generar un número aleatorio y Math.floor() para redondear al entero inferior.</li>
-        <li>Incorpores el método CumplirAnyo que sume 1 a la edad de la Persona</li>
-        <li>Muestra por pantalla los atributos y métodos que se han incorporado.</li>
+        <li><b>Incorpores el atributo Teléfono sólo en una de las instancias que has creado en el ejercicio 4c.</b></li>
+          <p>Persona1.telefono = 650189813;</p>
+        <li><b>Incorpores el atributo Edad de manera que se modifique en todas las instancias y se asigne un número random entre 1 y 100 años.
+            Pista: emplea Math.random() para generar un número aleatorio y Math.floor() para redondear al entero inferior.</b></li>
+          <p>Persona.prototype.edad = Math.floor(Math.random()*100)+1;</p>
+        <li><b>Incorpores el método CumplirAnyo que sume 1 a la edad de la Persona</b></li>
+          <p>Persona.prototype.CumplirAnyo = function() {<br />
+            &nbsp;&nbsp;this.edad++;<br />
+          }</p>
+        <li><b>Muestra por pantalla los atributos y métodos que se han incorporado.</b></li>
+        <script type="text/javascript">
+            document.write("<p>Los atributos de Persona1 son: " + Object.keys(Persona1) + "<br />");
+            document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "<br /></p>");
+        </script>
+      </ol>
     </p>
   </body>
 </html>
