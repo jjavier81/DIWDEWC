@@ -1,33 +1,56 @@
-body>ul {
-  list-style: none;
-  background-color: lightgrey;
+/*Estilo de la lista*/
+ul {
+  background-color: lightgray;
   border: 1px solid gray;
-  width: 180px;
+  width: 200px;
   padding: 0px;
   margin: 0px;
 }
+/*Estilo de los elementos de la lista*/
 li {
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
+/*Estilos de los elemnetos a que estan contenidos en 'li'*/
 li a {
   text-decoration: none;
   color: black;
   padding: 5px 0px 5px 15px;
   display: block;
 }
+/*No mostrar los elementos 'ul' contenidos en un 'li'*/
 li ul {
   display: none;
 }
-li>ul {
-  list-style-type: square;
-}
+/*Mostrar los elementos 'ul' contenidos en un 'li' cuando esta 'hover' y formato*/
 li:hover ul {
   display: block;
+  list-style: square;
+  padding-left: 20px;
+  color: green;
+  width: 180px;
 }
+/*Elementos 'li' contenidos en un 'ul' contenido a su vez en un 'li' color negro*/
+li ul li{
+  color: black;
+}
+/*Estilos de los elementos 'li:hover' contenidos en 'ul'*/
 ul li:hover {
   background-color: grey;
+  color: green;
 }
+/*Estilos de los elementos 'a:hover' contenidos en 'li'*/
 li a:hover {
+  color: green;
+}
+/*Añadir imagen de flecha a los elementos 'li:hover' de la clase flecha*/
+li:hover.flecha{
+  background-image: url("../img/flecha.png");
+  background-size:  15px 15px;
+  background-position: 0px 5px;
+  background-repeat: no-repeat;
+}
+/*Estilo del elemento 'a' hijo directo del elemento 'li:hover' de la clase 'flecha'*/
+li:hover.flecha>a {
   color: green;
 }

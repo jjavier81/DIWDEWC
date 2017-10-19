@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Unidad 2. Practica 1. Ejercicio 7.</title>
+    <script type="text/javascript">
+      var frase = "Esto es un string";
+    </script>
   </head>
   <body>
     <p>
@@ -13,12 +16,55 @@
       </b>
     </p>
     <ol type='a'>
-      <li><b>La longitud del string es:</b></li>
-      <li><b>El carácter que ocupa la posición 7 es:</b></li>
-      <li><b>El índice en el que está la última t es:</b></li>
-      <li><b>La transformación a minúsculas del string es:</b></li>
-      <li><b>La transformación de mayúsculas del string es:</b></li>
-      <li><b>Las palabras separadas por comas que componen la frase son:</b></li>
-      <li><b>Las posiciones de la 11 a la 18 de frase son:</b></li>
+      <li><b>La longitud del string es: </b>
+        <script type="text/javascript">
+          document.write(frase.length);
+        </script>
+      </li>
+      <p><i>document.write(frase.length);</i></p>
+
+      <li><b>El carácter que ocupa la posición 7 es: </b>
+        <script type="text/javascript">
+          document.write("'" + frase.charAt(6) + "'");
+        </script>
+      </li>
+      <p><i>document.write("'" + frase.charAt(6) + "'");</i></p>
+
+      <li><b>El índice en el que está la última t es: </b>
+        <script type="text/javascript">
+          document.write(frase.lastIndexOf("t"));
+        </script>
+      </li>
+      <p><i>document.write(frase.lastIndexOf());</i></p>
+
+      <li><b>La transformación a minúsculas del string es: </b>
+        <script type="text/javascript">
+          document.write(frase.toLocaleLowerCase());
+        </script>
+      </li>
+      <p><i>document.write(frase.toLocaleLowerCase());</i></p>
+
+      <li><b>La transformación de mayúsculas del string es: </b>
+        <script type="text/javascript">
+          document.write(frase.toLocaleUpperCase());
+        </script>
+      </li>
+      <p><i>document.write(frase.toLocaleUpperCase());</i></p>
+
+      <li><b>Las palabras separadas por comas que componen la frase son: </b>
+        <script type="text/javascript">
+          document.write(frase.split(" "));
+        </script>
+      </li>
+      <p><i>document.write(frase.split(" "));</i></p>
+
+      <li><b>Las posiciones de la 11 a la 18 de frase son: </b>
+        <script type="text/javascript">
+          document.write(frase.slice(11, 18));
+        </script>
+      </li>
+      <p><i>document.write(frase.slice(11, 18));</i></p>
+
+    </ol>
   </body>
 </html>

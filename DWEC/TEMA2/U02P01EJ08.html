@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 1. Ejercicio 8.</title>
+    <script type="text/javascript">
+      var frase = "Esto es un string";
+      var frase1 = " y con esto es un string más largo ";
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>
+          8. A partir del ejercicio anterior emplea los métodos concat, trim,
+          repeat y replace para realizar los pasos siguientes:
+      </b>
+    </p>
+    <ol type='a'>
+      <li><b>
+        Crea un nuevo string que Incluya frase y frase1 sin espacios en blanco.<br />
+        Siendo var frase1 = “ y con esto es un string más largo “. Para ello emplea concat
+        y trim para eliminar los espacios en blanco del string que se añade antes de concatenarlo.
+        Muestra el resultado por pantalla.
+      </b></li>
+      <script type="text/javascript">
+        document.write(frase.concat(frase1.trim()));
+      </script>
+      <p><i>document.write(frase.concat(frase1.trim()));</i></p>
+      <li><b>
+        Sustituye “largo” por “bonito”. Muestra el resultado por pantalla.
+      </b></li>
+      <script type="text/javascript">
+        document.write(frase.replace("largo","bonito"));
+      </script>
+      <p><i>document.write(frase.replace("largo","bonito"));</i></p>
+      <li><b>
+        Concatena “¡” al final del string del apartado a) 20 veces.
+      </b></li>
+      <script type="text/javascript">
+        document.write((frase.concat(frase1.trim())).concat("¡".repeat(20)));
+      </script>
+    </ol>
+  </body>
+</html>
