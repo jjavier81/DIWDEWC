@@ -35,15 +35,19 @@
     <p><b>5. Modifica el objeto Persona de manera que:</b>
       <ol type="a">
         <li><b>Incorpores el atributo Teléfono sólo en una de las instancias que has creado en el ejercicio 4c.</b></li>
-          <p>Persona1.telefono = 650189813;</p>
+          <p><font color='blue'>Persona1.telefono = 650189813;</font></p>
         <li><b>Incorpores el atributo Edad de manera que se modifique en todas las instancias y se asigne un número random entre 1 y 100 años.
             Pista: emplea Math.random() para generar un número aleatorio y Math.floor() para redondear al entero inferior.</b></li>
-          <p>Persona.prototype.edad = Math.floor(Math.random()*100)+1;</p>
+          <p><font color='blue'>Persona.prototype.edad = Math.floor(Math.random()*100)+1;</font></p>
         <li><b>Incorpores el método CumplirAnyo que sume 1 a la edad de la Persona</b></li>
-          <p>Persona.prototype.CumplirAnyo = function() {<br />
+          <p><font color='blue'>Persona.prototype.CumplirAnyo = function() {<br />
             &nbsp;&nbsp;this.edad++;<br />
-          }</p>
+          }</font></p>
         <li><b>Muestra por pantalla los atributos y métodos que se han incorporado.</b></li>
+			<p><font color='blue'>
+				document.write("< p>Los atributos de Persona1 son: " + Object.keys(Persona1) + "< br />");<br />
+				document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "< br />< /p>");
+			</font></p>
         <script type="text/javascript">
             document.write("<p>Los atributos de Persona1 son: " + Object.keys(Persona1) + "<br />");
             document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "<br /></p>");

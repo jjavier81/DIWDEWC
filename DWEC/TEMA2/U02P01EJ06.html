@@ -55,7 +55,7 @@
         Pista: emplea el método toFixed() para poder hacer el redondeo del número que pase el usuario</b></li>
         <li><b>Incorpora el método Recuperar() que permitirá poner una nota de 5 a los alumnos con nota inferior a 5.</b></li>
 
-          <p>
+          <p><font color='blue'>
             function Estudiante(nombre, apellidos, estudios, notamedia) {<br />
               &nbsp;&nbsp;Persona.call(this,nombre, apellidos);<br />
               &nbsp;&nbsp;this.estudios = estudios;<br />
@@ -67,26 +67,26 @@
               &nbsp;&nbsp;}<br />
             }<br />
             <br />
-          </p>
+          </font></p>
 
         <li><b>Crea un array utilizando new Array llamado Lista. Incluye en ese array 3 objetos alumno de ejemplo.
           Crea esos objetos utilizando el constructor.</b></li>
-          <p>
+          <p><font color='blue'>
             var Lista = new Array(3);<br />
             Lista[0] = new Estudiante("Pepito", "Pérez", "DAW", 3.599);<br />
             Lista[1] = new Estudiante("Jesús", "Gil", "DAW", 6.799);<br />
             Lista[2] = new Estudiante("Kun", "Agüero", "DAW", 4.899);<br />
             <br />
-          </p>
+          </font></p>
 
         <li><b>Muestra todos los atributos de cada objeto que se almacena en lista por consola con un mensaje como este:
         “El estudiante de < estudios >, < nombre > < apellidos > tiene una nota media de < notaMedia >”</b></li>
 
-          <p>
+          <p><font color='blue'>
             for(var i = 0; i < Lista.length; i++) {<br />
             &nbsp;&nbsp;console.log("El estudiante de " + Lista[i].estudios + ", " + Lista[i].nombre + " " + Lista[i].apellidos + " tiene una nota media de " + Lista[i].notamedia);<br />
             }<br />
-          </p>
+          </font></p>
       </ol>
     </p>
   </body>

@@ -33,6 +33,7 @@
         <li><b>El método Saludar() que muestra por consola el mensaje “Hola me llamo < nombre > < apellidos >”
           (siendo nombre y apellido las propiedades correspondientes.</b></li>
             <br />
+			<font color='blue'>
             function Persona(nombre, apellidos) { <br />
             &nbsp;&nbsp;this.nombre = nombre || "Anónimo"; <br />
             &nbsp;&nbsp;this.apellidos = apellidos; <br />
@@ -41,23 +42,30 @@
             &nbsp;&nbsp;} <br />
             } <br />
             <br />
+			</font>
         <li><b>Crea dos instancias empleando el constructor.</b></li>
         <br />
+		<font color='blue'>
         var Persona1 = new Persona("Pepito", "Pérez");<br />
         var Persona2 = new Persona("Jesús", "Gil");<br />
         <br />
+		</font>
         <li><b>Comprueba con instanceof que los objetos que has creado son instancias del constructor.</b></li>
         <br />
+		<font color='blue'>
         console.log("Persona1 es instancia del constructor: " + (Persona1 instanceof Persona));<br />
         console.log("Persona2 es instancia del constructor: " + (Persona2 instanceof Persona));<br />
         <br />
+		</font>
         <li><b>Muestra por pantalla los atributos y emplea los métodos.</b></li>
         <br />
+		<font color='blue'>
         document.write("Los atributos de Persona1 son: " + Object.keys(Persona1) + "< br />");<br />
         document.write("Los atributos de Persona2 son: " + Object.keys(Persona2) + "< br />");<br />
         Persona1.saludar();<br />
         Persona2.saludar();<br />
         <br />
+		</font>
       </ol>
     </p>
     <p><b>

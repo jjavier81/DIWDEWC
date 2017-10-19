@@ -34,7 +34,13 @@
         var primera = ((this.nombre).charAt(0)).toLocaleUpperCase();
         /*El apellido en minúsculas en el que reemplaces las e’s por 3 y las a’s por 4’s*/
         var losdosapellidos = (this.apellidos).split(" ");
-        var apellido1 = (((losdosapellidos[0]).toLocaleLowerCase()).replace("e","3")).replace("a","4");
+        var apellido1 = (losdosapellidos[0]).toLocaleLowerCase();		
+		while (apellido1.search("e") >= 0) {
+			var apellido1 = apellido1.replace("e","3");
+		}
+		while (apellido1.search("a") >= 0) {
+			var apellido1 = apellido1.replace("a","4");
+		}
         /*El número de letras del nombre*/
         var numeronombre = (this.nombre).length;
         /*resultado*/
@@ -64,15 +70,38 @@
     </p>
     <ol>
       <li><b>La primera letra del nombre en mayúsculas.</b></li>
+	  <p><font color='blue'>var primera = ((this.nombre).charAt(0)).toLocaleUpperCase(); </font></p>
       <li><b>El apellido en minúsculas en el que reemplaces las e’s por 3 y las a’s por 4’s</b></li>
+	  <p><font color='blue'>
+		
+			var losdosapellidos = (this.apellidos).split(" ");<br />
+			var apellido1 = (losdosapellidos[0]).toLocaleLowerCase();<br />
+			while (apellido1.search("e") >= 0) {<br />
+			&nbsp;&nbsp;var apellido1 = apellido1.replace("e","3");<br />
+			}<br />
+			while (apellido1.search("a") >= 0) {<br />
+			&nbsp;&nbsp;var apellido1 = apellido1.replace("a","4");<br />
+			}<br />
+		
+	   </font></p>	 
       <li><b>El número de letras del nombre</b></li>
+	  <p><font color='blue'>var numeronombre = (this.nombre).length;</font></p>
       <li><b>Por ejemplo, Ana Sánchez tendrá el password: As4nch3z3</b></li>
+	  <p><font color='blue'>
+		var password = primera.concat(apellido1.concat(numeronombre));<br />
+        document.write(this.nombre + " " + this.apellidos + " tendra el password: " + password + " #< br />");
+	   </font></p>
     </ol>
-    <p><b><i>Resultado:</i></b></p>
+    <p><b>Resultado:</b></p>
     <script type="text/javascript">
       for(var i = 0; i < Lista.length; i++) {
         Lista[i].crearPaswword();
       }
     </script>
+	<p><font color='blue'>
+		for(var i = 0; i < Lista.length; i++) {
+        &nbsp;&nbsp;Lista[i].crearPaswword();
+		}
+	 </font></p>
   </body>
 </html>
