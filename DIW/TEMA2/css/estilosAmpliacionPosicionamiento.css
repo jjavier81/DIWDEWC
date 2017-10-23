@@ -1,0 +1,58 @@
+ div.casa{
+       position:absolute;
+       margin-left: 40%;
+	   margin-top: 10%;
+       border:3px solid black;
+       width: 500px;
+       height: 400px;
+       background: lightgrey;
+    }
+
+    div.tejado{
+      position: absolute;
+      margin-top: -106px;
+	  margin-left: -23px;
+      width: 540px;
+      height: 100px;
+      background-color: red;
+      border:3px solid black;
+    }
+
+    div.ventana1{
+      position: absolute;
+      margin-left: 43px;
+      margin-top: 206px;
+      width: 100px;
+      height: 100px;
+      background-color: #00FFFF;
+      border:3px solid black;
+    }
+
+    div.ventana2{
+      position: absolute;
+      margin-left: 390px;
+      margin-top: 320px;
+      width: 100px;
+      height: 100px;
+      background-color: #00FFFF;
+      border:3px solid black;
+    }
+
+    div.puerta{
+      position: absolute;
+      margin-left: 180px;
+      margin-top: 360px;
+      width: 180px;
+      height: 140px;
+      background-color: #b03468;
+      border:3px solid black;
+
+    }
+
+    div.puerta h1{
+      position: relative;
+      color: white;
+      line-height: 60px;
+	  font-size: 100px;
+      text-align: center;
+    }
