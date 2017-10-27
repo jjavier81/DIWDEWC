@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 1.</title>
+    <script type="text/javascript">
+      var fechaActual = new Date();
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>
+        1. Crea un objeto “fecha” empleando el objeto Date. A partir de ese objeto:
+      </b>
+    </p>
+    <p><font color='blue'>var fechaActual = new Date();</font></p>
+    <ol>
+      <li><b>Muestra por consola el día (del 1 al 31)</b></li>
+	  <p><font color='blue'>
+      <script type="text/javascript">
+          console.info("Día del mes: " + fechaActual.getDate());
+      </script>
+        console.info("Día del mes: " + fechaActual.getDate());
+    </font></p>
+      <li><b>Muestra por consola el mes (del 1 al 12)</b></li>
+	  <p><font color='blue'>
+      <script type="text/javascript">
+          console.info("Mes del año: " + (fechaActual.getMonth()+1));
+      </script>
+        console.info("Mes del año: " + (fechaActual.getMonth()+1));
+    </font></p>
+      <li><b>Muestra por consola el año</b></li>
+	  <p><font color='blue'>
+      <script type="text/javascript">
+          console.info("Año actual: " + fechaActual.getFullYear());
+      </script>
+        console.info("Año actual: " + fechaActual.getFullYear());
+    </font></p>
+      <li><b>Muestra el día de la semana (Lunes, Martes, …)</b></li>
+    <p><font color='blue'>
+      <script type="text/javascript">
+        var diaSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+        console.info("Día de la semana: " + diaSemana[fechaActual.getDay()]);
+      </script>
+      var diaSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");<br />
+      console.info("Día de la semana: " + diaSemana[fechaActual.getDay()]);
+    </font></p>
+      <li><b>Muestra la fecha completa con formato dd/mm/aaaa</b></li>
+      <script type="text/javascript">
+        console.info(fechaActual.getDate() + "/" + (fechaActual.getMonth()+1) + "/" + fechaActual.getFullYear());
+      </script>
+    <p><font color='blue'>
+      console.info(fechaActual.getDate() + "/" + (fechaActual.getMonth()+1) + "/" + fechaActual.getFullYear());
+    </font></p>
+      <li><b>Muestra las horas (de 0 a 23)</b></li>
+    <p><font color='blue'>
+      <script type="text/javascript">
+        console.info("Hora actual: " + fechaActual.getHours());
+      </script>
+      console.info("Hora actual: " + fechaActual.getHours());
+    </font></p>
+      <li><b>Muestra la fecha completa con formato dd/mm/aaaa HH:MM:SS</b></li>
+    <p><font color='blue'>
+      <script type="text/javascript">
+        console.info(fechaActual.getDate() + "/" + (fechaActual.getMonth()+1) + "/" + fechaActual.getFullYear() + " " + fechaActual.getHours() + ":" + fechaActual.getMinutes() + ":" + fechaActual.getSeconds());
+      </script>
+      console.info(fechaActual.getDate() + "/" + (fechaActual.getMonth()+1) + "/" + fechaActual.getFullYear() + " " + fechaActual.getHours() + ":" + fechaActual.getMinutes() + ":" + fechaActual.getSeconds());
+    </font></p>
+    </ol>
+  </body>
+</html>

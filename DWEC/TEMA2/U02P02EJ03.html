@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 3.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <b>
+        3. Realiza los pasos que se indican a continuación:
+      </b>
+      <ol type='a'>
+        <li><b>Crea un array con 4 elementos</b></li>
+          <script type="text/javascript">
+            var elementos4 = ["Coche", "Naranja", "Lapiz", "Movil"];
+          </script>
+          <p class='solucion'>
+            var elementos4 = ["Coche", "Naranja", "Lapiz", "Movil"];
+          </p>
+
+        <li><b>Concatena 2 elementos más al final y 2 al principio</b></li>
+          <script type="text/javascript">
+            elementos4.push("Practica", "Desarrollo");
+            elementos4.unshift("DWEC", "Github");
+          </script>
+          <p class='solucion'>
+            elementos4.push("Practica", "Desarrollo");<br />
+            elementos4.unshift("DWEC", "Github");
+          </p>
+
+        <li><b>Muestra por consola el resultado después de aplicar cada uno utilizando toString()</b></li>
+          <script type="text/javascript">
+            console.info("Elementos4: " + elementos4.toString());
+          </script>
+          <p class='solucion'>
+            console.info("Array elementos4: " + elementos4.toString());
+          </p>
+
+        <li><b>Elimina las posiciones de la 3 a la 5 (incluidas)</b></li>
+          <script type="text/javascript">
+            elementos4.splice(2,3);
+          </script>
+          <p class='solucion'>
+            elementos4.splice(2,3);
+          </p>
+
+        <li><b>Inserta el número 10 y el 25 entre el penúltimo y el último</b></li>
+          <script type="text/javascript">
+            var longitud = (elementos4.length)-1;
+            elementos4.splice(longitud,0,'10','25');
+            console.info("Elementos4: " + elementos4.toString());
+          </script>
+          <p class='solucion'>
+            var longitud = (elementos4.length)-1;<br />
+            elementos4.splice(longitud,0,'10','25');<br />
+            console.info("Elementos4: " + elementos4.toString());
+          </p>
+
+        <li><b>Muestra el array del paso anterior, pero con los elementos separados por "==>" utilizando join().</b></li>
+          <script type="text/javascript">
+            document.write("<p class='resultado'>Elementos4: " + elementos4.join("==>") + "</p>");
+          </script>
+          <p class='solucion'>
+            document.write("< p class='resultado'>Elementos4: " + elementos4.join("==>") + "</ p>");
+          </p>
+
+        <li><b>Copia el array anterior en otra variable e invierte el orden de los elementos con esa segunda variable.</b></li>
+          <script type="text/javascript">
+            var elementos4nuevo = elementos4.slice();
+            elementos4nuevo.reverse();
+          </script>
+          <p class='solucion'>
+            var elementos4nuevo = elementos4.slice();<br />
+            elementos4nuevo.reverse();
+          </p>
+        <li><b>Muestra los dos arrays (directamente, sin join() ni toString()). ¿Puedes explicar qué ha pasado con los dos arrays y por qué?</b></li>
+          <script type="text/javascript">
+            document.write("<p class='resultado'>Elementos4: " + elementos4 + "</p>");
+            document.write("<p class='resultado'>elementos4nuevo: " + elementos4nuevo + "</p>");
+          </script>
+          <p class='solucion'>
+            document.write("< p class='resultado'>Elementos4: " + elementos4 + "</ p>");<br />
+            document.write("< p class='resultado'>elementos4nuevo: " + elementos4nuevo + "</ p>");
+          </p>
+        <li><b>Consulta en qué índice del array está el 25 y en qué índice está un elemento que no esté en el array.</b></li>
+          <script type="text/javascript">
+            var pos25 = elementos4.indexOf('25');
+            var posUndefined = elementos4.indexOf('NoExisto');
+            document.write("<p class='resultado'>Indice del elemento 25: " + pos25 + "</p>");
+            document.write("<p class='resultado'>Indice del elemento inexistente: " + posUndefined + "</p>");
+          </script>
+          <p class='solucion'>
+            document.write("< p class='resultado'>Indice del elemento 25: " + pos25 + "</ p>");<br />
+            document.write("< p class='resultado'>Indice del elemento inexistente: " + posUndefined + "</ p>");
+          </p>
+      </ol>
+    </p>
+  </body>
+</html>

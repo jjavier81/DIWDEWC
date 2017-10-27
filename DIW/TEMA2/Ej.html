@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Layout basico html</title>
+    <style media="screen">
+    /*reseteo de cajas*/
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      html,body {
+        height: 100%
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        display: table;
+        background-color: lightblue;
+      }
+      .logo > img {
+        width: 80px;
+        padding: 10px;
+      }
+      .logo {
+        display: table-cell;
+      }
+      header h1 {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      nav {
+        background-color: yellow;
+      }
+      
+      li {
+        display: inline-block;
+        padding: 10px;
+      }
+      .container {
+        padding-top: 148px;
+        /*min-height: 100%;
+        margin-bottom:-50px;*/
+        background-color: lightyellow;
+        flex: 1;
+      }
+      /*.cajaPie {
+        height: 50px;
+      }*/
+      footer {
+        height: 50px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="corporativo">
+        <div class="logo">
+          <img src="imagen.png" alt="logo">
+        </div>
+        <h1>Esto es la cabecera</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Elemento 1</a></li>
+          <li><a href="#">Elemento 2</a></li>
+          <li><a href="#">Elemento 3</a></li>
+          <li><a href="#">Elemento 4</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <!--<div class="cajaPie"></div>-->
+    </div>
+    <footer>Esto es el pie</footer>
+  </body>
+</html>

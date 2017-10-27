@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 2.</title>
+    <script type="text/javascript">
+        /*Saco los datos de la fechaActual*/
+        var fechaActual = new Date();
+        var anyoActual = fechaActual.getFullYear();
+        var mesActual = fechaActual.getMonth();
+        var diaActual = fechaActual.getDate();
+        var msFechaActual = fechaActual.getTime();
+      do {
+        /*Pido los datos al usuario y los saco*/
+        var fechaIntroducida = prompt("Introduce la fecha próxima de vacaciones con formato aaaa-mm-dd ó aaaa/mm/dd");
+        var anyo = fechaIntroducida.substr(0,4);
+        var mes = fechaIntroducida.substr(5,2);
+        var dia = fechaIntroducida.substr(8,2);
+        /*Convertir a fecha los datos*/
+        var fechaProxima = new Date();
+        fechaProxima.setDate(dia);
+        fechaProxima.setMonth(mes-1);
+        fechaProxima.setFullYear(anyo);
+        var msFechaProxima = fechaProxima.getTime();
+        /*Compruebo que la fecha introducida es mayor a la actual*/
+        var error = 0;
+        var diasQfaltan = -1;
+        if (msFechaProxima < msFechaActual) {
+          error++;
+        } else {
+          diasQfaltan = Math.floor((msFechaProxima - msFechaActual)/(1000*60*60*24));
+        }
+        /*Mientras no se cumpla todos los condicionantes seguirá ejecutando el bucle*/
+      } while (isNaN(anyo) || isNaN(mes) || isNaN(dia) || anyo < anyoActual || mes < 1 || mes > 12 || dia < 1 || dia > 31 || error > 0);
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>
+        2. Crea un script que:
+      </b>
+    </p>
+    <ol type='a'>
+      <li><b>Solicite al usuario la fecha de las próximas vacaciones con un
+        formato string tipo “aaaa-mm-dd” o “aaaa/mm/dd”.</b></li>
+      <li><b>Convierte la fecha anterior en un objeto Date y calcula cuántos
+        milisegundos quedan hasta esa fecha.</b></li>
+      <li><b>Calcule cuántos días quedan hasta esa fecha</b></li>
+      <script type="text/javascript">
+        if (diasQfaltan >= 0) {
+          document.write("<p><font color='red'>Te quedan " + diasQfaltan + " días para coger vacaciones!!</font></p>");
+        } else {
+          document.write("<p><font color='red'>Ha ocurrido un error en el calculo de los días</font></p>");
+        }
+      </script>
+    <!--EXPLICACION DE LA FALLA-->
+    <p><font color='blue'>
+    <font color='grey'>/*Saco los datos de la fechaActual*/</font><br />
+    var fechaActual = new Date();<br />
+    var anyoActual = fechaActual.getFullYear();<br />
+    var mesActual = fechaActual.getMonth();<br />
+    var diaActual = fechaActual.getDate();<br />
+    var msFechaActual = fechaActual.getTime();<br />
+    do {<br />
+      <font color='grey'>/*Pido los datos al usuario y los saco*/</font><br />
+      &nbsp;&nbsp;var fechaIntroducida = prompt("Introduce la fecha próxima de vacaciones con formato aaaa-mm-dd ó aaaa/mm/dd");<br />
+      &nbsp;&nbsp;var anyo = fechaIntroducida.substr(0,4);<br />
+      &nbsp;&nbsp;var mes = fechaIntroducida.substr(5,2);<br />
+      &nbsp;&nbsp;var dia = fechaIntroducida.substr(8,2);<br />
+      <font color='grey'>/*Convertir a fecha los datos*/</font><br />
+      &nbsp;&nbsp;var fechaProxima = new Date();<br />
+      &nbsp;&nbsp;fechaProxima.setDate(dia);<br />
+      &nbsp;&nbsp;fechaProxima.setMonth(mes-1);<br />
+      &nbsp;&nbsp;fechaProxima.setFullYear(anyo);<br />
+      &nbsp;&nbsp;var msFechaProxima = fechaProxima.getTime();<br />
+      <font color='grey'>/*Compruebo que la fecha introducida es mayor a la actual con los milisegundos*/</font><br />
+      &nbsp;&nbsp;var error = 0;<br />
+      &nbsp;&nbsp;var diasQfaltan = -1;<br />
+      &nbsp;&nbsp;if (msFechaProxima < msFechaActual) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;error++;<br />
+      &nbsp;&nbsp;} else {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;diasQfaltan = Math.floor((msFechaProxima - msFechaActual)/(1000*60*60*24));<br />
+      &nbsp;&nbsp;}<br />
+      <font color='grey'>/*Mientras no se cumpla todos los condicionantes seguirá ejecutando el bucle*/</font><br />
+    } while (isNaN(anyo) || isNaN(mes) || isNaN(dia) || anyo < anyoActual || mes < 1 || mes > 12 || dia < 1 || dia > 31 || error > 0);<br />
+  </font></p>
+  </body>
+</html>

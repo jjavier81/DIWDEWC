@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 4.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      var elementos4 = ["Coche", "Naranja", "Lapiz", "Movil", 25, 52];
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>
+        4. A partir del ejercicio anterior, utilizando every, some y reduce, muestra por
+        consola los resultados que se indican a continuación:
+      </b>
+    </p>
+      <ol type="a">
+        <li><b>Si todos los elementos del array son de tipo Number</b></li>
+          <script type="text/javascript">
+            console.info(elementos4.every(function(elementoArray) {
+              return isNaN(elementoArray);
+            }));
+          </script>
+          <p class='solucion'>
+            console.info(elementos4.every(function(elementoArray) {<br />
+              &nbsp;&nbsp;return isNaN(elementoArray);<br />
+            }));
+          </p>
+
+        <li><b>Si alguno de los elementos del array es menor de 20</b></li>
+        <script type="text/javascript">
+          console.info(elementos4.some(function(elementoArray) {
+            return elementoArray < 20;
+          }));
+        </script>
+        <p class='solucion'>
+          console.info(elementos4.some(function(elementoArray) {<br />
+            &nbsp;&nbsp;return elementoArray < 20;<br />
+          }));
+        </p>
+
+        <li><b>Utiliza el método reduce() para obtener la suma del array siguiente:
+          var a = [4, 21, 33, 12, 9, 54];</b></li>
+          <script type="text/javascript">
+            var a = [4, 21, 33, 12, 9, 54];
+            function getSum(total, num) {
+              return total + num;
+            }
+            document.write("<p class='resultado'>" + a.reduce(getSum,0) + "</p>");
+          </script>
+          <p class='solucion'>
+            function getSum(total, num) {<br />
+              &nbsp;&nbsp;return total + num;<br />
+            };<br />
+            document.write("< p class='resultado'>" + a.reduce(getSum) + "</ p>");
+          </p>
+      </ol>
+  </body>
+</html>

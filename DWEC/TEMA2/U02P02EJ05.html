@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 5.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      /*Ejercicio 4*/
+      function Persona(nombre, apellidos) {
+        this.nombre = nombre || "Anónimo";
+        this.apellidos = apellidos;
+        this.saludar = function () {
+          console.log("Hola me llamo " + this.nombre + " " + this.apellidos);
+        }
+      }
+      /*Fin Ejercicio 4*/
+      /*a. Incorpora el atributo Estudios
+        b. Incorpora el atributo NotaMedia (redondeada a 2 decimales)
+          Pista: emplea el método toFixed() para poder hacer el redondeo del número que pase el usuario
+        c. Incorpora el método Recuperar() que permitirá poner una nota de 5 a los alumnos con nota inferior a 5.*/
+
+      function Estudiante(nombre, apellidos, estudios, notamedia) {
+        Persona.call(this,nombre, apellidos);
+        this.estudios = estudios;
+        this.notamedia = notamedia.toFixed(2);
+        this.recuperar = function() {
+          if (this.notamedia < 5) {
+            this.notamedia = 5;
+          }
+        }
+      }
+
+      /*d. Crea un array utilizando new Array llamado Lista. Incluye en ese array 3
+      objetos alumno de ejemplo. Crea esos objetos utilizando el constructor.*/
+
+      var lista = new Array(3);
+      lista[0] = new Estudiante("Pepito", "Pérez", "DAW", 3.599);
+      lista[1] = new Estudiante("Jesús", "Gil", "DAW", 6.799);
+      lista[2] = new Estudiante("Kun", "Agüero", "DAW", 4.899);
+
+    </script>
+  </head>
+  <body>
+    <p>
+      <b>
+        5. Copia el Array de objetos Estudiante que creaste en U2Ejercicios1,
+        6d y utiliza sort para ordenar a los estudiantes en función de la nota.
+      </b>
+    </p>
+    <script type="text/javascript">
+      lista.sort(function(a, b){
+        return a.notamedia - b.notamedia;
+      });
+
+      for(var i = 0; i < lista.length; i++) {
+        console.log("El estudiante de " + lista[i].estudios + ", " + lista[i].nombre + " " + lista[i].apellidos + " tiene una nota media de " + lista[i].notamedia);
+      }
+    </script>
+    <p class='solucion' >
+      lista.sort(function(a, b){<br />
+        &nbsp;&nbsp;return a.notamedia - b.notamedia;<br />
+      });
+    </p>
+  </body>
+</html>

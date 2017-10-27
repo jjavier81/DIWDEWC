@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Práctica 1. Layout Fijo vs Fluido</title>
+    <link rel="stylesheet" href="css/U02P01fijo.css">
+  </head>
+  <body>
+    <header>
+      <figure class="logo">
+        <img src="img/imagen.png" alt="logo">
+      </figure>
+      <h1 class='titulo'>Título</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <article class="blog1">
+          <hgroup>
+            <header>
+              Titulo de la primera entrada
+            </header>
+            <p class="subtitulos">
+              Subtitulo de la primera entrada
+            </p>
+            <p class='fechaPublicado'>
+              publicado <time>10-10-2016</time>
+            </p>
+            <p class='textoBlog'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.
+            </p>
+            <figure>
+              <img src="img/blogs-bloguers.jpg" alt="Imagen Bloggers">
+              <figcaption>Este es el caption de la imagen</figcaption>
+            </figure>
+            <footer>
+              <a href="#">comentarios (0)</a>
+            </footer>
+          </hgroup>
+        </article>
+        <article class="blog2">
+          <hgroup>
+            <header>
+              Titulo de la segunda entrada
+            </header>
+            <p class="subtitulos">
+              Subtitulo de la segunda entrada
+            </p>
+            <p class='fechaPublicado'>
+              publicado <time>10-10-2016</time>
+            </p>
+            <p class='textoBlog'>
+              Este es el texto de mi segunda entrada
+            </p>
+            <footer>
+              <a href="#">comentarios (0)</a>
+            </footer>
+          </hgroup>
+        </article>
+      </section>
+      <aside>
+        <ul>
+          <li><a href="#">Enero</a>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+            </ul>
+          </li>
+          <li><a href="#">Febrero</a></li>
+        </ul>
+      </aside>
+    </div>
+    <footer>
+      <hr />
+      <p class='textoPie'>Derechos reservados C 2016-2020</p>
+    </footer>
+  </body>
+</html>
