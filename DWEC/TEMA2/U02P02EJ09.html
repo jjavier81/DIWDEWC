@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 9.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <b>
+        9. Crea una web que muestre la hora por consola formateada 
+		como HH:MM:SS. El refresco de esa información debe ser cada 5 segundos.
+      </b>
+    </p>
+	<script type='text/javascript'>
+		setInterval(temporizador, 5000);
+
+		function temporizador() {
+			var d = new Date();
+			console.clear();
+			console.log("Son las: " + d.toLocaleTimeString());
+		}
+	</script>
+	<p class='solucion'>
+		setInterval(temporizador, 5000);<br /><br />
+
+		function temporizador() {<br />
+			&nbsp;&nbsp;var d = new Date();<br />
+			&nbsp;&nbsp;console.clear();<br />
+			&nbsp;&nbsp;console.log("Son las: " + d.toLocaleTimeString());<br />
+		}
+	</p>
+  </body>
+</html>

@@ -26,12 +26,27 @@
         valores convertidos todos a número.</b></li>
         <script type="text/javascript">
           console.log(array6.map(function(num) {
-            return parseInt(num);
+            return Number(num);
           }));
         </script>
+		<p class='solucion'>
+			console.log(array6.map(function(num) {<br />
+				&nbsp;&nbsp;return Number(num);<br />
+			}));
+		</p>
       <li><b>Utiliza filter para no incluir en el array final los elementos que no hayan
         podido ser convertidos (NaN).</b></li>
+		
       <li><b>Imprime dicho array resultante por consola.</b></li>
+	    <script type="text/javascript">
+		  console.log(array6.filter(function(num) {
+			return !isNaN(Number(num));  }));
+		</script>
+		<p class='solucion'>
+			console.log(array6.filter(function(num) {<br />
+				&nbsp;&nbsp;return !isNaN(Number(num));<br />
+			}));
+		</p>
     </ol>
   </body>
 </html>

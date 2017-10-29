@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 10.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <b>
+        10. Incorpora a la web anterior 2 botones:
+      </b>
+    </p>
+	<ol type='a'>
+		<li><b>El primero debe activar que se muestre la hora por consola.</b></li>
+		<li><b>El segundo debe parar que se muestre la hora por consola.</b></li>
+	<script type='text/javascript'>
+	
+		function temporizador() {
+			var d = new Date();
+			console.clear();
+			console.log("Son las: " + d.toLocaleTimeString());
+		}
+	</script>
+	<p class='resultado'>
+		<input type='button' value='Mostrar Hora' onclick='tempo = setInterval(temporizador, 1000);'>
+		<input type='button' value='Parar Hora' onclick='window.clearTimeout(tempo);'>
+	<p class='solucion'>
+		<u>Los botones:</u><br />
+		< input type='button' value='Mostrar Hora' onclick='tempo = setInterval(temporizador, 1000);'><br />
+		< input type='button' value='Parar Hora' onclick='window.clearTimeout(tempo);'><br /><br />
+		<u>La función:</u><br />
+		function temporizador() {<br />
+			&nbsp;&nbsp;var d = new Date();<br />
+			&nbsp;&nbsp;console.clear();<br />
+			&nbsp;&nbsp;console.log("Son las: " + d.toLocaleTimeString());<br />
+		}
+	</p>
+  </body>
+</html>

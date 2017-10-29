@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 2. Practica 2. Ejercicio 8.</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+      .resultado {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <b>
+        8. Realiza una web que muestre un botón “Temporizador”. 
+		Cuando pulsemos ese botón debe activarse un temporizador 
+		que muestre un aviso que diga “Ya han pasado 5 segundos” 
+		cuando haya transcurrido ese tiempo.
+      </b>
+    </p>
+	<script type='text/javascript'>
+		function temporizador() {
+			alert("Ya han pasado 5 segundos.");
+		}
+	</script>
+	<p class='resultado'><input type='button' value='Temporizador' onclick='setTimeout(temporizador, 5000);' /></p>
+	<p class='solucion'>
+		<u>Solución:</u><br />
+		< input type='button' value='Temporizador' onclick='setTimeout(temporizador, 5000);' /><br />
+		function temporizador() {<br />
+			&nbsp;&nbsp;alert("Ya han pasado 5 segundos.");<br />
+		}
+  </body>
+</html>
