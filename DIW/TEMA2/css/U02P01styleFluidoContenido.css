@@ -1,0 +1,195 @@
+/*Reseteamos las cajas*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/*emplea un contenedor de 960px para el cuerpo del blog*/
+.container {
+  /*contenedor de tamaño fijo sea fluido pero quede limitado a un tamaño máximo de 960px.*/
+  max-width: 960px;
+  /*fluido y que pueda ocupar el 100% del ancho disponible.*/
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
+}
+
+/*.header se comporta como una tabla*/
+body>header{
+  position: fixed;
+  width:100%;
+  height: 10%;
+  background-color: lightblue;
+  display: table; /*Compórtate como una tabla*/
+  padding: 1%;
+}
+
+/*El logo que se comporte como una celda y alineación medio*/
+header>figure.logo{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.logo img{
+  width: 80px;
+}
+
+/*h1  de la cabeceraque se comporte como una celda*/
+header>h1 {
+  padding-left: 2%;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  background-color:lightblue;
+  text-transform: capitalize;
+  /*ii. La letra de la cabecera es 36px Helvetica y negrita*/
+  font: bold 2em Helvetica, sans-serif;
+}
+
+/*Barra menú horizontal*/
+header>nav{
+  text-align: right;
+  width:100%;
+  padding: 0,5%;
+}
+
+/*Menú horizontal:*/
+nav > ul > li{
+  list-style-type: none;
+  padding: 2%;
+  display:inline-block;
+  position: relative;
+  background: steelblue;
+  margin-left: 2%;
+}
+
+nav > ul > li:hover{
+  padding: 3%;
+  background: yellow;
+  margin-left: 2%;
+}
+
+nav ul li a{
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover{
+  color: red;
+}
+
+/*iii. La letra de los títulos h1 de los artículos es negrita y Verdana 24px*/
+hgroup>header {
+  text-align: left;
+  vertical-align: middle;
+  font: bold 1.5em Verdana;
+}
+
+/*iv. La letra de los títulos h2 de los artículos y de los elementos del
+menú de navegación principal es negrita y Verdana 14px*/
+.subtitulos,nav ul li a {
+  font: bold 0.8em Verdana;
+}
+
+/*formato de cada post*/
+article{
+  border: 1px solid black;
+  margin-top: 1%;
+}
+hgroup{
+  background-color: linen;
+  padding: 5%;
+}
+
+/*tamaño de la imagen del blog*/
+hgroup>figure>img{
+  width: 25%;
+}
+
+/*fecha de publicacion*/
+.fechaPublicado{
+  color: grey;
+  padding: 2% 2% 2% 0%;
+  font-weight: bold;
+}
+
+/*caption de la imagen del  foro*/
+hgroup>figure>figcaption{
+  font-style: oblique;
+}
+
+/*comentarios alineados a la derecha y sin subrayado*/
+hgroup>footer>a{
+  margin-top: 2%;
+  float: right;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*tamaño del section*/
+section{
+  margin-top: 120px;
+  padding-right: 1%;
+  width: 70%;
+  float: left;
+}
+
+/*tamaño y posición del footer*/
+body>footer {
+  padding: 1%;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+/*formatos y tipos del menu lateral aside*/
+aside ul li{
+  list-style-type: none;
+  list-style-position: inside;
+}
+aside ul li a{
+  text-decoration: none;
+  color: black;
+}
+aside ul li a:hover{
+  text-decoration: none;
+  color: blue;
+  padding: 2%;
+}
+aside{
+  padding: 1%;
+  margin-top: 120px;
+  width: 30%;
+  float: left;
+  background-color: lightgrey;
+}
+aside ul{
+  padding: 3%;
+}
+
+/*Dejamos que se muestre el segundo nivel si el ratón se pone encima*/
+aside ul li ul li {
+  display: none;
+}
+
+aside li:hover ul li{
+    display:block;
+    left: 3px;
+    background-color: ligthgrey;
+}
+/*Formateamos el segundo nivel del menú lateral*/
+aside li ul li:hover {
+  color: blue;
+  text-decoration: blue underline;
+}
