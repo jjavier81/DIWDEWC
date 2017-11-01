@@ -151,6 +151,14 @@ body>footer {
 }
 
 /*formatos y tipos del menu lateral aside*/
+aside{
+  margin-top: 120px;
+  padding: 1%;
+  width: 30%;
+  float: left;
+  background-color: lightgrey;
+}
+
 aside ul li{
   list-style-type: none;
   list-style-position: inside;
@@ -164,13 +172,7 @@ aside ul li a:hover{
   color: blue;
   padding: 2%;
 }
-aside{
-  margin-top: 120px;
-  padding: 1%;
-  width: 30%;
-  float: left;
-  background-color: lightgrey;
-}
+
 aside ul{
   padding: 3%;
 }
