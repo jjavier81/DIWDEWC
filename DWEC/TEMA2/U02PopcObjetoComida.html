@@ -44,7 +44,7 @@
 		/*verIngredientes: muestra en una ventana adicional los ingredientes e incluye un botón en la propia ventana para cerrarla.*/
 		Producto.prototype.verIngredientes = function() {
 			var ventanaIngredientes = window.open("", "ventanaIngredientes", "width=400,height=400");
-			ventanaIngredientes.document.write("<h1>Ingredientes</h1><p>"+ this.ingredientes + "</p><p  align='center'><button onclick='window.close();'>CERRAR CONDICIONES</button></p>");
+			ventanaIngredientes.document.write("<h1>Ingredientes</h1><p>"+ this.ingredientes + "</p><p  align='center'><button onclick='window.close();'>CERRAR INGREDIENTES</button></p>");
 		}
 	
 	/*c. Crea 3 instancias del objeto Producto y guárdalas en un array. Muestra esos objetos en una web de la siguiente manera:*/
