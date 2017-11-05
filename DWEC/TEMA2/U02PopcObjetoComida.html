@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practica Opcional Objeto Comida</title>
+	<script type='text/javascript'>
+	
+	/*a. Crea un constructor con los elementos siguientes:*/
+		/*Propiedades: código, nombre, precio (es un número random entre 1 y 3 con 2 decimales), 
+		ingredientes (es un array con los ingredientes que debe estar ordenado alfabéticamente).*/
+		function Producto(codigo, nombre, ingredientes) {
+			this.codigo = codigo;
+			/*número random entre 1 y 3 con 2 decimales*/
+			this.precio = (Math.random()*3).toFixed(2);
+			this.nombre = nombre;
+			/*Ordenado alfabéticamente*/
+			this.ingredientes = ingredientes.sort();
+			/*Método imprimeDatos: muestra por pantalla los valores de código, nombre y precio.*/
+			this.imprimeDatos = function () { 
+				document.write("<p>Código: " + this.codigo + "<br />"); 
+				document.write("<p>Nombre: " + this.nombre + "<br />");
+				document.write("<p>Precio: " + this.precio + "</p><hr />");
+			}
+		}
+	
+	/*b. Modifica el constructor para incluir los métodos adicionales siguientes:*/
+		/* borraIngredientes: método que elimina el último de los ingredientes 
+		(no es necesario que se muestre instantáneamente por pantalla el resultado). 
+		Debe comprobar que al menos se deja 1 ingrediente.*/
+		Producto.prototype.borraIngredientes = function() {
+			if (this.ingredientes.length > 0) {
+				this.ingredientes.pop();
+				alert("Quedan " + this.ingredientes.length + " ingredientes en el producto");
+			} else {
+				alert("Solo queda 1 ingrediente, no se puede eliminar más.");
+			}		
+		}
+		/* buscaInfo: método que abre una ventana secundaria con la búsqueda en Google del alimento*/
+		Producto.prototype.buscaInfo = function() {
+			window.open("https://www.google.es/search?q=" + this.nombre);
+		}
+		
+		/*verIngredientes: muestra en una ventana adicional los ingredientes e incluye un botón en la propia ventana para cerrarla.*/
+		Producto.prototype.verIngredientes = function() {
+			var ventanaIngredientes = window.open("", "ventanaIngredientes", "width=400,height=400");
+			ventanaIngredientes.document.write("<h1>Ingredientes</h1><p>"+ this.ingredientes + "</p><p  align='center'><button onclick='window.close();'>CERRAR CONDICIONES</button></p>");
+		}
+	
+	/*c. Crea 3 instancias del objeto Producto y guárdalas en un array. Muestra esos objetos en una web de la siguiente manera:*/
+		var ingredienteCarbonara = ["100gr Spaguettis", "Nata", "Champiñones", "Espinacas", "Aceite", "Sal", "Mantequilla"];
+		var ingredienteTartaqueso = ["Azucar", "Queso de untar", "Galletas", "Nata"];
+		var ingredienteSopadeAjo = ["Pan duro", "Ajos", "Aceite"];
+		var arrProductos = new Array(3);
+		arrProductos[0] = new Producto(1, "Spaghettis Carbonara", ingredienteCarbonara);
+		arrProductos[1] = new Producto(2, "Tarta de queso", ingredienteTartaqueso);
+		arrProductos[2] = new Producto(3, "Sopa de Ajo", ingredienteSopadeAjo);
+		
+		/*i. Emplea imprimeDatos para mostrar por pantalla los valores de los 3 objetos instanciados.*/
+		/*ii. Incluye 3 botones:
+		1. Ver ingredientes: para emplear el método verIngredientes.
+		2. Eliminar ingrediente: para eliminar ingredientes
+		3. Más información: para emplear el método buscarInfo*/
+		arrProductos.forEach(function(num,indice,array) {
+			num.imprimeDatos();
+			document.write("<p><button onclick='arrProductos[" + indice + "].verIngredientes();'>Ver Ingredientes</button>&nbsp;");
+			document.write("<button onclick='arrProductos[" + indice + "].borraIngredientes();'>Borrar Ingrediente</button>&nbsp;");
+			document.write("<button onclick='arrProductos[" + indice + "].buscaInfo();'>Más información</button></p>");
+		});		
+	</script>
+  </head>
+  <body>
+    
+  </body>
+</html>
