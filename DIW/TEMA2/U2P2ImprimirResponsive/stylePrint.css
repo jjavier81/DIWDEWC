@@ -1,0 +1,25 @@
+/*a. La letra sea de color negro salvo en el menú de la cabecera que es blanca*/
+*, time {
+  color: black;
+}
+
+/*b. El fondo de la cabecera pase a blanco*/
+.cabecera {
+	background-color: white;
+}
+
+/*c. El color de fondo de los elementos del menú principal pase a ser negro*/
+.menu li a{
+	background-color: black;
+  color: white;
+}
+
+/*d. El color linen cambie a lightgray*/
+article {
+	background-color: lightgray;
+}
+
+/*e. Se elimine las imágenes de los artículos*/
+article img {
+  display:none;
+}
