@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej Hola mundo hecho con nodos DOM</title>
+  </head>
+  <body>
+    <h1> Esto es un título</h1>
+    <p>Esto es un ejemplo </p>
+    <div> Esto es un div</div>
+    <script type="text/javascript">
+      /*a. Modificar el texto de los 3 elementos del body referenciándolos a partir de document.body.*/
+      /*El array no empieza con el numero 0 si no en el 2*/
+      document.body.childNodes[0].innerHTML = "Esto ha dejado de ser un titulo";
+      document.body.childNodes[1].innerHTML = "Esto no es un ejemplo";
+      document.body.childNodes[2].innerHTML = "Esto no es un div";
+
+      /*b. Modificar el title de la página*/
+      document.title = "Bienvenidos al maravillos mundo del DOM"
+
+      /*c. Modificar el color de los elementos de body a azul*/
+      document.body.style.color = "blue";
+
+      /*d. Listar en la consola todos los hijos de body*/
+      console.info(document.body.childNodes);
+
+      /*e. Listar en la consola los hijos de tipo element de body*/
+      console.info(document.body.children);
+
+    </script>
+  </body>
+</html>

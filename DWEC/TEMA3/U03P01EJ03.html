@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U03P01EJ03</title>
+  </head>
+  <body>
+    <div id="contiene_ps">
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <div id="cambiame">
+        <input type="color" id="txtColor" value="#FF0000">
+        <button id="actualizar" onclick="recorreTag();">Modificar los párrafos!</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      /*se modifique el texto de los 6 párrafos cuando se cargue*/
+      onload = function() {
+        for (var i = 0; i<document.getElementsByTagName("p").length; i++) {
+          document.getElementsByTagName("p")[i].innerHTML = "Este párrafo es el número" + (i+1);
+        }
+      }
+
+      /*se sustituya el color de los párrafos por el seleccionado, cuando el usuario pulse el botón.*/
+      function recorreTag() {
+        var colorP = document.getElementById('txtColor').value;
+        for (var i = 0; i<document.getElementsByTagName("p").length; i++) {
+          document.getElementsByTagName("p")[i].style.color = colorP;
+        }
+      }
+    </script>
+  </body>
+</html>
