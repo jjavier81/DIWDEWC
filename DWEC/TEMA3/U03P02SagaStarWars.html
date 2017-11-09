@@ -61,6 +61,7 @@
 				//d. Incluye el contenido del objeto incorporando elementos div’s por cada celda de la tabla.
 					//inicializo variables fil a 0
 				var fil = 0;
+				var cabecera = 0;
 				/*Recorro el array de objetos:*/
 				StarWarsFilms.forEach(function(objectoPeli){
 					//inicializo variables celda a 0
@@ -69,9 +70,33 @@
 					for (campo in objectoPeli){
 						console.log("El " + campo + " de la película es : " + objectoPeli[campo]);
 						if (fil == 0) {
+							//Creo la cabecera
+							var filacabecera = document.getElementById("fila"+fil);
+							var celdacabecera = document.createElement("div");
+							var txtceldacabecera = document.createTextNode(campo);
+								//Cuelgo cada textnode con su div
+							celdacabecera.appendChild(txtceldacabecera);
+								//Cuelgo cada celda de su fila
+							filacabecera.appendChild(celdacabecera);
+								//asigno atributo id y display
+							celdacabecera.setAttribute("id", "fila"+fil+"celda"+cell);
+							document.getElementById("fila"+fil+"celda"+cell).style.display = "table-cell";
+							//incremento el fil para asignar nueva fila (ej fila1celda2 ya que en cada pasada del bucle pinto el campo en la fila 0)
+							fil++;
+							//Creo la primera fila de peliculas
 							var fila = document.getElementById("fila"+fil);
 							var celda = document.createElement("div");
-							var txtcelda = document.createTextNode(campo);
+							var txtcelda = document.createTextNode(objectoPeli[campo]);
+								//Cuelgo cada textnode con su div
+							celda.appendChild(txtcelda);
+								//Cuelgo cada celda de su fila
+							fila.appendChild(celda);
+								//asigno atributo id y display
+							celda.setAttribute("id", "fila"+fil+"celda"+cell);
+							document.getElementById("fila"+fil+"celda"+cell).style.display = "table-cell";
+							//Disminuyo el valor fil para la siguiente pasada el campo que corresponda hasta que esten todos los campos.
+							fil--;
+							cabecera++;
 						} else {
 								//Selecciono la fila correspondiente donde va cada celda del objeto
 							var fila = document.getElementById("fila"+fil);
@@ -79,30 +104,36 @@
 							var celda = document.createElement("div");
 								//Creo textnode para cada celda con el valor del objeto
 							var txtcelda = document.createTextNode(objectoPeli[campo]);
+								//Cuelgo cada textnode con su div
+							celda.appendChild(txtcelda);
+								//Cuelgo cada celda de su fila
+							fila.appendChild(celda);
+								//asigno atributo id y display
+							celda.setAttribute("id", "fila"+fil+"celda"+cell);
+							document.getElementById("fila"+fil+"celda"+cell).style.display = "table-cell";
 						}
-							//Cuelgo cada textnode con su div
-						celda.appendChild(txtcelda);
-							//Cuelgo cada celda de su fila
-						fila.appendChild(celda);
-							//asigno atributo id y display
-						celda.setAttribute("id", "fila"+fil+"celda"+cell);
-						document.getElementById("fila"+fil+"celda"+cell).style.display = "table-cell";
 						/*e. Aplica la clase columna a los div’s que hacen de celdas para que tengan el aspecto de la imagen.*/
 						if (fil == 0) {
 							document.getElementById("fila"+fil+"celda"+cell).style.fontWeight = "bold";
+							fil++;
+							var claseColumna = document.getElementById("fila"+fil+"celda"+cell);
+							claseColumna.setAttribute("class", "columna");
+							fil--;
 						}
-						document.getElementById("fila"+fil+"celda"+cell).style.fontFamily = 'Arial';
-						document.getElementById("fila"+fil+"celda"+cell).style.border = "2px solid blue";
-						document.getElementById("fila"+fil+"celda"+cell).style.borderRadius = "8px";
-						document.getElementById("fila"+fil+"celda"+cell).style.textAlign = "center";
-						document.getElementById("fila"+fil+"celda"+cell).style.width = "25%";
-						document.getElementById("fila"+fil+"celda"+cell).style.padding="5px";
-
+						var claseColumna = document.getElementById("fila"+fil+"celda"+cell);
+						claseColumna.setAttribute("class", "columna");
 							//incremento el valor de la celda
 						cell++;
 					}
-					//incremento el valor de la fila
-					fil++;
+					//incremento el valor de la fila cuando los campos de la cabecera hayan salido
+					if (cabecera == 4) {
+						//incremento la cabecera a su vez para que su valor sea mas de 4
+						cabecera++;
+						//en este caso sumo 2 debido a que la fila 1 la he creado a la vez que la cabecera
+						fil = fil+2;
+					} else if (cabecera >= 4) {
+						fil++;
+					}
 				});
 
 				/*f. Crea un array StarWarsCarteles que incluya 7 objetos como el siguiente para cada película:
@@ -152,25 +183,34 @@
 					// 	//
 					// 	i++;
 					// }
+					var cartel = 1;
 					StarWarsCarteles.forEach(function(objectoCartel){
 						/*Recorro los campos del objeto*/
-						//inicializo variables celda a 0
-						var cellcartel = 0;
-						for (camp in objectoCartel){
-							if (cellcartel == 0) {
-								var fila = document.getElementById("filacartel");
-								//Creo una celda para cada cartel
-								var divCeldaCartel = document.createElement("div");
-								 //Creo textnode para cada celda con el valor del objeto
-							 	var txtceldaCartel = document.createTextNode(objectoCartel[camp]);
-								//Cuelgo cada textnode con su div
-								divCeldaCartel.appendChild(txtceldaCartel);
-								 //Cuelgo la celda de la fila
-		 						fila.appendChild(divCeldaCartel);
-								cellcartel++;
-							}
-							//
-						}
+						//recojo la fila en una variable
+						var fila = document.getElementById("filacartel");
+						//Creo una celda para cada cartel
+						var divCeldaCartel = document.createElement("div");
+						//Creo una imagen para cada divs
+						var imgCeldaCartel = document.createElement("img");
+						imgCeldaCartel.setAttribute("src", objectoCartel["imagen"]);
+						imgCeldaCartel.setAttribute("width", "120px");
+						imgCeldaCartel.setAttribute("height", "200px");
+						imgCeldaCartel.setAttribute("alt", "Imagen 50x50");
+						//creo un enlace para cada celda
+						var aEnlace = document.createElement("a");
+						aEnlace.setAttribute("href", objectoCartel["imdb"]);
+						aEnlace.setAttribute("target", objectoCartel["_blank"]);
+						//cuelgo la imagen del a
+						aEnlace.appendChild(imgCeldaCartel);
+						//cuelgo el enlace de la fila
+						divCeldaCartel.appendChild(aEnlace);
+						 //Cuelgo la celda de la fila
+		 				fila.appendChild(divCeldaCartel);
+						//cellcartel++;
+						//asigno atributo id y display
+						divCeldaCartel.setAttribute("id", cartel);
+						document.getElementById(cartel).style.display = "table-cell";
+						cartel++;						
 					});
 			} //Cierro cargaInfo
 		</script>
