@@ -23,25 +23,6 @@
     <button onclick="borrarLista()">Borrar lista</button>
     <hr />
     <script type="text/javascript">
-    /*----------------------OPCIONAL------------------------------*/
-      /*Creo divs segun categoria*/
-      //Selecciono la longitud del select para hacer un bucle
-      var longSelect = document.getElementsByTagName("select")[0].length;
-      for (var i = 1; i < longSelect; i++ ) {
-        //Cojo el valor del option para asignarselo como id al div
-        var idDiv = document.getElementsByTagName("option")[i].value;
-        //Creo el div
-        var divProducto = document.createElement("div");
-        //Creo el texto que contiene el div como titulo seleccionando el texto del option
-        var txtdivProducto = document.createTextNode(document.getElementsByTagName("option")[i].innerHTML);
-        //Cuelgo el txt del div creado
-        divProducto.appendChild(txtdivProducto);
-        //Cambio el color al div creado (correspondiente al color del producto) y lo cuelgo de body
-        document.body.appendChild(divProducto).style.color = idDiv;
-        //le asigno la id al div
-        divProducto.setAttribute("id", idDiv);
-      }
-      /*---------------------------------------------------------------*/
       function anadirElemento() {
         //Seleccionamos el elemento introducido por el usuario
         var elemento = document.getElementById('nuevoproducto').value;
@@ -53,6 +34,22 @@
           if (categoria == 0) {
             alert("Selecciona una categoría");
           } else {
+            //Selecciono el div de categoria
+            var divDeCategoria = document.getElementById(categoria);
+            //si da null lo creo
+            if (divDeCategoria == null) {
+              //Creo el div
+              var divDeCategoria = document.createElement("div");
+              //Cambio el color al div creado (correspondiente al color del producto) y lo cuelgo de body
+              document.body.appendChild(divDeCategoria).style.color = categoria;
+              //le asigno la id al div
+              divDeCategoria.setAttribute("id", categoria);
+              //Le asigno un borde al div creado
+              document.getElementById(categoria).style.borderWidth = "2px";
+              document.getElementById(categoria).style.borderStyle = "solid";
+              document.getElementById(categoria).style.borderColor = categoria;
+              document.getElementById(categoria).style.borderRadius = "10px";
+            }
             //Creo el elemento P
             var miP = document.createElement("p");
             //Creo el texto del elemento P
@@ -60,7 +57,6 @@
             //Cuelgo el texto del elemento P de P
             miP.appendChild(txtmiP);
             //Cuelgo el elemento P del div correspondiente  y le asigno un estilo
-            var divDeCategoria = document.getElementById(categoria);
             divDeCategoria.appendChild(miP).style.textIndent = "15px";
             //Le asigno el atributo onclick para borrar elementos
             miP.setAttribute("class", "listacompra");
@@ -73,8 +69,16 @@
       }
       //Funcion borrarElemento
       function borrarElemento() {
+        //Selecciono el elemento a borrar
         var elementoaborrar = document.querySelector("p:hover");
-        document.body.removeChild(elementoaborrar);
+        //Selecciono el padre del elemento
+        var divContenedor = document.querySelector("p:hover").parentNode;
+        //borro el elemento
+        elementoaborrar.parentNode.removeChild(elementoaborrar);
+        //Compruebo si tiene hijos el padre tras el borrado y si no me lo cargo
+        if (divContenedor.childNodes.length <= 0) {
+          divContenedor.parentNode.removeChild(divContenedor);
+        }
       }
 
       //Funcion borrarLista
@@ -82,7 +86,15 @@
         var listaaborrarlongitud = document.getElementsByClassName('listacompra').length;
         var listaaborrar = document.getElementsByClassName('listacompra');
         for(var i = 0; i < listaaborrarlongitud; i++) {
-          document.body.removeChild(listaaborrar[0]);
+          //Selecciono el padre del elemento
+          var divContenedor = listaaborrar[0].parentNode;
+          //borro el elemento
+          listaaborrar[0].parentNode.removeChild(listaaborrar[0]);
+          //Compruebo si tiene hijos el padre tras el borrado y si no me lo cargo
+          //uno a uno para no cargarme todos los divs que pueda contener la pagina
+          if (divContenedor.childNodes.length <= 0) {
+            divContenedor.parentNode.removeChild(divContenedor);
+          }
         }
       }
 
