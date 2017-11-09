@@ -9,10 +9,20 @@
       Emplea para ello únicamente JS.*/
       onload = function creaDOM(){
         /*Aquí se escribe lo que sea necesario*/
+		//titular de color azul y letra Arial
         var titular = document.createElement("h1");
         var txtTitular = document.createTextNode("Titular de color azul");
         titular.appendChild(txtTitular);
-
+		document.body.appendChild(titular);
+		document.getElementsByTagName("h1")[0].style.color = "blue";
+		document.getElementsByTagName("h1")[0].style.fontFamily = 'Arial';
+		//imagen de 50px de ancho y 50px
+		var imagen = document.createElement("img");
+		imagen.setAttribute("src", "img/images.png");
+		imagen.setAttribute("width", "50px");
+		imagen.setAttribute("height", "50px");
+		imagen.setAttribute("alt", "Imagen 50x50");
+		document.body.appendChild(imagen);		
       }
     </script>
   </head>

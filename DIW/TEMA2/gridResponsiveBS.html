@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <title>Responsive Layout</title>
+    <style>
+      /********** Estilo base **********/
+      .cabecera{
+        height: 80px;
+        border:1px solid black;
+        background: yellow;
+      }
+      .foto{
+        height: 80px;
+        border:1px solid black;
+        background: cyan;
+      }
+      .item{
+        height: 100px;
+        border:1px solid black;
+        background: orange;
+      }
+      .pie{
+        height: 40px;
+        border:1px solid black;
+        background: silver;
+      }
+      .lateral{
+        background-color: ligthgray;
+        border: 1px solid black;
+      }
+      .cuerpopagina{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="cabecera col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><h1>Responsive Layout</h1></div>
+      </div>
+      <div class="row">
+        <div class="lateral col-xl-3 col-lg-3 col-md-3 d-sm-none d-md-block d-sx-none"><h1>Responsive Layout</h1></div>
+        <div class="cuerpopagina col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+          <div class="row">
+            <div class="foto col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">Foto 1</div>
+            <div class="foto col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">Foto 2</div>
+            <div class="foto col-xl-4 col-lg-4 col-md-12 d-sm-none d-md-block col-12">Foto 3</div>
+          </div>
+          <div class="row">
+            <div class="item col-xl-3 col-lg-2 col-md-3 col-sm-6 col-12"><p>Item 1</p></div>
+            <div class="item col-xl-3 col-lg-4 col-md-3 col-sm-6 col-12"><p>Item 2</p></div>
+            <div class="item col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12"><p>Item 3</p></div>
+            <div class="item col-xl-3 col-lg-2 d-md-none d-lg-block d-sm-none col-12"><p>Item 4</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="pie col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">Pie</div>
+        <div class="pie col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">Pie</div>
+        <div class="pie col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">Pie</div>
+        <div class="pie col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">Pie</div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>

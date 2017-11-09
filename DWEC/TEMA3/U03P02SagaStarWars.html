@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style media="screen">
+			.columna{
+				display:inline-block;
+				width: 180px;
+				height: 20px;
+				border-radius: 8px;
+				border: 2px solid navy;
+				text-align: center;
+			}
+		</style>
+		<script charset="utf-8">
+			var StarWarsFilms=[
+				{titulo: "Episodi IV", nombre:"Una Nueva Esperanza", any: 1977 ,director: "George Lucas"},
+				{titulo: "Episodi V", nombre:"El Imperio Contraataca", any:1980, director: "George Lucas"},
+				{titulo: "Episodi VI", nombre:"El Retorno del Jedi", any:1984, director: "George Lucas"},
+				{titulo: "Episodi I", nombre:"La Amenaza Fantasma", any:1999, director: "George Lucas"},
+				{titulo: "Episodi II", nombre:"El ataque de los clones", any:2002, director: "George Lucas"},
+				{titulo: "Episodi III", nombre:"La Venganza de los Sith", any:2005, director: "George Lucas"},
+				{titulo: "Episodi VII", nombre:"El Despertar de la Fuerza", any:2015, director: "J.J. Abrams"}
+				 ];
+			onload = function cargaInfo(){
+				/*Aquí tengo que crear los nodos del DOM*/
+
+				//a. Incluye el título y cámbiale el formato.
+					//creo el h1
+				var titulo = document.createElement("h1");
+					//añado texto al h1
+				var txtTitulo = document.createTextNode("La Saga StarWars");
+					//cuelgo el texto del h1 de h1
+				titulo.appendChild(txtTitulo);
+					//cuelgo el h1 de body
+				document.body.appendChild(titulo);
+					//cambio color y fuente
+				document.getElementsByTagName("h1")[0].style.color = "Red";
+				document.getElementsByTagName("h1")[0].style.fontFamily = 'Arial';
+
+				//b. Incluye un elemento div que haga de tabla.
+					//creo el div que hará de tabla
+				var tabla = document.createElement("div");
+					//cuelgo el elemnto de body
+				document.body.appendChild(tabla);
+					//asigno id y cambio display
+				tabla.setAttribute("id", "tabla");
+				document.getElementsByTagName("div")[0].style.display = 'table';
+
+				//c. Incluye un elemento div por cada fila de la tabla sumando uno para añadir el titulo de las filas
+				for (var i = 0; i < StarWarsFilms.length+1; i++) {
+						//con cada pasada del bucle por el aray creo un div que hará de fila
+					var divPorFila = document.createElement("div");
+						//cuelgo el div creado de la tabla creada
+					tabla.appendChild(divPorFila);
+						//asigno un id y cambio display a row a cada div creado
+					divPorFila.setAttribute("id", "fila" + i);
+					document.getElementsByTagName("div")[i+1].style.display = 'table-row';
+				}
+
+				//d. Incluye el contenido del objeto incorporando elementos div’s por cada celda de la tabla.
+					//inicializo variables fil a 0
+				var fil = 0;
+				/*Recorro el array de objetos:*/
+				StarWarsFilms.forEach(function(objectoPeli){
+					//inicializo variables celda a 0
+					var cell = 0;
+					/*Recorro los campos del objeto*/
+					for (campo in objectoPeli){
+						console.log("El " + campo + " de la película es : " + objectoPeli[campo]);
+						if (fil == 0) {
+							var fila = document.getElementById("fila"+fil);
+							var celda = document.createElement("div");
+							var txtcelda = document.createTextNode(campo);
+						} else {
+								//Selecciono la fila correspondiente donde va cada celda del objeto
+							var fila = document.getElementById("fila"+fil);
+								//Creo las celdas como div
+							var celda = document.createElement("div");
+								//Creo textnode para cada celda con el valor del objeto
+							var txtcelda = document.createTextNode(objectoPeli[campo]);
+						}
+							//Cuelgo cada textnode con su div
+						celda.appendChild(txtcelda);
+							//Cuelgo cada celda de su fila
+						fila.appendChild(celda);
+							//asigno atributo id y display
+						celda.setAttribute("id", "fila"+fil+"celda"+cell);
+						document.getElementById("fila"+fil+"celda"+cell).style.display = "table-cell";
+						/*e. Aplica la clase columna a los div’s que hacen de celdas para que tengan el aspecto de la imagen.*/
+						if (fil == 0) {
+							document.getElementById("fila"+fil+"celda"+cell).style.fontWeight = "bold";
+						}
+						document.getElementById("fila"+fil+"celda"+cell).style.fontFamily = 'Arial';
+						document.getElementById("fila"+fil+"celda"+cell).style.border = "2px solid blue";
+						document.getElementById("fila"+fil+"celda"+cell).style.borderRadius = "8px";
+						document.getElementById("fila"+fil+"celda"+cell).style.textAlign = "center";
+						document.getElementById("fila"+fil+"celda"+cell).style.width = "25%";
+						document.getElementById("fila"+fil+"celda"+cell).style.padding="5px";
+
+							//incremento el valor de la celda
+						cell++;
+					}
+					//incremento el valor de la fila
+					fil++;
+				});
+
+				/*f. Crea un array StarWarsCarteles que incluya 7 objetos como el siguiente para cada película:
+						{imagen:"url de imagen del cartel ",
+						imdb:"url de la web imdb sobre esa película"},
+				*/
+				var StarWarsCarteles=[
+					{imagen: "img/episodio4.jpg", imdb:"http://www.imdb.com/title/tt0076759/?ref_=nv_sr_6"},
+					{imagen: "img/episodio5.jpg", imdb:"http://www.imdb.com/title/tt0080684/?ref_=nv_sr_5"},
+					{imagen: "img/episodio6.jpg", imdb:"http://www.imdb.com/title/tt0086190/?ref_=nv_sr_6"},
+					{imagen: "img/episodio1.jpg", imdb:"http://www.imdb.com/title/tt0120915/?ref_=nv_sr_3"},
+					{imagen: "img/episodio2.jpg", imdb:"http://www.imdb.com/title/tt0121765/?ref_=nv_sr_4"},
+					{imagen: "img/episodio3.jpg", imdb:"http://www.imdb.com/title/tt0121766/?ref_=nv_sr_4"},
+					{imagen: "img/episodio7.jpg", imdb:"http://www.imdb.com/title/tt2488496/?ref_=nv_sr_1"}
+					 ];
+
+					/*g. Modifica el script para incluir los carteles a continuación de la
+					tabla de manera que si pulsamos sobre un cartel, vayamos a la página de
+					 la imdb sobre esa película.*/
+					 //creo el div que hará de tabla de carteles
+				 	var tablacartel = document.createElement("div");
+					 //cuelgo el elemento de body
+				 	document.body.appendChild(tablacartel);
+					 //asigno id y cambio display
+				 	tablacartel.setAttribute("id", "tablacartel");
+				 	document.getElementById("tablacartel").style.display = 'table';
+				  //Creo una fila para la tablacartel
+					 var divFilaCartel = document.createElement("div");
+					//cuelgo el div creado de la tabla creada
+					 tablacartel.appendChild(divFilaCartel);
+					//asigno un id y cambio display a row a cada div creado
+					 divFilaCartel.setAttribute("id", "filacartel");
+					 document.getElementById("filacartel").style.display = 'table-row';
+					//Pinto las celdas de los carteles
+					// for (var i = 0; i<StarWarsCarteles.length; i++) {
+					// 	var cartel = StarWarsCarteles[i];
+					// 	var urlimagen = cartel[0];
+					// 	var fila = document.getElementById("filacartel");
+					// 	//Creo una celda para cada cartel
+					// 	var divCeldaCartel = document.createElement("div");
+					// 	 //Creo textnode para cada celda con el valor del objeto
+					// 	var txtceldaCartel = document.createTextNode(urlimagen);
+					// 		//Cuelgo cada textnode con su div
+					// 	divCeldaCartel.appendChild(txtceldaCartel);
+					// 	 //Cuelgo la celda de la fila
+					// 		fila.appendChild(divCeldaCartel);
+					// 	//
+					// 	i++;
+					// }
+					StarWarsCarteles.forEach(function(objectoCartel){
+						/*Recorro los campos del objeto*/
+						//inicializo variables celda a 0
+						var cellcartel = 0;
+						for (camp in objectoCartel){
+							if (cellcartel == 0) {
+								var fila = document.getElementById("filacartel");
+								//Creo una celda para cada cartel
+								var divCeldaCartel = document.createElement("div");
+								 //Creo textnode para cada celda con el valor del objeto
+							 	var txtceldaCartel = document.createTextNode(objectoCartel[camp]);
+								//Cuelgo cada textnode con su div
+								divCeldaCartel.appendChild(txtceldaCartel);
+								 //Cuelgo la celda de la fila
+		 						fila.appendChild(divCeldaCartel);
+								cellcartel++;
+							}
+							//
+						}
+					});
+			} //Cierro cargaInfo
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
