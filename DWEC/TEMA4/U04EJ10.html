@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10 (Eventos y Formularios)</title>
+    <style media="screen">
+		.solucion {
+			color: blue;
+		}
+    </style>	
+  </head>
+  <body>
+	<script type="text/javascript">
+	
+		function cambiaArmadura(){
+          var imgArmadura = document.getElementById('seiya');
+          var armadura = document.getElementById('armadura').value;
+          imgArmadura.src = "img/" + armadura + ".jpg";
+        }
+			
+    </script>
+    <p><b>10. Realizar una web que incluya una imagen y un selector con una lista de 4 opciones diferentes, de manera que al seleccionar un elemento de la lista, se actualice automáticamente la imagen del documento. No debe existir un botón.</b></p>
+	<h2 align='center'>SEIYA. CABALLERO PEGASO.</h2>
+	<p align='center'>
+		<br />
+		<img id='seiya' src='img/seiya.jpg' width="250" height="400" alt='pegasoInicio' />
+		<br />		
+		<select onchange="cambiaArmadura()" id="armadura">
+			<option selected value='seiya'> Selecciona una armadura... </option>
+			<option value='seiya1'>Armadura de bronce</option>
+			<option value='seiya2'>Armadura de plata</option>
+			<option value='seiya3'>Armadura de titanio</option>
+			<option value='seiyaoro'>Armadura de Oro</option>
+			<option value='seiyadivina'>Armadura Divina</option>
+			<option value='seiyagalaxy'>Armadura Galaxy</option>
+		</select>
+	</p>
+	<p class='solucion'>
+		function cambiaArmadura(){<br />
+        &nbsp;&nbsp;  var imgArmadura = document.getElementById('seiya');<br />
+        &nbsp;&nbsp;  var armadura = document.getElementById('armadura').value;<br />
+        &nbsp;&nbsp;  imgArmadura.src = "img/" + armadura + ".jpg";<br />
+        }
+    </p>
+  </body>
+</html>

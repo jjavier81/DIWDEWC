@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 9 (Eventos y Formularios)</title>
+    <style media="screen">
+		.solucion {
+			color: blue;
+		}
+    </style>
+	<script type="text/javascript">
+	
+		function dimensionesVentana() {
+			var ancho = window.innerWidth;
+			var alto = window.innerHeight;
+			document.getElementById("muestradimensiones").innerHTML = "Anchura de la ventana: " + ancho + "<br>Altura de la ventana: " + alto;
+		}
+			
+    </script>
+  </head>
+  <body onresize="dimensionesVentana()">	
+    <p><b>9. Realiza una web que muestre las dimensiones de la ventana cuando se redimensione.</b></p>
+	<h2 align='center' id="muestradimensiones"></h2>
+    <p class='solucion'>
+		function dimensionesVentana() {<br />
+		&nbsp;&nbsp;	var ancho = window.innerWidth;<br />
+		&nbsp;&nbsp;	var alto = window.innerHeight;<br />
+		&nbsp;&nbsp;	document.getElementById("dimensionesVentana").innerHTML = "Anchura de la ventana: " + ancho + "<br>Altura de la ventana: " + alto;<br />
+		}
+    </p>
+  </body>
+</html>

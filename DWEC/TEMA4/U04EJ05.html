@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5 (Eventos y Formularios)</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+		
+		addEventListener("DOMContentLoaded",function(){
+			var imagen = document.getElementById('cambiaimagen');
+			
+				/*CAMBIAR LA IMAGEN CON EL RATÓN ENCIMA*/
+			imagen.addEventListener("mouseover", change);			
+			function change(e){
+				this.src = "https://pre00.deviantart.net/75c5/th/pre/f/2013/131/1/8/saint_seiya___seiya_hades_ending_render_by_thewolfmonster-d64w0nm.png";
+			}
+			
+				/*VOLVER A LA IMAGEN PRINCIPAL CON EL RATÓN FUERA DE LA IMAGEN*/
+			imagen.addEventListener("mouseout",function(e) {
+				this.src = "https://vignette.wikia.nocookie.net/saintseiya/images/7/74/Seiya-Pegaso_161.JPG/revision/latest?cb=20141204214125&path-prefix=es";
+			});
+			
+				/*BLOQUEAR EL CAMBIO DE IMAGEN*/
+			var enlace = document.getElementById('bloqueacambioimagen');
+			enlace.addEventListener('click',function(e) {
+				imagen.removeEventListener('mouseover',change);
+				e.preventDefault;
+			});
+		
+		});
+		
+    </script>
+  </head>
+  <body>
+    <p><b>5. Incluye en la web anterior, un enlace con la frase “Deshabilitar cambio de imagen” con el atributo href=”#nonavegar”. Cuando pulsemos en el enlace, deben deshabilitarse los eventos anteriores y además el usuario no debe navegar al href del enlace.</b></p>
+
+    <p align='center'>
+		<img id='cambiaimagen' src='https://vignette.wikia.nocookie.net/saintseiya/images/7/74/Seiya-Pegaso_161.JPG/revision/latest?cb=20141204214125&path-prefix=es' alt='pegaso' width='300px' />
+		<br />
+		<a id='bloqueacambioimagen' href="#">Deshabilitar cambio de imagen</a>
+	</p>
+    <p class='solucion'>
+		addEventListener("DOMContentLoaded",function(){<br />
+		&nbsp;	var imagen = document.getElementById('cambiaimagen');<br />
+			<br />
+			&nbsp;&nbsp;&nbsp;	/*CAMBIAR LA IMAGEN CON EL RATÓN ENCIMA*/<br />
+		&nbsp;	imagen.addEventListener("mouseover", change);<br />			
+		&nbsp;	function change(e){<br />
+			&nbsp;&nbsp;&nbsp;	this.src = "https://pre00.deviantart.net/75c5/th/pre/f/2013/131/1/8/saint_seiya___seiya_hades_ending_render_by_thewolfmonster-d64w0nm.png";<br />
+		&nbsp;	}<br />
+			<br />
+			&nbsp;&nbsp;&nbsp;	/*VOLVER A LA IMAGEN PRINCIPAL CON EL RATÓN FUERA DE LA IMAGEN*/<br />
+		&nbsp;	imagen.addEventListener("mouseout",function(e) {<br />
+			&nbsp;&nbsp;&nbsp;	this.src = "https://vignette.wikia.nocookie.net/saintseiya/images/7/74/Seiya-Pegaso_161.JPG/revision/latest?cb=20141204214125&path-prefix=es";<br />
+		&nbsp;	});<br />		
+			<br />
+			&nbsp;&nbsp;&nbsp;	/*BLOQUEAR EL CAMBIO DE IMAGEN*/<br />
+		&nbsp;	var enlace = document.getElementById('bloqueacambioimagen');<br />
+		&nbsp;	enlace.addEventListener('click',function(e) {<br />
+			&nbsp;&nbsp;&nbsp;	imagen.removeEventListener('mouseover',change);<br />
+			&nbsp;&nbsp;&nbsp;	e.preventDefault;<br />
+		&nbsp;	});<br />
+		});<br />
+    </p>
+  </body>
+</html>

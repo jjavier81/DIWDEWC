@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7 (Eventos y Formularios)</title>
+    <style media="screen">
+		.solucion {
+			color: blue;
+		}
+	  
+		.codigoCaracter {
+			font-size:10em;
+			font-weight: bold;
+			text-align: center;
+		}
+	  
+		.caracter{
+			border: 1px solid black;
+			border-radius: 10px;
+			background-color: grey;
+			font-size: 2em;
+			width: 250px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+    </style>
+    <script type="text/javascript">
+	
+		onload = function() {
+			onkeydown = mostrarCaracteresEspeciales;
+			onkeyup = mostrarInformacionCaracteres;
+		}
+		
+		function mostrarCaracteresEspeciales(e) {
+			/*Para distinguir caracteres especiales de los no especiales*/
+			var caracterEspecial = e.altKey || e.ctrlKey || e.shiftKey || e.metakey;
+			if (caracterEspecial) {
+				console.info('La tecla pulsada es un carácter especial');
+			}
+		}
+		
+		function mostrarInformacionCaracteres(e){
+			var info = '';
+			info = '<h1 class="codigoCaracter">' + e.keyCode + '<h1>' + '<div class="caracter">' + e.key + '<div>';
+			muestrainfo.innerHTML = info;
+		}
+			
+    </script>
+  </head>
+  <body>
+    <p><b>7. Crea una web que muestre la tecla y el carácter que es pulsado (por ejemplo, esta web tiene una funcionalidad similar: http://keycode.info/), y que indique por consola si es un carácter especial.</b></p>
+
+	<div id='muestrainfo'></div>
+	<br />
+
+    <p class='solucion'>
+		onload = function() {<br />
+		&nbsp;&nbsp;	onkeydown = mostrarCaracteresEspeciales;<br />
+		&nbsp;&nbsp;	onkeyup = mostrarInformacionCaracteres;<br />
+		}<br />
+		<br />
+		function mostrarCaracteresEspeciales(e) {<br />
+		&nbsp;&nbsp;	/*Para distinguir caracteres especiales de los no especiales*/<br />
+		&nbsp;&nbsp;	var caracterEspecial = e.altKey || e.ctrlKey || e.shiftKey || e.metakey;<br />
+		&nbsp;&nbsp;	if (caracterEspecial) {<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;		console.info('La tecla pulsada es un carácter especial');<br />
+		&nbsp;&nbsp;	}<br />
+		}<br />
+		<br />
+		function mostrarInformacionCaracteres(e){<br />
+		&nbsp;&nbsp;	var info = '';<br />
+		&nbsp;&nbsp;	info = '<h1 class="codigoCaracter">' + e.keyCode + '<h1>' + '<div class="caracter">' + e.key + '<div>';<br />
+		&nbsp;&nbsp;	muestrainfo.innerHTML = info;<br />
+		}<br />
+		
+    </p>
+  </body>
+</html>

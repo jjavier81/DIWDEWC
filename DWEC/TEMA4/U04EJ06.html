@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6 (Eventos y Formularios)</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+			  
+		onload = function() {
+			onkeyup = cambiaMayuscula;
+		}
+	  
+		var mayuscula = false;
+	  
+		function cambiaMayuscula(e){
+			var texto = document.getElementsByTagName('p')[1];
+			if (e.key == 'Shift') {
+				if (mayuscula) {
+					texto.style.textTransform = 'lowercase';
+					mayuscula = false;
+				} else {
+					texto.style.textTransform = 'uppercase';
+					mayuscula = true;
+				}
+			}
+		}
+		
+    </script>
+  </head>
+  <body>
+    <p><b>6. Crea una web que cuando el usuario pulse la tecla Shift, cambie el texto a mayúsculas y cuando vuelva a pulsar pase a minúsculas.</b></p>
+
+    <p align='center'>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+	</p>
+    <p class='solucion'>
+		onload = function() {<br />
+		&nbsp;&nbsp;	onkeyup = cambiaMayuscula;<br />
+		}<br />
+		<br />
+		var mayuscula = false;<br />
+		<br />
+		function cambiaMayuscula(e){<br />
+		&nbsp;&nbsp;	var texto = document.getElementsByTagName('p')[1];<br />
+		&nbsp;&nbsp;	if (e.key == 'Shift') {<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;		if (mayuscula) {<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			texto.style.textTransform = 'lowercase';<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			mayuscula = false;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;		} else {<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			texto.style.textTransform = 'uppercase';<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			mayuscula = true;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;		}<br />
+		&nbsp;&nbsp;	}<br />
+		}<br />
+    </p>
+  </body>
+</html>

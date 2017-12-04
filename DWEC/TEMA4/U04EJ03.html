@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3 (Eventos y Formularios)</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+		function coordenadasRaton(e) {
+			var x = e.clientX;
+			var y = e.clientY;
+			console.info('X: ' + x + ', Y; ' + y);
+		}
+    </script>
+  </head>
+  <body onmouseover='coordenadasRaton(event)'>
+    <p><b>3. Utilizando la información que proporciona event, realiza una web que muestre las coordenadas X e Y del ratón por consola mientras el usuario pulse la letra shift y se mueva por el elemento body.</b></p>
+
+    <p>Elemento p</p>
+    <a href="#">Elemento a</a>
+    <div>Elemento div</div>
+    <h1>Elemento h1</h1> 
+    <h2>Elemento h2</h2>
+    <h3>Elemento h3</h3>
+    <p class='solucion'>
+		function coordenadasRaton(e) {<br />
+		&nbsp;&nbsp;&nbsp;	var x = e.clientX;<br />
+		&nbsp;&nbsp;&nbsp;	var y = e.clientY;<br />
+		&nbsp;&nbsp;&nbsp;	console.info('X: ' + x + ', Y; ' + y);<br />
+		}
+    </p>
+  </body>
+</html>

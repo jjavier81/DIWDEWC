@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1 (Eventos y Formularios)</title>
+    <style media="screen">
+      .solucion {
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+      addEventListener("DOMContentLoaded",function(){
+
+       /*Evento: UN CLIC*/
+      document.getElementsByTagName('h1')[0].onclick = function() {
+        document.getElementsByTagName('h1')[0].innerHTML = "Evento 'onclick' sobre elemento h1";
+      }
+
+      /*Evento: DOBLE CLIC*/
+      document.getElementsByTagName("p")[2].ondblclick = function(){
+        document.getElementsByTagName("p")[2].innerHTML = "Evento 'ondblclick' sobre elemento p";
+      }
+
+      /*Evento: CLIC DERECHO DEL RATÓN*/
+      document.querySelector("div").oncontextmenu = function(e){
+        e.preventDefault();
+        document.querySelector("div").innerHTML = "Evento 'oncontextmenu' sobre elemento div";
+      }
+
+      /*Evento: RATÓN DENTRO DEL ELEMENTO*/
+      document.querySelector("h2").onmouseenter = function(){
+       document.querySelector("h2").innerHTML = "Evento 'onmouseenter' encima del elemento h2";
+      }
+
+      /*Evento: RATÓN SOBRE EL ELEMENTO*/
+      document.querySelector("h3").onmouseover = function(){
+       document.querySelector("h3").innerHTML = "Evento 'onmouseover' sobre elemento h3";
+      }
+
+       //Quitar click derecho del ratón sobre toda la página
+       oncontextmenu = function(e){
+         e.preventDefault();
+       }
+
+
+     });
+    </script>
+  </head>
+  <body>
+    <p><b>1. Crea una web que contenga elementos p, div, h1, h2 y h3 con texto que cambiarán su contenido cuando se produzca un evento de la siguiente manera:</b></p>
+    <ol type='a'>
+      <li>Incluye una manera distinta de asociar la función de manejo de eventos para cada elemento.</li>
+      <li>Además, escoge un evento de ratón distinto para cada elemento salvo para el elemento div que debe tener asociado el evento del menú secundario.</li>
+      <li>Impide que el menú secundario haga la acción que tiene asociada por defecto.</li>
+    </ol>
+    <h1>Elemento h1</h1>
+    <p class='solucion'>
+      /*Evento: UN CLIC*/<br />
+	document.getElementsByTagName('h1')[0].onclick = function() {<br />
+    &nbsp;&nbsp;&nbsp; document.getElementsByTagName('h1')[0].innerHTML = "Evento 'onclick' sobre elemento h1";<br />
+     }
+    </p>
+    <p>Elemento p</p>
+    <p class='solucion'>
+      /*Evento: DOBLE CLIC*/<br />
+      document.getElementsByTagName("p")[2].ondblclick = function(){<br />
+      &nbsp;&nbsp;&nbsp; document.getElementsByTagName("p")[2].innerHTML = "Evento 'ondblclick' sobre elemento p";
+      }
+    </p>
+    <div>Elemento div</div>
+    <p class='solucion'>
+      /*Evento: CLIC DERECHO DEL RATÓN*/<br />
+      document.querySelector("div").oncontextmenu = function(e){<br />
+      &nbsp;&nbsp;&nbsp; e.preventDefault();<br />
+      &nbsp;&nbsp;&nbsp; document.querySelector("div").innerHTML = "Evento 'oncontextmenu' sobre elemento div";<br />
+      }
+    </p>
+    <h2>Elemento h2</h2>
+    <p class='solucion'>
+      /*Evento: RATÓN DENTRO DEL ELEMENTO*/<br />
+      document.querySelector("h2").onmouseenter = function(){<br />
+       &nbsp;&nbsp;&nbsp;  document.querySelector("h2").innerHTML = "Evento 'onmouseenter' encima del elemento h2";<br />
+      }
+    </p>
+    <h3>Elemento h3</h3>
+    <p class='solucion'>
+      /*Evento: RATÓN SOBRE EL ELEMENTO*/<br />
+      document.querySelector("h3").onmouseover = function(){<br />
+      &nbsp;&nbsp;&nbsp;  document.querySelector("h3").innerHTML = "Evento 'onmouseover' sobre elemento h3";<br />
+      }
+    </p>
+  </body>
+</html>
