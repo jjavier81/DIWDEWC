@@ -9,38 +9,38 @@
       }
     </style>
     <script type="text/javascript">
-      addEventListener("DOMContentLoaded",function(){
+		addEventListener("DOMContentLoaded",function(){
 
        /*Evento: UN CLIC*/
-      document.getElementsByTagName('h1')[0].onclick = function() {
-        document.getElementsByTagName('h1')[0].innerHTML = "Evento 'onclick' sobre elemento h1";
-      }
+		document.getElementsByTagName('h1')[0].onclick = function() {
+			document.getElementsByTagName('h1')[0].innerHTML = "Evento 'onclick' sobre elemento h1";
+		}
 
       /*Evento: DOBLE CLIC*/
-      document.getElementsByTagName("p")[2].ondblclick = function(){
-        document.getElementsByTagName("p")[2].innerHTML = "Evento 'ondblclick' sobre elemento p";
-      }
+		document.getElementsByTagName("p")[2].ondblclick = function(){
+			document.getElementsByTagName("p")[2].innerHTML = "Evento 'ondblclick' sobre elemento p";
+		}
 
       /*Evento: CLIC DERECHO DEL RATÓN*/
-      document.querySelector("div").oncontextmenu = function(e){
-        e.preventDefault();
-        document.querySelector("div").innerHTML = "Evento 'oncontextmenu' sobre elemento div";
-      }
+		document.querySelector("div").oncontextmenu = function(e){
+			e.preventDefault();
+			document.querySelector("div").innerHTML = "Evento 'oncontextmenu' sobre elemento div";
+		}
 
       /*Evento: RATÓN DENTRO DEL ELEMENTO*/
-      document.querySelector("h2").onmouseenter = function(){
-       document.querySelector("h2").innerHTML = "Evento 'onmouseenter' encima del elemento h2";
-      }
+		document.querySelector("h2").onmouseenter = function(){
+			document.querySelector("h2").innerHTML = "Evento 'onmouseenter' encima del elemento h2";
+		}
 
       /*Evento: RATÓN SOBRE EL ELEMENTO*/
-      document.querySelector("h3").onmouseover = function(){
-       document.querySelector("h3").innerHTML = "Evento 'onmouseover' sobre elemento h3";
-      }
+		document.querySelector("h3").onmouseover = function(){
+			document.querySelector("h3").innerHTML = "Evento 'onmouseover' sobre elemento h3";
+		}
 
        //Quitar click derecho del ratón sobre toda la página
-       oncontextmenu = function(e){
-         e.preventDefault();
-       }
+		oncontextmenu = function(e){
+			e.preventDefault();
+		}
 
 
      });

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escoge tu regalo</title>
+    <style media="screen">
+	
+		.tooltip {
+			position: relative;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 125%;
+			left: 50%;
+			margin-left: -60px;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #555 transparent transparent transparent;
+		}
+		
+		.tooltiptext {
+			visibility: hidden;
+		}
+
+
+		.tooltip .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+
+    </style> 
+	<script>
+	
+		/*inicio la variable premio a falso*/
+		var premio = false;		
+		addEventListener("click",function(e){
+			if (!premio) {
+				var id = e.target.id;
+				var imgPremio = document.getElementById(id);
+				document.getElementById(id).value;
+				imgPremio.src = "img/" + id + ".jpg";
+				document.getElementById(id).classList.remove("tooltip");
+
+
+				/*oculto todas las pistas mostradas*/
+				/*document.getElementById('p1').classList.remove('pistas');*/
+							
+				if (id == "coche") {
+					alert ('Te ha tocado un coche!!');
+					document.getElementById('r1').style.display='block';
+				} else if (id == "viaje") {
+					alert ('Te ha tocado un viaje!!');
+					document.getElementById('r2').style.display='block';
+				} else if (id == "pocoyo") {
+					alert ('Te ha tocado a Pocoyo!!');
+					document.getElementById('r3').style.display='block';
+				}				
+				premio = true;
+			} else {
+				alert('Alea jacta est!! Conformate con tu premio!!');
+			}
+		});	
+
+		addEventListener("contextmenu", function(e) {
+			e.preventDefault();
+			var id = e.target.id;
+			document.getElementsByName(id)[0].className += " tooltip";
+			
+
+		});	
+	
+	</script>
+  </head>
+  <body>
+    <h1 align='center'>Escoge un regalo</h1>
+	<p align='center'>(Haz clic derecho sobre cada caja para conseguir pistas)</p>
+	<br />
+	<table align='center'>			
+		<tr>
+			<td>				
+				<div class="cartaSorpresa" name='coche'>
+					<span class="tooltiptext">Con el cuatro siempre rima...</span>
+				</div>
+				<img class='sorpresa' id='coche' src='img/sorpresa.jpg' alt='sorpresa' width='350px'>				
+			</td>
+			<td>				
+				<div class="cartaSorpresa" name='viaje'>	
+					<span class="tooltiptext">Aire, tierra o mar.</span>
+				</div>
+				<img class='sorpresa' id='viaje' src='img/sorpresa.jpg' alt='sorpresa' width='350px'>
+			</td>
+			<td>				
+				<div class="cartaSorpresa" name='pocoyo'>	
+					<span class="tooltiptext">De color azul...</span>
+				</div>
+				<img class='sorpresa' id='pocoyo' src='img/sorpresa.jpg' alt='sorpresa' width='350px'>
+			</td>
+		</tr>		
+		<tr>
+			<th align='center'><p id='r1'>Un Coche!!</p></th>
+			<th align='center'><p id='r2'>Un Viaje!!</p></th>
+			<th align='center'><p id='r3'>Un Pocoyo!!</p></th>			
+		</tr>
+	</table>
+	<script type='text/javascript'>
+	
+		/*oculto todos los textos del premio*/
+		document.getElementById('r1').style.display='none';
+		document.getElementById('r2').style.display='none';
+		document.getElementById('r3').style.display='none';
+	
+	</script>
+  </body>
+</html>
