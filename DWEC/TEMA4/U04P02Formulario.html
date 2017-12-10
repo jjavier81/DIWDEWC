@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>U4 Práctica 2: Formulario</title>
+
+    <link rel="stylesheet" href="css/estiloEjFormulario.css">
+	
+	<script>
+		//GENERAR UN BUCLE PARA RECORRER TODOS LOS INPUT Y SELECT Y VER SI TIENEN EL FOCO O NO
+		onload = function(){
+			//Se crea la función poner foco
+			function ponFoco(e){
+				e.target.style.outline = "purple solid 2px";
+			}
+			//Se crea la función quitar foco
+			function quitaFoco(e){
+				 e.target.style.outline = "none"; //Quitamos el estilo
+			}
+			
+			function ponFocoError(e) {
+				e.target.onfocus;
+			}
+			
+			var j = document.querySelectorAll("input, select");
+			for (var i=0; i<j.length; i++) {				
+				j[i].onfocus = ponFoco;				
+				j[i].onblur = quitaFoco;
+			}			
+			
+			//GENERO LA VARIABLE FORMULARIO PARA VALIDAR
+			var formulario = document.getElementById('formulario');
+			//GENERAR LA FUNCION VALIDACION CUANDO SE HACE CLIC SOBRE ENVIAR
+			formulario.onsubmit = function validacion(){
+					//Campo donde pondré los errores:
+				var err = document.getElementsByClassName('errores')[0];
+					//Listado de errores
+				var errList ="";
+					//Ret es lo que devolverá return cuando acabe la validación
+				var ret = true;
+					//Inicio la variable que me va a decir si es el primer error.
+				var error1ro = 0;
+				
+					//COMPROBAMOS LA VALIDACION DEL NOMBRE
+				var nombre = document.getElementById('nombre').value;
+				if (nombre == null || nombre.length == 0) {
+					errList += "El campo nombre está vacío. Debes introducir un valor.<br />";
+					ret = false;
+					document.getElementById('nombre').style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="nombre"]').focus();
+						error1ro++;
+					}
+					
+				} else if (!(/^\S+[\s?\S+]*$/.test(nombre))) {
+					errList += "El campo nombre no es correcto. Inserta un nombre válido.<br />";
+					ret = false;
+					document.getElementById('nombre').style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="nombre"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//COMPROBAMOS LA VALIDACION DE LOS APELLIDOS
+				var apellidos = document.getElementById('apellidos').value;
+				if (apellidos == null || apellidos.length == 0) {
+					errList += "El campo apellidos está vacío. Debes introducir un valor.<br />";
+					ret = false;
+					document.getElementById('apellidos').style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="apellidos"]').focus();
+						error1ro++;
+					}
+				} else if (!(/^\S+[\s?\S+]*$/.test(apellidos))) {
+					errList += "El campo apellidos no es correcto. Inserta unos apellidos válidos.<br />";
+					ret = false;
+					document.getElementById('apellidos').style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="apellidos"]').focus();
+						error1ro++;
+					}
+				} 
+				
+					//COMPROBAMOS LA VALIDACIÓN DEL EMAIL
+				var email = document.getElementsByName("email")[0].value;
+				if ( email == null || email.length == 0 || !(/^\w+([\.\-\+]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,4})+$/.test(email)) ){
+					errList += "El email es incorrecto. Es necesario introducir un e-mail válido.<br/>";
+					ret = false;
+					document.getElementsByName("email")[0].style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="email"]').focus();
+						error1ro++;
+					}
+				}
+				var emailRepe = document.getElementById("emailRepe").value;
+				if(emailRepe == null || emailRepe.length == 0 || email != emailRepe){
+					errList += "El email repetido debe coincidir con el primer email que introdujo <br/>";
+					ret = false;
+					document.getElementById("emailRepe").style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="emailRepe"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//COMPROBAMOS LA VALIDACION DEL DNI
+				var dni = document.getElementById('dni').value;
+				if (dni.length == 0 || dni == null || !(/^\d{8}[a-zA-Z]$/.test(dni))){
+					errList += "El dni es erróneo <br/>";
+					document.getElementById("dni").style.outline = 'red solid 2px';
+					ret = false;
+					if (error1ro == 0) {
+						document.querySelector('input[id="dni"]').focus();
+						error1ro++;
+					}
+				} else {
+					var numero = dni.substr(0,dni.length-1);
+					var letr = dni.substr(dni.length-1,1);
+					numero = numero % 23;
+					var letra='TRWAGMYFPDXBNJZSQVHLCKET';
+					letra=letra.substring(numero,numero+1);
+					if (letra!=letr.toUpperCase()) {
+						errList += 'Dni erroneo, la letra del NIF no se corresponde. <br />';
+						document.getElementById("dni").style.outline = 'red solid 2px';
+						ret = false;
+						if (error1ro == 0) {
+							document.querySelector('input[id="dni"]').focus();
+							error1ro++;
+						}
+					}
+				}
+				
+					//COMPROBAMOS LA VALIDACIÓN DE LA FECHA DE NACIMIENTO
+				var fecha = (document.getElementsByName('fecha')[0].value).split('-');
+				var ano=fecha[0];
+				var mes=fecha[1];// de 0 a 11
+				var dia=fecha[2];// 1 a 31
+				var nf= new Date(ano,(mes - 1),dia);
+				var hoy = new Date();
+					//resto los años de las dos fechas
+				var edad = hoy.getFullYear()- ano - 1; //-1 porque no se si ha cumplido años ya este año
+					//si resto los meses y me da mayor que 0, ha cumplido años
+				if (hoy.getMonth() + 1 - mes > 0){
+					edad++;
+				}
+					//si resto los dias y me da menor que 0 entonces no ha cumplido años.
+					//si da mayor o igual si ha cumplido
+				if (hoy.getUTCDate() - dia >= 0){
+					edad++;
+				}
+				if ( isNaN(nf) || dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 0 || ano >= hoy.getFullYear()){
+					errList += "La fecha es errónea. Debes introducir una fecha valida. <br/>"
+					ret = false;
+					document.getElementsByName('fecha')[0].style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="fecha"]').focus();
+						error1ro++;
+					}
+				}else if (edad < 18){
+					errList += "Debe ser mayor de edad para inscribirse <br/>"
+					ret = false;
+					document.getElementsByName('fecha')[0].style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('input[id="fecha"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//COMPROBAMOS LA VALIDACIÓN DE HABER ELEGIDO ALGO DE LA SECCIÓN FAVORITA
+				var seccion = document.getElementsByName("seccion")[0].selectedIndex;
+				if (seccion == null || seccion == 0){
+					errList += "Es necesario seleccionar una sección favorita. <br/>";
+					ret = false;
+					document.getElementsByName("seccion")[0].style.outline = 'red solid 2px';
+					if (error1ro == 0) {
+						document.querySelector('select[id="selector"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//COMPROBAMOS QUE SE HA SELECCIONADO UNA FORMA DE PAGO
+				var efectivo = formulario.efectivo.value;
+				if (efectivo != "efectivo" && efectivo != "tarjeta"){
+					ret = false;
+					document.getElementsByName("efectivo")[0].style.outline = 'red solid 2px';
+					document.getElementsByName("efectivo")[1].style.outline = 'red solid 2px';
+					errList += "Es necesario indicar una forma de pago.<br/>";
+					if (error1ro == 0) {
+						document.querySelector('input[id="efectivo"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//COMPROBAMOS SI SE HAN ACEPTADO LAS CONDICIONES
+				if(!(cond.checked)){
+					ret = false;
+					document.getElementsByName("cond")[0].style.outline = 'red solid 2px';
+					errList += "Es necesario aceptar las condiciones de alta.<br/>";
+					if (error1ro == 0) {
+						document.querySelector('input[id="cond"]').focus();
+						error1ro++;
+					}
+				}
+				
+					//RESULTADO DE LA VALIDACION
+				if (ret){
+					var seccionEscogida = document.getElementsByName("seccion")[0].value;
+					document.getElementById('formulario').action = 'U04P02Formulario' + seccionEscogida + '.html';
+					document.getElementById('enviar').value = 'Enviando...';
+					document.getElementById('enviar').disabled = true;
+					errList = "Tu petición se ha enviado correctamente";
+					err.style.color="blue";
+				}else{
+					err.style.color="red";
+				}
+				err.innerHTML = errList;
+				return ret;
+			}
+		}
+	</script>
+
+  </head>
+
+  <body>
+
+    <form id="formulario" action="#" method="post" enctype="application/x-www-urlencoded">
+
+    <!--Zona info personal-->
+
+    <h1>Formulario alta</h1>
+
+    <fieldset>
+
+    <legend>Información personal</legend>
+
+    <div>
+
+    <label for="nombre">Nombre*:</label>
+
+    <input type="text" name="nombre" id="nombre" autofocus="autofocus" placeholder="Introduce el nombre..."></input>
+
+    </div>
+
+
+
+    <div>
+
+    <label for="apellidos">Apellidos*:</label>
+
+    <input type="text" name="apellidos" id="apellidos"></input>
+
+    </div>
+
+
+
+    <div>
+
+    <label for="email">Email*:</label>
+
+    <input type="email" name="email" id="email"></input>
+
+    </div>
+
+
+
+    <div>
+
+    <label for="email">Repetir email*:</label>
+
+    <input type="email" name="email" id="emailRepe"></input>
+
+    </div>
+
+
+
+    <div>
+
+    <label for="dni">DNI:</label>
+
+    <input type="text" name="dni" id="dni"></input>
+
+    </div>
+
+
+
+    <div id="inputFecha">
+
+    <label for="fecha">Fecha nacimiento*:</label>
+
+    <input type="date" name="fecha" id="fecha"></input>
+
+    </div>
+
+
+
+    <div id="seccion">
+
+    <label for="selector">Sección favorita*:</label>
+
+    <select name="seccion" id="selector">
+
+    <option value="0">Escoge una sección </option>
+
+    <option value="discos">Discos</option>
+
+    <option value="libros">Libros</option>
+
+    <option value="tecnologia">Tecnología</option>
+
+    </select>
+
+    </div>
+
+    <div>
+
+      <p>Modo preferente de pago*:</p>
+
+    </div>
+
+    <div id="radio">
+
+      <label for="efectivo">Efectivo
+
+      <input type="radio" name="efectivo" id="efectivo" value="efectivo"></input>
+
+      </label>
+
+      <label for="tarjeta">Tarjeta
+
+      <input type="radio" name="efectivo" id="tarjeta" value="tarjeta"></input>
+
+      </label>
+
+    </div>
+
+
+
+    </fieldset>
+
+
+
+    <!--Zona checks y aceptar-->
+
+    <label class="check">
+
+    <input type="checkbox" name="cond" id="cond"></input>
+
+    <p> Acepto las condiciones de alta</p>
+
+    </label>
+
+
+
+    <input type="submit" value="Enviar" id="enviar"></input>
+
+
+
+    <div id="nota">Nota: los campos marcados con "*" son obligatorios</div>
+
+
+
+    <!-- Incluyo un div vacío para poner los errores del formulario -->
+
+    <div class="errores"></div>
+
+    </form>
+
+
+
+  </body>
+
+</html>
