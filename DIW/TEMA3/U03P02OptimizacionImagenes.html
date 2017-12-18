@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- FUENTES DE GOOGLE -->
+		<link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+		
+		<!-- FAVICON -->
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+
+		<meta charset="utf-8">
+		<title>Cafés La Perdiz</title>
+		
+		<!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<style media="screen">
+			* {
+				font-family: 'Pangolin';
+			}
+
+			body {
+				background-color: #EFA16F;
+			}
+
+			.cabecera{
+				height: 100px;
+				display: table;
+			}
+
+			.logo{
+				display: table-cell;
+				width: 30%;
+				vertical-align: middle;
+				text-align: right;
+			}
+
+			.titulo{
+				display: table-cell;
+				width: 70%;
+				vertical-align: middle;
+				font-family: 'Berkshire Swash';
+				text-align: left;
+				padding-left: 10%;
+			}
+
+			.imagen{
+				height: 350px;
+			}
+
+			.padding{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			.info{
+				padding-top: 15px;
+				text-align: center;
+				height: 400px;
+			}
+
+			.conocenos{
+				border-right: 3px solid black;
+			}
+
+			.conocenos img{
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			.conocenos h1{
+				font-family: 'Berkshire Swash';
+			}
+
+			.escribir{
+				margin-bottom: 60px;
+				text-align: left;
+				padding-left: 40px;
+			}
+
+			.llamar{
+				text-align: left;
+				padding-left: 40px;
+			}
+
+			.contacta h1{
+				font-family: 'Berkshire Swash';
+			}
+
+			@media(min-width: 0px) and (max-width: 767px){
+				.conocenos{
+					border-right: none;
+					border-bottom: 3px solid black;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="padding">
+				<div class="row">
+					<div class="cabecera w-100">
+						<div class="logo">
+							<img src="img/logo.svg" width="80" alt="logo">
+						</div>
+						<div class="titulo">
+							<h1>Cafés La Perdiz</h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="imagen w-100">
+						<picture>
+							<source media="(min-width: 992px)" srcset="img/grande.png">
+							<source media="(min-width: 576px) and (max-width: 991px)" srcset="img/mediano.png">
+							<source media="(max-width: 575px)" srcset="img/pequeno.png">
+							<img src="img/grande.png" width="100%" height="350">
+						</picture>
+					</div>
+				</div>
+				<div class="row">
+					<div class="texto w-100">Según el formato de mapa de bits más adecuado siguiendo la guía, tanto el logo como los iconos del telefono y del correo deberían de ser jpg 
+					ya que no necesitamos ni animación ni preservar detalles con mucha resolución. Tras ello además los hemos convertido a svg (vectorial) por lo que ocupan menos y nos 
+					viene bien en la carga de la página.<br />Tamaños antes y después de la vectorización y después de la reducción y compresión : <br /> Logo: 439kb - 258kb - 234kb  <br /> 
+					Correo-e: 2441kb - 330kb - 278kb<br /> Teléfono: 2434kb - 333kb - 282kb</div>
+				</div>
+				<div class="info row">
+					<div class="conocenos col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<h1>Conócenos</h1>
+						<img src="img/cafetera.jpg" width="200" height="200">
+						<p>La imagen de la cafetera pongo <b>la imagen jpg debido a que la imagen en png24 ocupa mucho y no necesito tanta resolución y por otro lado la imagen png8 es demasiado
+						pobre y además si nos ceñimos a la guia, el formato correcto es el jpg.</b> Para convertir a png con gimp exportamos a png y directamente ya realiza la conversión y para png8
+						primero debemos ir a Imagen-->Modo-->Indexado-->Usar paleta optimizada para web y luego exportar a png.</p>
+					</div>
+					<div class="contacta col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<h1>Contacta con nosotros</h1>
+						<div class="escribir">
+							<img src="img/correoe.svg" width="70" /> Escribe a <a href="mailto:info@cafeslaperdiz.com">info@cafeslaperdiz.com<a>
+						</div>
+						<div class="llamar">
+							<img src="img/telefono.svg" width="70" /> Llama al <a href="tel:600-11-12-11">600-11-12-11<a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	</body>
+</html>
