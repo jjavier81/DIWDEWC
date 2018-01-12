@@ -1,0 +1,81 @@
+/*Cuando se ponga el foco sobre los input de la web (login, password y buscador), deben transformarse aumentando su tamaño un 10%.*/
+input:focus{
+	transform: scale(1.1,1.1);
+}
+
+/*Cuando el ratón se sitúe sobre los iconos de redes sociales del pie, debe producirse una transición que dure 3s que reduzca el radio del borde 
+de los iconos al 5% y que modifique el color de la letra y del fondo.*/
+footer ul li a i:hover {
+    background: white;
+    color: black;
+    border-radius: 5%;
+    transition: all 3s ease-in-out;
+}
+
+/*Se debe aplicar una animación sobre otro elemento de la web (imágenes, h1’s o textos…) que:
+a. Modifique al menos 2 propiedades CSS.
+b. Emplee un mínimo de 3 estados.*/
+
+@keyframes mueveimagenes {
+    0%   {transform: rotate(0deg); border-radius: 50%;}
+    50%  {transform: rotate(360deg); background-color: yellow; border-radius: 50%;}
+    100% {transform: rotate(0deg); border-radius: 50%;}
+}
+
+@keyframes rotaimagenes {
+    0%   {transform: translate(0%);}
+    50%  {transform: translate(50%);}
+    100% {transform: translate(0%);}
+}
+
+article figure{
+	animation-name: rotaimagenes;/* Relaciona con @keyframes */
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+	
+}
+
+article figure img{
+	animation-name: mueveimagenes;/* Relaciona con @keyframes */
+    animation-duration: 5s;
+    animation-iteration-count: infinite;	
+}
+
+@keyframes cambiah1 {
+    0%   {color: blue; margin-left:0%;}
+    25%  {color: red; margin-left: 60%;}
+    100% {color: blue; margin-left:0%;}
+}
+
+h1 {
+	animation-name: cambiah1;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
