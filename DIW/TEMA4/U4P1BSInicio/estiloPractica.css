@@ -43,7 +43,7 @@ article figure img{
 
 @keyframes cambiah1 {
     0%   {color: blue; margin-left:0%;}
-    25%  {color: red; margin-left: 60%;}
+    25%  {color: red; margin-left: 60%; text-transform: uppercase;}
     100% {color: blue; margin-left:0%;}
 }
 
