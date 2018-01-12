@@ -43,7 +43,7 @@ article figure img{
 
 @keyframes cambiah1 {
     0%   {color: blue; margin-left:0%;}
-    25%  {color: red; margin-left: 60%; text-transform: uppercase;}
+    50%  {color: red; margin-left: 60%; text-transform: uppercase;}
     100% {color: blue; margin-left:0%;}
 }
 
@@ -53,6 +53,19 @@ h1 {
 	animation-iteration-count: infinite;
 }
 
+@keyframes cambiaP {
+    0%   {color: black;}
+	25%   {color: orange;}
+    50%  {color: red; text-indent: 15%;}
+    75% {color: blue; text-indent: 5%;}
+	100%   {color: black;}
+}
+
+p {
+	animation-name: cambiaP;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
 
 
 
