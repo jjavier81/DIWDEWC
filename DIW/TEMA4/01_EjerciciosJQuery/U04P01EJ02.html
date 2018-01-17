@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+		/*Aquí va el código*/
+		$(document).ready(function(){
+	  
+			/*TUNEAR EL TEXTO(H1)*/
+			$('h1').css({
+				'padding':'5',
+				'text-align':'center', 
+				'fontfamily':'fantasy', 
+				'font-size':'2em', 
+				'border':'1px solid red', 
+				'background':'yellow'});
+				
+			/*INSERTAR SALTOS DE LINEA DEBAJO DE LA IMAGEN*/
+			var saltoLinea = $(document.createElement("br"));
+			var saltoLinea2 = $(document.createElement("br"));
+			$(saltoLinea).insertAfter('img');
+			$(saltoLinea2).insertAfter('br');
+			
+			/*CAMBIAR ATRIBUTOS DE IMAGEN Y CENTRAR*/
+			$('img').attr('width','400');
+			$('div').attr("align",'center');
+			
+			/*OCULTAR Y MOSTRAR LA IMAGEN HACIENDO CLIC SOBRE EL TITULO*/
+			$('div').css({'display':'none'});				
+			$('h1').toggle(// Primer click
+				function(e){ 
+					$('div').slideDown();
+					$(this).text('Haz click aquí para ocultar la imagen!');
+					e.preventDefault();
+				}, // Separamos las dos funciones con una coma      
+				// Segundo click
+				function(e){ 
+					$('div').slideUp();
+					$(this).text('Haz click aquí para desplegar la imagen!');
+					e.preventDefault();
+				}
+			);
+
+			/*MODIFICAR EL TAMAÑO DE LA IMAGEN CUANDO SE PULSAN LOS BOTONES + Y - */
+			$('#masAncho').click(function(){			
+				var widthValue = $('img').attr('width');
+				if (parseInt(widthValue) < 2000) { 
+					var widthNewValue = parseInt(widthValue) + 20;
+					$('img').attr('width',widthNewValue);
+				}			
+			});
+			
+			$('#menosAncho').click(function(){			
+				var widthValue = $('img').attr('width');
+				if (parseInt(widthValue) > 20) { 
+					var widthNewValue = parseInt(widthValue) - 20;
+					$('img').attr('width',widthNewValue);
+				}
+			});
+		});
+	  
+    </script>
+  </head>
+  <body>
+    <h1>Haz click aquí para desplegar la imagen!</h1>
+    <div class="contenedor">
+      <img src="img/mundo.jpg">
+      <button id="masAncho">+</button>
+      <button id="menosAncho">-</button>
+    </div>
+  </body>
+</html>

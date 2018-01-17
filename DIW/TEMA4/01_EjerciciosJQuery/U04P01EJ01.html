@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .rojo{
+      color: #cc0000;
+      }
+      .verde{
+      color: #00cc00;
+      }
+      .azul{
+      color: #0000cc;
+      }
+      .fondogris{
+      background-color: #cccccc;
+      }
+      .italica{
+      font-style: italic;
+      }
+      .negrita{
+      font-weight: bold;
+      }
+      body{
+      font-family: verdana, arial, helvetica;
+      }
+      div{
+      margin-bottom: 4px;
+      }
+      i{
+      font-style: normal;
+      display: block;
+      margin-top: 8px;
+      }
+      b{
+      font-weight: normal;
+      display: block;
+      margin-top: 8px;
+      }
+    </style>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        /*Aquí va el código*/
+        $('p:first').addClass('rojo');
+        $('p:nth-child(3)').addClass('verde');
+        $('span:first').addClass('italica');
+        $('p:nth-child(4)').addClass('rojo').addClass('fondogris');
+        $('div:nth-child(8)').addClass('rojo');
+        $('span:last').addClass('negrita');
+        $('div:nth-child(9)').addClass('verde fondogris');
+        $('div:nth-child(11)').addClass('azul');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Selectores en jQuery</h1>
+    <p>Este es un párrafo con class="rojo"</p>
+    <p>Este es un párrafo con class="verde" y aquí <span>meto una itálica</span></p>
+    <p>Este es un párrafo con class="rojo fondogris" (es decir, este elemento tiene aplicadas las clases "rojo" y "fondogris"</p>
+    <p id="p4">Este es un párrafo con id="p4", sin class</p>
+    <p>Este es un párrafo sin id ni class</p>
+    <div>Esto es una división </div>
+    <div>Esto es una división con class="rojo" y aqui <span>meto una negrita</span></div>
+    <div>Esto es una división con class="verde fondogris"</div>
+    <div>Esto es una división sin id ni class</div>
+    <div>Esto es una división con class="azul"</div>
+    <b>Esto es una etiqueta b</b>
+    <i>Esto es una etiqueta i</i>
+  </body>
+</html>
