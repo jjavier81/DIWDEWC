@@ -75,14 +75,14 @@
   				//});
           pajaros = $('#pajaros');
           $(pajaros).css({display: 'block', left:'0px', width: '30%'});
-          $(".pajaros").css({width:'100%', heigth:'auto'});
-          $("#pajaros").animate({marginLeft:'100%', width:'70%', marginTop:'0%'}, 7000);
+          $(".pajaros").css({width:'100%', heigth:'100%'});
+          $("#pajaros").animate({marginLeft:'100%', width:'60%', marginTop:'10%'}, 7000);
           setTimeout(
             function(){
               $("#pajaros").css({display: 'none'});
               palacio = $('#palacio');
               $(palacio).css({display: 'block', marginLeft:'110%', width: '30%'});
-              $(".palacio").css({width:'70%', heigth:'auto'});
+              $(".palacio").css({width:'70%', heigth:'100%'});
               $(palacio).animate({marginLeft:'-70%', width:'100%', marginTop:'10%'}, 7000);
             },
           7000);
@@ -91,7 +91,7 @@
               $("#palacio").css({display: 'none'});
               adios = $('#adios');
               $(adios).css({display: 'block', margin:'auto', width: '100%'});
-              $(".adios").css({width:'100%', heigth:'auto'});
+              $(".adios").css({width:'100%', heigth:'100%'});
               $(adios).animate({margin:'auto', width:'0%', marginTop:'10%'}, 7000);
             },
           14000);
@@ -100,7 +100,7 @@
               $("#palacio").css({display: 'none'});
               aplauso = $('#aplauso');
               $(aplauso).css({display: 'block', margin:'auto', width: '0%'});
-              $(".aplauso").css({width:'100%', heigth:'auto'});
+              $(".aplauso").css({width:'100%', heigth:'100%'});
               $(aplauso).animate({width:'30%', heigth:'auto'}, 5000);
             },
           21000);
@@ -117,6 +117,9 @@
               clearInterval(setInterval());
             },
           24000);
+          $(aplauso).click(function(){
+            location.reload();
+          });
         });
 		  });
     </script>
