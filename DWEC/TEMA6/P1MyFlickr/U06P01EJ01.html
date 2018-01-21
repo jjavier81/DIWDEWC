@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Plantilla básica JQuery Local</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		//Aquí puedes programar con JQuery
+        $('button').click(function(){
+          var valor = $('#selector').val();
+          var url = 'https://api.flickr.com/services/feeds/photos_public.gne?tags=';
+          url += valor + '&format=json&jsoncallback=?';
+          $.getJSON(url,function (data,st,xhr){
+            console.log(data);
+            var arrFotos = data.items;
+            $('img').remove();
+            $.each(arrFotos, function (i, item) {
+              console.log('Imagen nº: ' + i + ' src= ' + item.media.m);
+              var foto = item.media.m;
+              var div = $('#imagenes');
+              var img = $('<img />').attr('src',foto).css({'width':'300px','height':'300px'}).appendTo(div);
+              return i<9;
+            });
+          });
+        })
+    	});
+    </script>
+  </head>
+  <body>
+    <h1>My Flickr</h1>
+    <button>Dibujar</button>
+    <select id='selector'>
+      <option value='landscapes'>Paisajes</option>
+      <option value="puppys">Cachorros</option>
+      <option value="dog">Perritos</option>
+      <option value="car">Coches</option>
+      <option value="dragonball">Drabon Ball</option>
+      <option value="arale">Arale</option>
+      <option value="cardenete">Cardenete</option>
+    </select>
+    <div id="imagenes"></div>
+  </body>
+</html>

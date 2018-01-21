@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1(U06.Ejercicios)</title>
+    <style>
+      h1,h2,h3,p {
+        text-align: center;
+      }
+      div {
+        margin: auto;
+      }
+      img {
+        align: center;
+        border: 1px solid black;
+      }
+    </style>
+    <script type='text/javascript'>
+      onload = function() {
+        /*Compatibilidad con navegadores*/
+        if (window.XMLHttpRequest) {
+          var xhr = new XMLHttpRequest();
+        } else if (ActiveXObject("Microsoft.XMLHTTP")){
+          var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        /*Conseguir con random el titular a buscar*/
+        var titular = Math.floor(Math.random()*4+1);
+        /*variable para saber el archivo de noticias que voy abrir*/
+        var url = 'titular' + titular + '.txt';
+
+        /*Configura una conexión con el enlace*/
+        xhr.open('GET',url,true);
+        /*Se llama a la función cuando la conexión este lista*/
+        xhr.onreadystatechange = muestraTitular;
+        /*se abre la conexión*/
+        xhr.send();
+
+        function muestraTitular(){
+          /*Mostrar el estado de la petición por pantalla*/
+          estadopeticion.innerHTML += ('<p>Estado de la peticion: ' + xhr.readyState + "</p>");
+          /*Mostrar todas las cabeceras del servidor*/
+          cabeceras.innerHTML += '<p>' + xhr.getAllResponseHeaders() +'<p>';
+          /*Mostrar el código y texto de la respuesta del servidor*/
+          codEstado.innerHTML += '<p>' + xhr.status + ' ' + xhr.statusText + '<p>';
+          if(xhr.readyState ==  4 && xhr.status == 200){
+            /*Mostrar la noticia por pantalla*/
+            noticia.innerHTML = xhr.responseText;
+          } else if(xhr.status != 200) {
+            alert(xhr.statusText);
+          }
+        }
+
+
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1>ÚLTIMAS NOTICIAS</h1>
+    <div id='noticia'></div>
+    <h2>Estados de la petición</h2>
+    <div id='estadopeticion'></div>
+    <h3>Cabeceras</h3>
+    <div id='cabeceras'></div>
+    <h3>Codigo Estado</h3>
+    <div id='codEstado'></div>
+  </body>
+</html>

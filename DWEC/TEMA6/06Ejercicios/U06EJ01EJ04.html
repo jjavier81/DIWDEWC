@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Login para Validación</title>
+    <script type="text/javascript">
+      onload = function(){
+        /*Compatibilidad con navegadores*/
+        if (window.XMLHttpRequest) {
+          var xhr = new XMLHttpRequest();
+        } else if (ActiveXObject("Microsoft.XMLHTTP")){
+          var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        document.forms[0].onsubmit = function(e){
+            /*nunca enviaré el formulario porque me traeré los datos con Ajax en lugar de enviarlos con submit*/
+            e.preventDefault();
+            /*Envío por POST, url de donde me dirijo y síncrono*/
+            var url = "U06EJ01EJ04LoginJSON.php";
+            xhr.open("POST",url,true);
+            /*Se llama a la función cuando la conexión este lista*/
+            xhr.onreadystatechange = function(){
+              /*Si ha hecho los 4 pasos del state y el status es correcto*/
+              if(xhr.readyState == 4 && xhr.status == 200){
+                /*Defino la variable respuesta donde almaceno lo que leera del proceso llamado*/
+                var respuesta = xhr.responseText;
+                console.log(respuesta);
+                /*Parseamos la respuesta y la metemos en una variable*/
+                var objetoParsear = JSON.parse(respuesta);
+                /*Introducimos la respuesta recibida en su div correspondiente*/
+                document.getElementById("resLogin").innerHTML = respuesta;
+
+                /*Si el objeto es true*/
+                if(objetoParsear.res){
+                  localStorage.setItem("token", objetoParsear.token)
+                  document.forms[0].action = "U06EJ01EJ04homeLogado.html";
+                  document.forms[0].submit();
+                }else{
+                  alert("Error en el parseo")
+                }
+
+              } else if (xhr.readyState == 4) {
+                alert("Se ha producido un error al obtener los datos"
+                + "\n\nreadyState:" + xhr.readyState
+                + "\nstatus: " + xhr.status
+                + "\nheaders: " + xhr.getAllResponseHeaders());
+              }
+            }
+            //devolvemos una strLogin = "usuario=valor_us&pass=valor_pass"
+            function obtenDatosLogin(){
+              var us = document.getElementById("usuario").value;
+              var password = document.getElementById("password").value;
+              var strLogin = "usuario=" + encodeURIComponent(us) + "&password=" + encodeURIComponent(password);
+              console.log(strLogin);
+              return strLogin;
+            }
+            // Por defecto, POST envía los datos con el formato url por lo que no tengo que especificarlo así:
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+            var datosLogin = obtenDatosLogin();
+            xhr.send(datosLogin);
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo envío datos Login y obtengo respuesta mediante Ajax</h1>
+    <h2>Formato envío: url mediante POST</h2>
+    <form action="#" method="post">
+      <div>Usuario: <input type="text" id="usuario" name="usuario" placeholder="Introduce tu usuario..." maxlength="40"></input></div>
+      <div>Contraseña: <input type="password" id="password" name="password"></input></div>
+      <div id="resLogin"></div>
+      <input type="submit" name="boton" id="enviar" value="Enviar"></input>
+    </form>
+  </body>
+</html>

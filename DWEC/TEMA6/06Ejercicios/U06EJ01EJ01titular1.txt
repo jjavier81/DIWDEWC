@@ -1,0 +1,4 @@
+<center>
+	<h2>AJAX COMO MOTIVO DE SUICIDIO</h2>
+	<img src='http://www.noticiaspv.com/wp-content/uploads/2013/09/noticiaspvNoticiasPuertoVallarta-noticiaspvnoticiaspuertovallarta-sucidio.jpg' alt='suicidio'>
+</center>

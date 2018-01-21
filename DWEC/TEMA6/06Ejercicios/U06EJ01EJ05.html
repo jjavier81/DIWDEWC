@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5(U06.Ejercicios)</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        /*Conseguir con random el titular a buscar*/
+        var titular = Math.floor(Math.random()*4+1);
+        $('#noticia').load('titular'+titular+'.txt');
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>ÚLTIMAS NOTICIAS</h1>
+    <div id='noticia'></div>
+  </body>
+</html>

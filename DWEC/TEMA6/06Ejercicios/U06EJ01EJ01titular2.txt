@@ -1,0 +1,4 @@
+<center>
+	<h2>XHR LA HERRAMIENTA QUE NADIE ENTIENDE</h2>
+	<img src='https://domscripting.com/presentations/wd06/workshop/slides/images/page_xhr_server.jpg' alt='XHR'>
+</center>

@@ -1,0 +1,152 @@
+$("#button").click(function(){
+$("#box").animate({height: "300px"});
+});
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<style>
+		body{
+			background-color: black;
+		}
+    #inicio {
+      margin: auto;
+      width: 80%;
+      align: center;
+    }
+    .inicio {
+      width: 100%;
+      align: center;
+    }
+    #pajaros,#palacio,#adios,#aplauso {
+      display: none;
+    }
+    #boton {
+      width: 80%;
+      margin: auto;
+    }
+		.boton{
+      text-align: center;
+			text-decoration: none;
+			padding: 1%;;
+			font-family: Apple Chancery;
+			font-weight: 2%;
+			font-size: 4em;
+			color: white;
+			background-color: #ff4000;
+			border-radius: 30px;
+			border: 4px solid #ff4000;
+		}
+    .boton{
+      background-color: #ff4000;
+      color: white;
+      border: 4px solid #ff4000;
+    }
+    #pajaros {
+      margin-top: 10%;
+    }
+    #palacio {
+      margin-left:'110%';
+      width: '70%';
+    }
+	</style>
+  <script>
+		$(document).ready(function(){
+      $('.boton').hover(function(){
+        $('.boton').css({
+            backgroundColor: 'white',
+            color: '#ff4000',
+            border: '4px solid #ff4000'
+        },'fast');
+        $('.boton').text('Haz click aqui!');
+      },function(){
+        $('.boton').css({
+            backgroundColor: '#ff4000',
+            color: 'white',
+            border: '4px solid #ff4000'
+        });
+        $('.boton').text('Confias en mi o no?!');
+      });
+			$('#contenedor').attr("align",'center');
+      $(".boton").click(
+        function(){
+          //$("#inicio").toggle();
+          $(".boton").css({display:'none'});
+  				$('#inicio').slideUp();
+  					//e.preventDefault();
+  				//});
+          pajaros = $('#pajaros');
+          $(pajaros).css({display: 'block', left:'0px', width: '30%'});
+          $(".pajaros").css({width:'100%', heigth:'auto'});
+          $("#pajaros").animate({marginLeft:'100%', width:'70%', marginTop:'0%'}, 7000);
+          setTimeout(
+            function(){
+              $("#pajaros").css({display: 'none'});
+              palacio = $('#palacio');
+              $(palacio).css({display: 'block', marginLeft:'110%', width: '30%'});
+              $(".palacio").css({width:'70%', heigth:'auto'});
+              $(palacio).animate({marginLeft:'-70%', width:'100%', marginTop:'10%'}, 7000);
+            },
+          7000);
+          setTimeout(
+            function(){
+              $("#palacio").css({display: 'none'});
+              adios = $('#adios');
+              $(adios).css({display: 'block', margin:'auto', width: '100%'});
+              $(".adios").css({width:'100%', heigth:'auto'});
+              $(adios).animate({margin:'auto', width:'0%', marginTop:'10%'}, 7000);
+            },
+          14000);
+          setTimeout(
+            function(){
+              $("#palacio").css({display: 'none'});
+              aplauso = $('#aplauso');
+              $(aplauso).css({display: 'block', margin:'auto', width: '0%'});
+              $(".aplauso").css({width:'100%', heigth:'auto'});
+              $(aplauso).animate({width:'30%', heigth:'auto'}, 5000);
+            },
+          21000);
+          setTimeout(
+            function(){
+              setInterval(function(){
+                $(aplauso).animate({width:'20%', opacity: '0.3'});
+                $(aplauso).animate({width:'30%', opacity: '1'});
+              }, 1000);
+            },
+          26000);
+          setTimeout(
+            function(){
+              clearInterval(setInterval());
+            },
+          24000);
+        });
+		  });
+    </script>
+  </head>
+  <body>
+    <div class="contenedor">
+  		<div id='inicio'>
+  			<img class='inicio' src="img/aladdininicio.gif">
+      </div>
+      <div id='pajaros'>
+  			<img class='pajaros' src="img/aladdinpajaros.jpg">
+      </div>
+      <div id='palacio'>
+        <img class='palacio' src="img/aladdinpalacio.jpg">
+      </div>
+      <div id='adios'>
+        <img class='adios' src="img/aladdinadios.jpg">
+      </div>
+      <div id='aplauso'>
+        <img class='aplauso' src="img/aladdinaplausos.gif">
+  		</div>
+    </div>
+		<div id='boton'>
+      <center>
+			     <button class='boton'>¿CONFIAS EN MI?</button>
+      </center>
+		</div>
+    </div>
+  </body>
+</html>
