@@ -146,3 +146,6 @@ img{
   position: absolute;
   top: -5000px;
 }
+strong {
+	font-weight: bold;
+}
