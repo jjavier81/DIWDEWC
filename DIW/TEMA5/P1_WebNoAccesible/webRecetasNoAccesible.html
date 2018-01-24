@@ -3,20 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="estilo.css">
-    <script type="text/javascript">
-      function visualiza(elId) {
-        //selecciona los div dentro de contenido
-        var losDiv = document.getElementById("contenido").getElementsByTagName("div");
-        //oculta los div seleccionados
-        for(var i = 0; i < losDiv.length; i++){
-          losDiv[i].style.display = "none";
-        }
-        //muestra el div indicado
-        document.getElementById(elId).style.display = "block";
-        // cancela el evento normal del enlace (equivale a e.preventDefault());
-        return false;
-      }
-    </script>
+    <script text="text/javascript" src="webRecetasNoAccesible.js" charset="utf-8"></script>
   </head>
   <body>
     <div id="titulo">
@@ -25,16 +12,16 @@
         <p>Como en casa en ningún sitio!</p>
       </div>
       <div id="logo">
-        <img src="logo.png" width="85">
+        <img src="logo.png" alt='Logo'>
       </div>
     </div>
 
     <div id="navegacion">
       <ul>
-	       <li><a href="#presentacion" onclick="visualiza('presentacion');">Presentación</a></li>
-	       <li><a href="#primeros" onclick="visualiza('primeros');">Primer plato</a></li>
-	       <li><a href="#segundos" onclick="visualiza('segundos');">Segundo plato</a></li>
-	       <li><a href="#postres" onclick="visualiza('postres');">Postre</a></li>
+	       <li><a href="#presentacion" class="presentacion">Presentación</a></li>
+	       <li><a href="#primeros" class="primeros">Primer plato</a></li>
+	       <li><a href="#segundos" class="segundos">Segundo plato</a></li>
+	       <li><a href="#postres" class="postres">Postre</a></li>
        </ul>
      </div>
 <!-- Inicio de contenido -->
@@ -51,13 +38,13 @@
   </p>
   <p>Bon Appetit!</p>
 
-  <h3><a href="#primeros" onclick="visualiza('primeros'); return false;">Entrantes y Primeros platos</a></h3>
+  <h3><a href="#primeros" class="primeros">Entrantes y Primeros platos</a></h3>
   Aperitivos, ensaladas, sopas y cremas.
 
-  <h3><a href="#segundos" onclick="visualiza('segundos'); return false;">Segundos: El plato fuerte!</a></h3>
+  <h3><a href="#segundos" class="segundos">Segundos: El plato fuerte!</a></h3>
   Pasta, arroces, carnes y pescados.
 
-  <h3><a href="#postres" onclick="visualiza('postres'); return false;">Deja hueco para los Postres</a></h3>
+  <h3><a href="#postres" class="postres">Deja hueco para los Postres</a></h3>
   Conoce las técnicas para cocinar los mejores postres caseros.
 </div>
 
